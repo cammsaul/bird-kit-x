@@ -61,6 +61,7 @@
 		7E255C3018172345008FD59D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E255C321817234A008FD59D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E255C3418172350008FD59D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7E255C36181725A9008FD59D /* XGlobalMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGlobalMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				7E255C0018171DEC008FD59D /* ExpaPlatform.h */,
+				7E255C36181725A9008FD59D /* XGlobalMacros.h */,
 				7E255C2718171EE3008FD59D /* Logging */,
 				7E255BFE18171DEC008FD59D /* Supporting Files */,
 			);
