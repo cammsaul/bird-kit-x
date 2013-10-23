@@ -10,4 +10,5 @@
 #import "ExpaLogger.h"
 #import "UIView+Expa.h"
 #import "UIButton+Expa.h"
+#import "UIAlertView+Expa.h"
 #import "NSLayoutConstraint+Expa.h"

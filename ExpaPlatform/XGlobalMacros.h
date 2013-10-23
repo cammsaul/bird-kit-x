@@ -15,3 +15,4 @@
 #define PROP_WEAK		@property (nonatomic, weak, readwrite)
 #define PROP_WEAK_RO	@property (nonatomic, weak, readonly)
 #define PROP_DELEGATE(PROTOCOL) PROP_WEAK id<PROTOCOL> delegate
+#define PROP_DATASOURCE(PROTOCOL) PROP_WEAK id<PROTOCOL> datasource

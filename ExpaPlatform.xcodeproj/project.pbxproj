@@ -26,6 +26,8 @@
 		7E255C6018173115008FD59D /* NSLayoutConstraint+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C5E18173115008FD59D /* NSLayoutConstraint+Expa.m */; };
 		7E255C6318173174008FD59D /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C6218173174008FD59D /* UIButton+Expa.m */; };
 		7E255C6418173174008FD59D /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C6218173174008FD59D /* UIButton+Expa.m */; };
+		7E255C8C181750FD008FD59D /* UIAlertView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C8B181750FD008FD59D /* UIAlertView+Expa.m */; };
+		7E255C8D181750FD008FD59D /* UIAlertView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C8B181750FD008FD59D /* UIAlertView+Expa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		7E255C5E18173115008FD59D /* NSLayoutConstraint+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Expa.m"; sourceTree = "<group>"; };
 		7E255C6118173174008FD59D /* UIButton+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Expa.h"; sourceTree = "<group>"; };
 		7E255C6218173174008FD59D /* UIButton+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Expa.m"; sourceTree = "<group>"; };
+		7E255C8A181750FD008FD59D /* UIAlertView+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Expa.h"; sourceTree = "<group>"; };
+		7E255C8B181750FD008FD59D /* UIAlertView+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Expa.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 				7E255C5A1817309C008FD59D /* UIView+Expa.m */,
 				7E255C6118173174008FD59D /* UIButton+Expa.h */,
 				7E255C6218173174008FD59D /* UIButton+Expa.m */,
+				7E255C8A181750FD008FD59D /* UIAlertView+Expa.h */,
+				7E255C8B181750FD008FD59D /* UIAlertView+Expa.m */,
 				7E255C5D18173115008FD59D /* NSLayoutConstraint+Expa.h */,
 				7E255C5E18173115008FD59D /* NSLayoutConstraint+Expa.m */,
 			);
@@ -278,6 +284,7 @@
 				7E255C5B1817309C008FD59D /* UIView+Expa.m in Sources */,
 				7E255C6318173174008FD59D /* UIButton+Expa.m in Sources */,
 				7E255C5F18173115008FD59D /* NSLayoutConstraint+Expa.m in Sources */,
+				7E255C8C181750FD008FD59D /* UIAlertView+Expa.m in Sources */,
 				7E255C2A18171F0A008FD59D /* ExpaLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +296,7 @@
 				7E255C6418173174008FD59D /* UIButton+Expa.m in Sources */,
 				7E255C5C1817309C008FD59D /* UIView+Expa.m in Sources */,
 				7E255C6018173115008FD59D /* NSLayoutConstraint+Expa.m in Sources */,
+				7E255C8D181750FD008FD59D /* UIAlertView+Expa.m in Sources */,
 				7E255C1818171DEC008FD59D /* ExpaPlatformTests.m in Sources */,
 				7E255C2B18171F0A008FD59D /* ExpaLogger.m in Sources */,
 			);
