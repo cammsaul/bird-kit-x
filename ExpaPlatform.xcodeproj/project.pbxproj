@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768091819D12200E684CF /* XFeedbackViewController.m */; };
+		2157680F1819D20E00E684CF /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157680E1819D20E00E684CF /* XFeedback.m */; };
 		7E255BFC18171DEC008FD59D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BFB18171DEC008FD59D /* Foundation.framework */; };
 		7E255C0118171DEC008FD59D /* ExpaPlatform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E255C0018171DEC008FD59D /* ExpaPlatform.h */; };
 		7E255C0A18171DEC008FD59D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C0918171DEC008FD59D /* XCTest.framework */; };
@@ -58,6 +60,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		215768081819D12200E684CF /* XFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedbackViewController.h; sourceTree = "<group>"; };
+		215768091819D12200E684CF /* XFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedbackViewController.m; sourceTree = "<group>"; };
+		2157680A1819D12200E684CF /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
+		2157680D1819D20E00E684CF /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
+		2157680E1819D20E00E684CF /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
@@ -114,6 +121,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215768071819CFBA00E684CF /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				215768081819D12200E684CF /* XFeedbackViewController.h */,
+				215768091819D12200E684CF /* XFeedbackViewController.m */,
+				2157680A1819D12200E684CF /* XFeedbackViewController.xib */,
+				2157680D1819D20E00E684CF /* XFeedback.h */,
+				2157680E1819D20E00E684CF /* XFeedback.m */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
 		7E255BEF18171DEC008FD59D = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +168,7 @@
 		7E255BFD18171DEC008FD59D /* ExpaPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				215768071819CFBA00E684CF /* Feedback */,
 				7E255C0018171DEC008FD59D /* ExpaPlatform.h */,
 				7E255C36181725A9008FD59D /* XGlobalMacros.h */,
 				7E255C5818173047008FD59D /* Categories */,
@@ -309,11 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */,
 				7E46DA9718198B7A0010ADE2 /* XViewController.m in Sources */,
 				7E255C5B1817309C008FD59D /* UIView+Expa.m in Sources */,
 				7E255C6318173174008FD59D /* UIButton+Expa.m in Sources */,
 				7E46DA9E18198C130010ADE2 /* XNavigationService.m in Sources */,
 				7E255C5F18173115008FD59D /* NSLayoutConstraint+Expa.m in Sources */,
+				2157680F1819D20E00E684CF /* XFeedback.m in Sources */,
 				7E255C8C181750FD008FD59D /* UIAlertView+Expa.m in Sources */,
 				7E255C2A18171F0A008FD59D /* XLogging.m in Sources */,
 			);
