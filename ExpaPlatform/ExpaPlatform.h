@@ -12,6 +12,7 @@
 #import "XNavigationService.h"
 #import "XViewController.h"
 #import "XGeocoder.h"
+#import "XFeedback.h"
 
 // Foundation Categories
 #import "NSDictionary+Expa.h"
