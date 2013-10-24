@@ -15,15 +15,9 @@
 		7E255C1018171DEC008FD59D /* libExpaPlatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BF818171DEC008FD59D /* libExpaPlatform.a */; };
 		7E255C1618171DEC008FD59D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E255C1418171DEC008FD59D /* InfoPlist.strings */; };
 		7E255C1818171DEC008FD59D /* ExpaPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C1718171DEC008FD59D /* ExpaPlatformTests.m */; };
-		7E255C2A18171F0A008FD59D /* XLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C2918171F0A008FD59D /* XLogging.m */; };
-		7E255C2B18171F0A008FD59D /* XLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E255C2918171F0A008FD59D /* XLogging.m */; };
 		7E255C3118172345008FD59D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3018172345008FD59D /* UIKit.framework */; };
 		7E255C331817234A008FD59D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C321817234A008FD59D /* QuartzCore.framework */; };
 		7E255C3518172350008FD59D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3418172350008FD59D /* CoreGraphics.framework */; };
-		7E46DA9718198B7A0010ADE2 /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DA9618198B7A0010ADE2 /* XViewController.m */; };
-		7E46DA9818198B7A0010ADE2 /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DA9618198B7A0010ADE2 /* XViewController.m */; };
-		7E46DA9E18198C130010ADE2 /* XNavigationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DA9B18198C130010ADE2 /* XNavigationService.m */; };
-		7E46DA9F18198C130010ADE2 /* XNavigationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DA9B18198C130010ADE2 /* XNavigationService.m */; };
 		7E46DB021819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAF81819CCC60010ADE2 /* NSDictionary+Expa.m */; };
 		7E46DB031819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAF81819CCC60010ADE2 /* NSDictionary+Expa.m */; };
 		7E46DB041819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFB1819CCC60010ADE2 /* NSLayoutConstraint+Expa.m */; };
@@ -34,6 +28,26 @@
 		7E46DB091819CCC60010ADE2 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
 		7E46DB0A1819CCC60010ADE2 /* UIView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB011819CCC60010ADE2 /* UIView+Expa.m */; };
 		7E46DB0B1819CCC60010ADE2 /* UIView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB011819CCC60010ADE2 /* UIView+Expa.m */; };
+		7E46DB171819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB111819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m */; };
+		7E46DB181819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB111819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m */; };
+		7E46DB241819D4FF0010ADE2 /* XGCDUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB231819D4FF0010ADE2 /* XGCDUtilites.m */; };
+		7E46DB251819D4FF0010ADE2 /* XGCDUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB231819D4FF0010ADE2 /* XGCDUtilites.m */; };
+		7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB271819D54F0010ADE2 /* XDeviceUtilities.m */; };
+		7E46DB291819D54F0010ADE2 /* XDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB271819D54F0010ADE2 /* XDeviceUtilities.m */; };
+		7E46DB2C1819D59D0010ADE2 /* XLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB2B1819D59D0010ADE2 /* XLocationUtilities.m */; };
+		7E46DB2D1819D59D0010ADE2 /* XLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB2B1819D59D0010ADE2 /* XLocationUtilities.m */; };
+		7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */; };
+		7E46DB311819D5B80010ADE2 /* XDevUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */; };
+		7E46DB441819D6AE0010ADE2 /* XGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB3B1819D6AE0010ADE2 /* XGeocoder.m */; };
+		7E46DB451819D6AE0010ADE2 /* XGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB3B1819D6AE0010ADE2 /* XGeocoder.m */; };
+		7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB3E1819D6AE0010ADE2 /* XLogging.m */; };
+		7E46DB471819D6AE0010ADE2 /* XLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB3E1819D6AE0010ADE2 /* XLogging.m */; };
+		7E46DB481819D6AE0010ADE2 /* XNavigationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB411819D6AE0010ADE2 /* XNavigationService.m */; };
+		7E46DB491819D6AE0010ADE2 /* XNavigationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB411819D6AE0010ADE2 /* XNavigationService.m */; };
+		7E46DB4A1819D6AE0010ADE2 /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB431819D6AE0010ADE2 /* XViewController.m */; };
+		7E46DB4B1819D6AE0010ADE2 /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB431819D6AE0010ADE2 /* XViewController.m */; };
+		7E46DB4E1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB4D1819D74C0010ADE2 /* NSMutableArray+Expa.m */; };
+		7E46DB4F1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB4D1819D74C0010ADE2 /* NSMutableArray+Expa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,16 +84,10 @@
 		7E255C1318171DEC008FD59D /* ExpaPlatformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpaPlatformTests-Info.plist"; sourceTree = "<group>"; };
 		7E255C1518171DEC008FD59D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E255C1718171DEC008FD59D /* ExpaPlatformTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpaPlatformTests.m; sourceTree = "<group>"; };
-		7E255C2818171F0A008FD59D /* XLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLogging.h; sourceTree = "<group>"; };
-		7E255C2918171F0A008FD59D /* XLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLogging.m; sourceTree = "<group>"; };
 		7E255C3018172345008FD59D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E255C321817234A008FD59D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E255C3418172350008FD59D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7E255C36181725A9008FD59D /* XGlobalMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGlobalMacros.h; sourceTree = "<group>"; };
-		7E46DA9518198B7A0010ADE2 /* XViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
-		7E46DA9618198B7A0010ADE2 /* XViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
-		7E46DA9A18198C130010ADE2 /* XNavigationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationService.h; sourceTree = "<group>"; };
-		7E46DA9B18198C130010ADE2 /* XNavigationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationService.m; sourceTree = "<group>"; };
 		7E46DAF71819CCC60010ADE2 /* NSDictionary+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Expa.h"; sourceTree = "<group>"; };
 		7E46DAF81819CCC60010ADE2 /* NSDictionary+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Expa.m"; sourceTree = "<group>"; };
 		7E46DAFA1819CCC60010ADE2 /* NSLayoutConstraint+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Expa.h"; sourceTree = "<group>"; };
@@ -90,6 +98,26 @@
 		7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Expa.m"; sourceTree = "<group>"; };
 		7E46DB001819CCC60010ADE2 /* UIView+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Expa.h"; sourceTree = "<group>"; };
 		7E46DB011819CCC60010ADE2 /* UIView+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Expa.m"; sourceTree = "<group>"; };
+		7E46DB101819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEdgeSwipeGestureRecognizer.h; sourceTree = "<group>"; };
+		7E46DB111819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XEdgeSwipeGestureRecognizer.m; sourceTree = "<group>"; };
+		7E46DB221819D4FF0010ADE2 /* XGCDUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGCDUtilites.h; sourceTree = "<group>"; };
+		7E46DB231819D4FF0010ADE2 /* XGCDUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGCDUtilites.m; sourceTree = "<group>"; };
+		7E46DB261819D54F0010ADE2 /* XDeviceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDeviceUtilities.h; sourceTree = "<group>"; };
+		7E46DB271819D54F0010ADE2 /* XDeviceUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDeviceUtilities.m; sourceTree = "<group>"; };
+		7E46DB2A1819D59D0010ADE2 /* XLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLocationUtilities.h; sourceTree = "<group>"; };
+		7E46DB2B1819D59D0010ADE2 /* XLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLocationUtilities.m; sourceTree = "<group>"; };
+		7E46DB2E1819D5B80010ADE2 /* XDevUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDevUtilities.h; sourceTree = "<group>"; };
+		7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDevUtilities.m; sourceTree = "<group>"; };
+		7E46DB3A1819D6AE0010ADE2 /* XGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGeocoder.h; sourceTree = "<group>"; };
+		7E46DB3B1819D6AE0010ADE2 /* XGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGeocoder.m; sourceTree = "<group>"; };
+		7E46DB3D1819D6AE0010ADE2 /* XLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLogging.h; sourceTree = "<group>"; };
+		7E46DB3E1819D6AE0010ADE2 /* XLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLogging.m; sourceTree = "<group>"; };
+		7E46DB401819D6AE0010ADE2 /* XNavigationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationService.h; sourceTree = "<group>"; };
+		7E46DB411819D6AE0010ADE2 /* XNavigationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationService.m; sourceTree = "<group>"; };
+		7E46DB421819D6AE0010ADE2 /* XViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
+		7E46DB431819D6AE0010ADE2 /* XViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
+		7E46DB4C1819D74C0010ADE2 /* NSMutableArray+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Expa.h"; sourceTree = "<group>"; };
+		7E46DB4D1819D74C0010ADE2 /* NSMutableArray+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Expa.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +183,10 @@
 			children = (
 				7E255C0018171DEC008FD59D /* ExpaPlatform.h */,
 				7E255C36181725A9008FD59D /* XGlobalMacros.h */,
+				7E46DB381819D6AE0010ADE2 /* Components */,
 				7E255C5818173047008FD59D /* Categories */,
-				7E46DA9418198B7A0010ADE2 /* Views+ViewControllers */,
-				7E255C2718171EE3008FD59D /* Logging */,
+				7E46DB0F1819D4B40010ADE2 /* GestureRecognizers */,
+				7E46DB121819D4B40010ADE2 /* Utilities */,
 				7E255BFE18171DEC008FD59D /* Supporting Files */,
 			);
 			path = ExpaPlatform;
@@ -189,15 +218,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7E255C2718171EE3008FD59D /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				7E255C2818171F0A008FD59D /* XLogging.h */,
-				7E255C2918171F0A008FD59D /* XLogging.m */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
 		7E255C5818173047008FD59D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,30 +227,13 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		7E46DA9418198B7A0010ADE2 /* Views+ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				7E46DA9918198C130010ADE2 /* NavigationService */,
-				7E46DA9518198B7A0010ADE2 /* XViewController.h */,
-				7E46DA9618198B7A0010ADE2 /* XViewController.m */,
-			);
-			path = "Views+ViewControllers";
-			sourceTree = "<group>";
-		};
-		7E46DA9918198C130010ADE2 /* NavigationService */ = {
-			isa = PBXGroup;
-			children = (
-				7E46DA9A18198C130010ADE2 /* XNavigationService.h */,
-				7E46DA9B18198C130010ADE2 /* XNavigationService.m */,
-			);
-			path = NavigationService;
-			sourceTree = "<group>";
-		};
 		7E46DAF61819CCC60010ADE2 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
 				7E46DAF71819CCC60010ADE2 /* NSDictionary+Expa.h */,
 				7E46DAF81819CCC60010ADE2 /* NSDictionary+Expa.m */,
+				7E46DB4C1819D74C0010ADE2 /* NSMutableArray+Expa.h */,
+				7E46DB4D1819D74C0010ADE2 /* NSMutableArray+Expa.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -248,6 +251,69 @@
 				7E46DB011819CCC60010ADE2 /* UIView+Expa.m */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		7E46DB0F1819D4B40010ADE2 /* GestureRecognizers */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB101819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.h */,
+				7E46DB111819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m */,
+			);
+			path = GestureRecognizers;
+			sourceTree = "<group>";
+		};
+		7E46DB121819D4B40010ADE2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB221819D4FF0010ADE2 /* XGCDUtilites.h */,
+				7E46DB231819D4FF0010ADE2 /* XGCDUtilites.m */,
+				7E46DB261819D54F0010ADE2 /* XDeviceUtilities.h */,
+				7E46DB271819D54F0010ADE2 /* XDeviceUtilities.m */,
+				7E46DB2A1819D59D0010ADE2 /* XLocationUtilities.h */,
+				7E46DB2B1819D59D0010ADE2 /* XLocationUtilities.m */,
+				7E46DB2E1819D5B80010ADE2 /* XDevUtilities.h */,
+				7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7E46DB381819D6AE0010ADE2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB3F1819D6AE0010ADE2 /* NavigationService */,
+				7E46DB3C1819D6AE0010ADE2 /* Logging */,
+				7E46DB391819D6AE0010ADE2 /* Geocoder */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7E46DB391819D6AE0010ADE2 /* Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB3A1819D6AE0010ADE2 /* XGeocoder.h */,
+				7E46DB3B1819D6AE0010ADE2 /* XGeocoder.m */,
+			);
+			path = Geocoder;
+			sourceTree = "<group>";
+		};
+		7E46DB3C1819D6AE0010ADE2 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB3D1819D6AE0010ADE2 /* XLogging.h */,
+				7E46DB3E1819D6AE0010ADE2 /* XLogging.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		7E46DB3F1819D6AE0010ADE2 /* NavigationService */ = {
+			isa = PBXGroup;
+			children = (
+				7E46DB401819D6AE0010ADE2 /* XNavigationService.h */,
+				7E46DB411819D6AE0010ADE2 /* XNavigationService.m */,
+				7E46DB421819D6AE0010ADE2 /* XViewController.h */,
+				7E46DB431819D6AE0010ADE2 /* XViewController.m */,
+			);
+			path = NavigationService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,13 +397,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E46DA9718198B7A0010ADE2 /* XViewController.m in Sources */,
-				7E46DA9E18198C130010ADE2 /* XNavigationService.m in Sources */,
+				7E46DB2C1819D59D0010ADE2 /* XLocationUtilities.m in Sources */,
 				7E46DB0A1819CCC60010ADE2 /* UIView+Expa.m in Sources */,
+				7E46DB171819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */,
 				7E46DB021819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */,
+				7E46DB441819D6AE0010ADE2 /* XGeocoder.m in Sources */,
+				7E46DB241819D4FF0010ADE2 /* XGCDUtilites.m in Sources */,
 				7E46DB061819CCC60010ADE2 /* UIAlertView+Expa.m in Sources */,
+				7E46DB4A1819D6AE0010ADE2 /* XViewController.m in Sources */,
+				7E46DB4E1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
+				7E46DB481819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				7E46DB081819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
-				7E255C2A18171F0A008FD59D /* XLogging.m in Sources */,
+				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
+				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
+				7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
 				7E46DB041819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,15 +419,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E46DA9F18198C130010ADE2 /* XNavigationService.m in Sources */,
+				7E46DB251819D4FF0010ADE2 /* XGCDUtilites.m in Sources */,
 				7E46DB071819CCC60010ADE2 /* UIAlertView+Expa.m in Sources */,
 				7E46DB051819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */,
 				7E46DB0B1819CCC60010ADE2 /* UIView+Expa.m in Sources */,
-				7E46DA9818198B7A0010ADE2 /* XViewController.m in Sources */,
+				7E46DB181819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */,
 				7E255C1818171DEC008FD59D /* ExpaPlatformTests.m in Sources */,
+				7E46DB471819D6AE0010ADE2 /* XLogging.m in Sources */,
+				7E46DB2D1819D59D0010ADE2 /* XLocationUtilities.m in Sources */,
 				7E46DB091819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
-				7E255C2B18171F0A008FD59D /* XLogging.m in Sources */,
+				7E46DB311819D5B80010ADE2 /* XDevUtilities.m in Sources */,
+				7E46DB491819D6AE0010ADE2 /* XNavigationService.m in Sources */,
+				7E46DB4F1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
 				7E46DB031819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */,
+				7E46DB451819D6AE0010ADE2 /* XGeocoder.m in Sources */,
+				7E46DB291819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
+				7E46DB4B1819D6AE0010ADE2 /* XViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
