@@ -83,7 +83,7 @@ static NSString *__AsanaAPIKey;
 
 }
 
-+ (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
 	[controller dismissViewControllerAnimated:YES completion:nil];
 }
 
