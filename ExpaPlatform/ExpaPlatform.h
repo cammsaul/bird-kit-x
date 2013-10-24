@@ -11,15 +11,21 @@
 #import "XLogging.h"
 #import "XNavigationService.h"
 #import "XViewController.h"
+#import "XGeocoder.h"
+#import "XFeedback.h"
 
 // Foundation Categories
 #import "NSDictionary+Expa.h"
+#import "NSMutableArray+Expa.h"
 
 // UIKit Categories
 #import "UIView+Expa.h"
 #import "UIButton+Expa.h"
 #import "UIAlertView+Expa.h"
 #import "NSLayoutConstraint+Expa.h"
-#import "XNavigationService.h"
-#import "XViewController.h"
-#import "XFeedback.h"
+
+// Utility function files
+#import "XGCDUtilites.h"
+#import "XDeviceUtilities.h"
+#import "XLocationUtilities.h"
+#import "XDeviceUtilities.h"
