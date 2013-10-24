@@ -1,12 +1,12 @@
 //
-//  ExpaLogger.m
+//  XLogging.m
 //  GeoTip
 //
 //  Created by Cameron Saul on 10/22/13.
 //  Copyright (c) 2013 Series G. All rights reserved.
 //
 
-#import "ExpaLogger.h"
+#import "XLogging.h"
 
 static int CurrentLogLevel = LogLevelInfo;
 int *XLogLevel = &CurrentLogLevel;
