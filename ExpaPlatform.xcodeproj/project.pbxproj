@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768091819D12200E684CF /* XFeedbackViewController.m */; };
 		2157680F1819D20E00E684CF /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157680E1819D20E00E684CF /* XFeedback.m */; };
+		7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
+		7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
 		7E255BFC18171DEC008FD59D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BFB18171DEC008FD59D /* Foundation.framework */; };
 		7E255C0118171DEC008FD59D /* ExpaPlatform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E255C0018171DEC008FD59D /* ExpaPlatform.h */; };
 		7E255C0A18171DEC008FD59D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C0918171DEC008FD59D /* XCTest.framework */; };
@@ -81,6 +83,8 @@
 		2157680A1819D12200E684CF /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
 		2157680D1819D20E00E684CF /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
 		2157680E1819D20E00E684CF /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
+		7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expa.h"; sourceTree = "<group>"; };
+		7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expa.m"; sourceTree = "<group>"; };
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */,
 				7E46DB001819CCC60010ADE2 /* UIView+Expa.h */,
 				7E46DB011819CCC60010ADE2 /* UIView+Expa.m */,
+				7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */,
+				7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -419,9 +425,6 @@
 			files = (
 				7E46DB2C1819D59D0010ADE2 /* XLocationUtilities.m in Sources */,
 				2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */,
-				7E46DA9718198B7A0010ADE2 /* XViewController.m in Sources */,
-				7E46DA9E18198C130010ADE2 /* XNavigationService.m in Sources */,
-				7E255C5F18173115008FD59D /* NSLayoutConstraint+Expa.m in Sources */,
 				2157680F1819D20E00E684CF /* XFeedback.m in Sources */,
 				7E46DB0A1819CCC60010ADE2 /* UIView+Expa.m in Sources */,
 				7E46DB171819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */,
@@ -436,6 +439,7 @@
 				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
 				7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
+				7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB041819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */,
 				7E46DB081819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
 			);
@@ -457,6 +461,7 @@
 				7E46DB311819D5B80010ADE2 /* XDevUtilities.m in Sources */,
 				7E46DB491819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				7E46DB4F1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
+				7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB031819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */,
 				7E46DB451819D6AE0010ADE2 /* XGeocoder.m in Sources */,
 				7E46DB291819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
