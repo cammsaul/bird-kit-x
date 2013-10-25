@@ -12,6 +12,7 @@
 #import <objc/runtime.h>
 
 static char HiddenButtonKey;
+static char LoadingSpinnerKey;
 
 @implementation UIView (Expa)
 
@@ -223,6 +224,25 @@ static char HiddenButtonKey;
 		if (subview.tag == tag) {
 			[subview removeFromSuperview];
 		}
+	}
+}
+
+- (BOOL)showsLoadingSpinner {
+	return objc_getAssociatedObject(self, &LoadingSpinnerKey) != nil;
+}
+
+- (void)setShowsLoadingSpinner:(BOOL)showsLoadingSpinner {
+	if (showsLoadingSpinner == [self showsLoadingSpinner]) return;
+	
+	if (showsLoadingSpinner) {
+		Class spinnerClass = NSClassFromString(@"MBProgressHUD");
+		#pragma clang diagnostic ignored "-Wundeclared-selector"
+		SEL addSpinnerSel = @selector(showHUDAddedTo:animated:);
+		IMP addSpinnerImp = [spinnerClass methodForSelector:addSpinnerSel];
+		id spinner = addSpinnerImp(spinnerClass, addSpinnerSel, self, self, YES);
+		objc_setAssociatedObject(self, &LoadingSpinnerKey, spinner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	} else {
+		objc_setAssociatedObject(self, &LoadingSpinnerKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 	}
 }
 

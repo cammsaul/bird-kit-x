@@ -91,8 +91,13 @@ typedef void(^Transform3DCompletionBlock)();
 - (void)removeAllSubviews;
 - (void)removeSubviewWithTag:(int)tag;
 
-#pragma mark - 3D Animations
+/// Is there currently an MBProgressHUD in the current view? (Requires MBProgressHUD be added to the runtime)
+- (BOOL)showsLoadingSpinner;
 
+/// Show/hides an MBProgressHUD in the currentView, animated. (Requires MBProgressHUD be added to the runtime)
+- (void)setShowsLoadingSpinner:(BOOL)showsLoadingSpinner;
+
+#pragma mark - 3D Animations
 
 /// Duration of 0 is considered to mean "animated = NO"
 + (void)apply3DTransform:(CATransform3D)transform toView:(UIView *)view duration:(CGFloat)duration completion:(Transform3DCompletionBlock)completion;
