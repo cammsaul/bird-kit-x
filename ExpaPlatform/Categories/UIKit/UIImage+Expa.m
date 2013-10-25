@@ -26,7 +26,7 @@
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     CGColorSpaceRelease(colorSpace);
 	
-    UIImage *image = [UIImage imageWithCGImage:newImage];
+    UIImage *image = [UIImage imageWithCGImage:newImage scale:1.0 orientation:UIImageOrientationRight]; // captureStillImageAsynchronouslyFromConnection always outputs image with orientation to the right
     CGImageRelease(newImage);
 
 	return image;
