@@ -15,6 +15,7 @@ static UINavigationController *_navigationController;
 @implementation XNavigationService
 
 + (void)setNavigationController:(UINavigationController *)navigationController {
+	XLog(self, LogFlagInfo, @"Root navigation controller set to: %@", navigationController);
 	_navigationController = navigationController;
 }
 
