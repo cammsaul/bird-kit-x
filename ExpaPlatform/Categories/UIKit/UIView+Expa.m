@@ -9,7 +9,6 @@
 #import "UIView+Expa.h"
 #import "NSLayoutConstraint+Expa.h"
 #import "UIButton+Expa.h"
-#import "XLogging.h"
 #import <objc/runtime.h>
 
 static char HiddenButtonKey;
@@ -228,7 +227,7 @@ static char LoadingSpinnerKey;
 	}
 }
 
-- (id)loadingSpinner {
+- (UIView *)loadingSpinner {
 	return objc_getAssociatedObject(self, &LoadingSpinnerKey);
 }
 
@@ -239,12 +238,23 @@ static char LoadingSpinnerKey;
 - (void)setShowsLoadingSpinner:(BOOL)showsSpinner {
 	if (showsSpinner == [self showsLoadingSpinner]) return;
 	
-	Class spinnerClass = NSClassFromString(@"MBProgressHUD");
-	#pragma clang diagnostic ignored "-Wundeclared-selector"
-	SEL sel = showsSpinner ? @selector(showHUDAddedTo:animated:) : @selector(hideAllHUDsForView:animated:);
-	IMP imp = [spinnerClass methodForSelector:sel];
-	id spinner = imp(spinnerClass, sel, self, YES);
-	objc_setAssociatedObject(self, &LoadingSpinnerKey, (showsSpinner ? spinner : nil), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	id spinner = nil;
+	if (showsSpinner) {
+		Class spinnerClass = NSClassFromString(@"MBProgressHUD");
+		#pragma clang diagnostic ignored "-Wundeclared-selector"
+		SEL sel = @selector(showHUDAddedTo:animated:);
+		IMP imp = [spinnerClass methodForSelector:sel];
+		spinner = imp(spinnerClass, sel, self, YES);
+	} else {
+		
+		__weak UIView *wLoadingSpinner = (id)self.loadingSpinner;
+		[UIView animateWithDuration:0.3f animations:^{
+			wLoadingSpinner.alpha = 0;
+		} completion:^(BOOL finished) {
+			[wLoadingSpinner removeFromSuperview];
+		}];
+	}
+	objc_setAssociatedObject(self, &LoadingSpinnerKey, spinner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
