@@ -10,4 +10,5 @@
 
 @interface XFeedbackViewController : UIViewController
 
+@property (nonatomic, strong) UIImage *feedbackImage;
 @end

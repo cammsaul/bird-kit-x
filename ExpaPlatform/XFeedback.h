@@ -12,6 +12,7 @@
 
 @interface XFeedback : NSObject <MFMailComposeViewControllerDelegate>
 
-+ (void)registerAsanaAPIKey:(NSString *)appID;
++ (void)registerAsanaAPIKey:(NSString *)appID workspaceID:(NSString*)workspaceID;
++ (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message;
 
 @end
