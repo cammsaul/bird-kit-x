@@ -7,8 +7,11 @@
 //
 
 #import "XFeedback.h"
+#import "NSString+XURLEncoding.h"
+#import "XFeedbackViewController.h"
 
 static NSString *__AsanaAPIKey;
+static NSString *__AsanaWorkspaceID;
 
 static NSString * XBase64EncodedStringFromString(NSString *string) {
     NSData *data = [NSData dataWithBytes:[string UTF8String] length:[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
@@ -51,8 +54,9 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
     return sharedInstance;
 }
 
-+ (void)registerAsanaAPIKey:(NSString *)appID {
++ (void)registerAsanaAPIKey:(NSString *)appID workspaceID:(NSString*)workspaceID{
     __AsanaAPIKey = appID;
+    __AsanaWorkspaceID = workspaceID;
     
     [[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance]
                                              selector:@selector(screenshotTaken)
@@ -60,18 +64,116 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
                                                object:nil];
 }
 
++ (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message
+{
+    [[self sharedInstance] postBugReportWithImage:image message:message];
+}
+
 - (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message
 {
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.mysite.com/"]];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://app.asana.com/api/1.0/tasks"]];
     NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:", __AsanaAPIKey];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", XBase64EncodedStringFromString(basicAuthCredentials)];
     [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
     
+    NSString *name = [NSString stringWithFormat:@"name=%@",
+                      [@"New Bug Report" urlEncodeUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSString *msg = [NSString stringWithFormat:@"notes=%@",
+                     [message urlEncodeUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSString *myParameters = [NSString stringWithFormat:@"%@&%@&workspace=%@",name,msg,__AsanaWorkspaceID];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:[myParameters dataUsingEncoding:NSUTF8StringEncoding]];
+    
     [NSURLConnection sendAsynchronousRequest:urlRequest
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if (error) {
+                                      UIViewController *rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+                                      NSData *imageData = UIImagePNGRepresentation(image);
+                                   
+                                   if ([MFMailComposeViewController canSendMail]) {
+                                       MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+                                       mailViewController.mailComposeDelegate = self;
+                                       [mailViewController setSubject:@"Feedback for Beta 1"];
+                                       [mailViewController setToRecipients:@[@"feedback@geotip.com"]];
+                                       [mailViewController addAttachmentData:imageData mimeType:@"image/png" fileName:@"feedback.png"];
+                                       [rootVC presentViewController:mailViewController animated:YES completion:nil];
+                                       
+                                   }
+                                   
+                                   else {
+                                       //Allow the user to decide what to do with the image, via UIActivityViewController
+                                       //instead of forcibly save it to disk.
+                                       UIActivityViewController *activityViewController =
+                                       [[UIActivityViewController alloc] initWithActivityItems:@[ imageData ]
+                                                                         applicationActivities:nil];
+                                       
+                                       [rootVC presentViewController:activityViewController
+                                                            animated:YES
+                                                          completion:nil];
+                                       
+                                   }
+                                   return;
+
+                                   
+                               }
                                
-                               NSLog(@"%@",response);
+                               NSError *jerror = nil;
+                               NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jerror];
+                               if (!jerror) {
+                                   NSData *imageData = UIImagePNGRepresentation(image);
+                                   NSNumber *taskId = jsonArray[@"data"][@"id"];
+                                   NSString *url = [NSString stringWithFormat:@"https://app.asana.com/api/1.0/tasks/%@/attachments",taskId];
+                                   NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+                                   NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:", __AsanaAPIKey];
+                                   NSString *authValue = [NSString stringWithFormat:@"Basic %@", XBase64EncodedStringFromString(basicAuthCredentials)];
+                                   [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+                                   
+                                   [urlRequest setHTTPMethod:@"POST"];
+                                   
+                                   NSString *boundary = @"dfggfsdiigiigigigue22223";
+                                   
+                                   NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+                                   [urlRequest setValue:contentType forHTTPHeaderField: @"Content-Type"];
+                                   
+                                   // post body
+                                   NSMutableData *body = [NSMutableData data];
+                                   
+                                   // add params (all params are strings)
+                                       [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+                                       [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", @"files"] dataUsingEncoding:NSUTF8StringEncoding]];
+                                       [body appendData:[[NSString stringWithFormat:@"%@\r\n", @"kkk.png"] dataUsingEncoding:NSUTF8StringEncoding]];
+
+                                   
+                                   // add image data
+                                   if (imageData) {
+                                       [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+                                       [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", @"file"] dataUsingEncoding:NSUTF8StringEncoding]];
+                                       [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                                       [body appendData:imageData];
+                                       [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+                                   }
+                                   
+                                   [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
+
+                                   [urlRequest setHTTPBody:body];
+                                   
+                                   [NSURLConnection sendAsynchronousRequest:urlRequest
+                                                                      queue:[NSOperationQueue mainQueue]
+                                    completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                        NSError *jerror = nil;
+                                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                        NSDictionary *dict  = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jerror];
+                                        NSLog(@"dict: %@ %@",dict, str);
+                                    }];
+                                    
+                               }
+                               
+                               
+                               NSLog(@"%@",jsonArray);
                                //Do Stuff
                                
                            }];
@@ -80,7 +182,7 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
 
 - (void)screenshotTaken
 {
-   UIViewController *rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+
 
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
     if (NULL != UIGraphicsBeginImageContextWithOptions)
@@ -101,32 +203,14 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    NSData *imageData = UIImagePNGRepresentation(image);
+    XFeedbackViewController *xFeedbackVC = [[XFeedbackViewController alloc] init];
+    [xFeedbackVC setFeedbackImage:image];
+    UIViewController *rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    [rootVC presentViewController:xFeedbackVC animated:YES completion:nil];
     
-    if ([MFMailComposeViewController canSendMail]) {
-        
-        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        mailViewController.mailComposeDelegate = self;
-        [mailViewController setSubject:@"Feedback for Beta 1"];
-        [mailViewController setToRecipients:@[@"feedback@geotip.com"]];
-        [mailViewController addAttachmentData:imageData mimeType:@"image/png" fileName:@"feedback.png"];
-        [rootVC presentViewController:mailViewController animated:YES completion:nil];
-        
-    }
+   
     
-    else {
-        //Allow the user to decide what to do with the image, via UIActivityViewController
-        //instead of forcibly save it to disk.
-        UIActivityViewController *activityViewController =
-        [[UIActivityViewController alloc] initWithActivityItems:@[ imageData ]
-                                          applicationActivities:nil];
-        
-        [rootVC presentViewController:activityViewController
-                                                     animated:YES
-                                                   completion:nil];
-        
-    }
-
+  
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
