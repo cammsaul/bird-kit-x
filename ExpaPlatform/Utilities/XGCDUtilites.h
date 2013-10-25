@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
+typedef void(^weak_ref_block_t)(id weakRef);
+
 /// Shorthand for calling dispatch_after() to dispatch on the main thread after some delay.
 void dispatch_after_seconds(const double delayInSeconds, dispatch_block_t block);
 
@@ -28,3 +30,6 @@ void dispatch_async_background_priority(dispatch_block_t block);
 
 /// shorthand for dispatch_async(dispatch_get_main_queue(), block)
 void dispatch_async_main(dispatch_block_t block);
+
+/// Helper method to create a weak reference to an object. Happens syncronously.
+void with_weak_ref(id obj, weak_ref_block_t weak_ref_block);

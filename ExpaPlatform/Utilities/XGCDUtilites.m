@@ -36,3 +36,8 @@ inline void dispatch_async_background_priority(dispatch_block_t block) {
 inline void dispatch_async_main(dispatch_block_t block) {
 	dispatch_async(dispatch_get_main_queue(), block);
 }
+
+void with_weak_ref(id obj, weak_ref_block_t weak_ref_block) {
+	__block __weak id weakRef = obj;
+	weak_ref_block(weakRef);
+}

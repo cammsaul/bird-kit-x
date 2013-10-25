@@ -222,7 +222,7 @@
 				7E46DB381819D6AE0010ADE2 /* Components */,
 				7E255C5818173047008FD59D /* Categories */,
 				7E46DB0F1819D4B40010ADE2 /* GestureRecognizers */,
-				7E46DB121819D4B40010ADE2 /* Utilities */,
+				7E46DB121819D4B40010ADE2 /* UtilityFunctions */,
 				7E255BFE18171DEC008FD59D /* Supporting Files */,
 			);
 			path = ExpaPlatform;
@@ -304,7 +304,7 @@
 			path = GestureRecognizers;
 			sourceTree = "<group>";
 		};
-		7E46DB121819D4B40010ADE2 /* Utilities */ = {
+		7E46DB121819D4B40010ADE2 /* UtilityFunctions */ = {
 			isa = PBXGroup;
 			children = (
 				7E46DB221819D4FF0010ADE2 /* XGCDUtilites.h */,
@@ -316,6 +316,7 @@
 				7E46DB2E1819D5B80010ADE2 /* XDevUtilities.h */,
 				7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */,
 			);
+			name = UtilityFunctions;
 			path = Utilities;
 			sourceTree = "<group>";
 		};

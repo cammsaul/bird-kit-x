@@ -6,5 +6,16 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-/// Simple way to show an alert with a formattible string as a TODO reminder. Logs the TODO as well.
+/// Simple way to show an alert with a format string as a TODO reminder. Logs the TODO as well.
 void TodoAlert(NSString *formatString, ...);
+
+/// Simple function to show an error alert view and log the error, if error is non-nil.
+/// You may optionally provide additional info with the vararg format string.
+/// Unlike ErrorAlert, formatString is optional.
+void AlertIfError(id sender, NSError *error, NSString *formatStringOrNil, ...);
+
+/// Shows an error alert view and logs the error. Unlike AlertIfError, error is optional; message
+/// and logging will always take place.(see also AlertIfError)
+/// This method generally shouldn't be used in production, since there is no localization
+/// and the error messages are probably not always user friendly.
+void ErrorAlert(id sender, NSError *errorOrNil, NSString *formatString, ...);

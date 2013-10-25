@@ -34,9 +34,7 @@ static char AlertViewButtonPressedBlockKey;
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	AlertViewButtonPressedBlock block = objc_getAssociatedObject(alertView, &AlertViewButtonPressedBlockKey);
-	if (block) {
-		block(buttonIndex == self.cancelButtonIndex, buttonIndex);
-	}
+	if (block) block(buttonIndex == self.cancelButtonIndex, buttonIndex);
 }
 
 @end

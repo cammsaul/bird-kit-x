@@ -15,7 +15,7 @@ typedef void(^AlertViewButtonPressedBlock)(BOOL cancelButtonPressed, NSUInteger 
 
 /// Similar to the standard way of showing an alert view, but uses a block instead of a delegate, which is
 /// usually more convenient.
-/// (This is done by making the alert view its own delegate, and keeping an associative reference to the block)
+/// (This is done by making the alert view its own delegate, and keeping the block around as an Objective-C associated object)
 + (void)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 		buttonPressedBlock:(AlertViewButtonPressedBlock)buttonPressedBlock

@@ -30,4 +30,4 @@
 #import "XGCDUtilites.h"
 #import "XDeviceUtilities.h"
 #import "XLocationUtilities.h"
-#import "XDeviceUtilities.h"
+#import "XDevUtilities.h"
