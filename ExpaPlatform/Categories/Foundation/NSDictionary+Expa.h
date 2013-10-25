@@ -19,7 +19,7 @@
 /***** The following methods are intended primarily to help with using XNavigationService *****/
 
 /// Returns a new dictionary by copying the current dictionary and setting value for key.
-- (NSDictionary *)dictionaryByAddingValue:(NSObject *)value forKey:(NSString *)key;
+- (NSDictionary *)dictionaryByAddingValue:(NSObject *)value forKey:(NSString const * const)key;
 
 /// Returns YES if the dictionary contains a NSNumber associated with key.
 - (BOOL)containsNumber:(NSString *)key;
