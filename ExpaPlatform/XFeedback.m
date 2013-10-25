@@ -64,6 +64,35 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
                                                object:nil];
 }
 
+- (void)callMailAsFallback:(UIImage*)image
+{
+    UIViewController *rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setSubject:@"Feedback for Beta 1"];
+        [mailViewController setToRecipients:@[@"feedback@geotip.com"]];
+        [mailViewController addAttachmentData:imageData mimeType:@"image/png" fileName:@"feedback.png"];
+        [rootVC presentViewController:mailViewController animated:YES completion:nil];
+        
+    }
+    
+    else {
+        //Allow the user to decide what to do with the image, via UIActivityViewController
+        //instead of forcibly save it to disk.
+        UIActivityViewController *activityViewController =
+        [[UIActivityViewController alloc] initWithActivityItems:@[ imageData ]
+                                          applicationActivities:nil];
+        
+        [rootVC presentViewController:activityViewController
+                             animated:YES
+                           completion:nil];
+        
+    }
+}
+
 + (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message
 {
     [[self sharedInstance] postBugReportWithImage:image message:message];
@@ -90,34 +119,8 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (error) {
-                                      UIViewController *rootVC = [[[UIApplication sharedApplication] delegate] window].rootViewController;
-                                      NSData *imageData = UIImagePNGRepresentation(image);
-                                   
-                                   if ([MFMailComposeViewController canSendMail]) {
-                                       MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-                                       mailViewController.mailComposeDelegate = self;
-                                       [mailViewController setSubject:@"Feedback for Beta 1"];
-                                       [mailViewController setToRecipients:@[@"feedback@geotip.com"]];
-                                       [mailViewController addAttachmentData:imageData mimeType:@"image/png" fileName:@"feedback.png"];
-                                       [rootVC presentViewController:mailViewController animated:YES completion:nil];
-                                       
-                                   }
-                                   
-                                   else {
-                                       //Allow the user to decide what to do with the image, via UIActivityViewController
-                                       //instead of forcibly save it to disk.
-                                       UIActivityViewController *activityViewController =
-                                       [[UIActivityViewController alloc] initWithActivityItems:@[ imageData ]
-                                                                         applicationActivities:nil];
-                                       
-                                       [rootVC presentViewController:activityViewController
-                                                            animated:YES
-                                                          completion:nil];
-                                       
-                                   }
+                                   [self callMailAsFallback:image];
                                    return;
-
-                                   
                                }
                                
                                NSError *jerror = nil;
@@ -164,18 +167,11 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
                                    [NSURLConnection sendAsynchronousRequest:urlRequest
                                                                       queue:[NSOperationQueue mainQueue]
                                     completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                                        NSError *jerror = nil;
-                                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                        NSDictionary *dict  = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jerror];
-                                        NSLog(@"dict: %@ %@",dict, str);
+
                                     }];
                                     
                                }
-                               
-                               
-                               NSLog(@"%@",jsonArray);
-                               //Do Stuff
-                               
+                                                              
                            }];
 }
 
