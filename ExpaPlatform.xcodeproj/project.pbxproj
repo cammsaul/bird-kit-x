@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
 		2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768091819D12200E684CF /* XFeedbackViewController.m */; };
 		2157680F1819D20E00E684CF /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157680E1819D20E00E684CF /* XFeedback.m */; };
 		215768121819EB8900E684CF /* NSString+XURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768111819EB8900E684CF /* NSString+XURLEncoding.m */; };
@@ -30,7 +31,6 @@
 		7E46DB051819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFB1819CCC60010ADE2 /* NSLayoutConstraint+Expa.m */; };
 		7E46DB061819CCC60010ADE2 /* UIAlertView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFD1819CCC60010ADE2 /* UIAlertView+Expa.m */; };
 		7E46DB071819CCC60010ADE2 /* UIAlertView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFD1819CCC60010ADE2 /* UIAlertView+Expa.m */; };
-		7E46DB081819CCC60010ADE2 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
 		7E46DB091819CCC60010ADE2 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
 		7E46DB0A1819CCC60010ADE2 /* UIView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB011819CCC60010ADE2 /* UIView+Expa.m */; };
 		7E46DB0B1819CCC60010ADE2 /* UIView+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DB011819CCC60010ADE2 /* UIView+Expa.m */; };
@@ -91,7 +91,6 @@
 		21576814181A00A100E684CF /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
 		7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expa.h"; sourceTree = "<group>"; };
 		7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expa.m"; sourceTree = "<group>"; };
-
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
@@ -447,14 +446,13 @@
 				7E46DB4A1819D6AE0010ADE2 /* XViewController.m in Sources */,
 				7E46DB4E1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
 				7E46DB481819D6AE0010ADE2 /* XNavigationService.m in Sources */,
-				7E46DB081819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
+				2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */,
 				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
 				21576815181A00A100E684CF /* MPTextView.m in Sources */,
 				7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
 				7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB041819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */,
-				7E46DB081819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +506,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -541,6 +538,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -555,7 +553,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -617,7 +614,6 @@
 		7E255C1F18171DEC008FD59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -638,7 +634,6 @@
 		7E255C2018171DEC008FD59D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
