@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@class MBProgressHUD;
+
 /// Save ourselves a bit of typing by defining some really common resizing masks here
 static const UIViewAutoresizing UIViewAutoresizingFlexibleVerticalMargins	= UIViewAutoresizingFlexibleTopMargin		| UIViewAutoresizingFlexibleBottomMargin;
 static const UIViewAutoresizing UIViewAutoresizingFlexibleHorizontalMargins = UIViewAutoresizingFlexibleLeftMargin		| UIViewAutoresizingFlexibleRightMargin;
@@ -90,6 +92,9 @@ typedef void(^Transform3DCompletionBlock)();
 
 - (void)removeAllSubviews;
 - (void)removeSubviewWithTag:(int)tag;
+
+/// The MBProgressHUD associated with this view, if one was set using setShowsLoadingSpinner:
+- (MBProgressHUD *)loadingSpinner;
 
 /// Is there currently an MBProgressHUD in the current view? (Requires MBProgressHUD be added to the runtime)
 - (BOOL)showsLoadingSpinner;
