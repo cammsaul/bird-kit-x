@@ -85,15 +85,13 @@
 		2157680A1819D12200E684CF /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
 		2157680D1819D20E00E684CF /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
 		2157680E1819D20E00E684CF /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		215768101819EB8900E684CF /* NSString+XURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XURLEncoding.h"; sourceTree = "<group>"; };
 		215768111819EB8900E684CF /* NSString+XURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XURLEncoding.m"; sourceTree = "<group>"; };
 		21576813181A00A100E684CF /* MPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTextView.h; sourceTree = "<group>"; };
 		21576814181A00A100E684CF /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
-=======
 		7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expa.h"; sourceTree = "<group>"; };
 		7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expa.m"; sourceTree = "<group>"; };
->>>>>>> c73e46540b0971df9994c608f85246b3d5904285
+
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
