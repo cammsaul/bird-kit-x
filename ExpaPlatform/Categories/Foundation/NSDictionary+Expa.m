@@ -20,7 +20,7 @@
 	return result;
 }
 
-- (NSDictionary *)dictionaryByAddingValue:(NSObject *)value forKey:(NSString *)key {
+- (NSDictionary *)dictionaryBySettingValue:(NSObject *)value forKey:(NSString *)key {
 	NSMutableDictionary *newDict = [self mutableCopy];
 	[newDict setValue:value forKey:key];
 	return newDict;

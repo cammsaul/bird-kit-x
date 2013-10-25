@@ -9,9 +9,12 @@
 @import Foundation;
 @import UIKit;
 
+
+#pragma clang diagnostic ignored "-Wunused-variable"
 /// this parameter is a special case; if you set this parameter and the target view controller responds to setDelegate:,
 /// then setDelegate: will be called with the value when that view controller is pushed.
-extern const NSString *XNavigationServiceDelegateParam;
+/// Since we don't want to retain delegate, the property is removed from the dictionary AFTER validation.
+static const NSString *XNavigationServiceDelegateParam = @"delegate";
 
 /// Simple navigation service that supports navigating to different pages of the app with parameters, similar to Android
 /// activities or web navigation.

@@ -14,6 +14,8 @@
 		21576815181A00A100E684CF /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21576814181A00A100E684CF /* MPTextView.m */; };
 		7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
 		7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
+		7E0AE8D5181A2B3800C373E4 /* UIColor+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8D4181A2B3800C373E4 /* UIColor+Expa.m */; };
+		7E0AE8D6181A2B3800C373E4 /* UIColor+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8D4181A2B3800C373E4 /* UIColor+Expa.m */; };
 		7E255BFC18171DEC008FD59D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BFB18171DEC008FD59D /* Foundation.framework */; };
 		7E255C0118171DEC008FD59D /* ExpaPlatform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E255C0018171DEC008FD59D /* ExpaPlatform.h */; };
 		7E255C0A18171DEC008FD59D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C0918171DEC008FD59D /* XCTest.framework */; };
@@ -91,6 +93,8 @@
 		21576814181A00A100E684CF /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
 		7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expa.h"; sourceTree = "<group>"; };
 		7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expa.m"; sourceTree = "<group>"; };
+		7E0AE8D3181A2B3800C373E4 /* UIColor+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expa.h"; sourceTree = "<group>"; };
+		7E0AE8D4181A2B3800C373E4 /* UIColor+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expa.m"; sourceTree = "<group>"; };
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 				7E46DB011819CCC60010ADE2 /* UIView+Expa.m */,
 				7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */,
 				7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */,
+				7E0AE8D3181A2B3800C373E4 /* UIColor+Expa.h */,
+				7E0AE8D4181A2B3800C373E4 /* UIColor+Expa.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
 				21576815181A00A100E684CF /* MPTextView.m in Sources */,
+				7E0AE8D5181A2B3800C373E4 /* UIColor+Expa.m in Sources */,
 				7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
 				7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB041819CCC60010ADE2 /* NSLayoutConstraint+Expa.m in Sources */,
@@ -477,6 +484,7 @@
 				7E46DB451819D6AE0010ADE2 /* XGeocoder.m in Sources */,
 				7E46DB291819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
 				7E46DB4B1819D6AE0010ADE2 /* XViewController.m in Sources */,
+				7E0AE8D6181A2B3800C373E4 /* UIColor+Expa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,10 @@
 //
 
 #import "XNavigationService.h"
+#import "NSDictionary+Expa.h"
 #import "XLogging.h"
 
 static UINavigationController *_navigationController;
-const NSString *XNavigationServiceDelegateParam = @"Delegate";
 
 @implementation XNavigationService
 
@@ -21,12 +21,15 @@ const NSString *XNavigationServiceDelegateParam = @"Delegate";
 + (void)navigateTo:(NSString *)destination params:(NSDictionary *)params {
 	NSAssert(_navigationController, @"you must call setNavigationController: before using the navigation service!");
 	
+	id delegate = params[XNavigationServiceDelegateParam];
+	
 	Class class = NSClassFromString(destination);
 	UIViewController *vc;
 	if ([class instancesRespondToSelector:@selector(initWithParams:)]) {
 		if ([class respondsToSelector:@selector(validateParams:)]) {
 			[class validateParams:params];
 		}
+		if (delegate) params = [params dictionaryBySettingValue:nil forKey:XNavigationServiceDelegateParam]; // remove delegate from dictionary so it isn't retained
 		vc = [[class alloc] initWithParams:params];
 		XLog(self, LogFlagInfo, @"Pushed view controller %@ with params: %@", destination, params);
 	} else {
@@ -37,9 +40,9 @@ const NSString *XNavigationServiceDelegateParam = @"Delegate";
 		XLog(self, LogFlagInfo, @"Pushed view controller %@", destination);
 	}
 	
-	if (params[XNavigationServiceDelegateParam]) {
+	if (delegate) {
 		if ([vc respondsToSelector:@selector(setDelegate:)]) {
-			[(id)vc setDelegate:params[XNavigationServiceDelegateParam]];
+			[(id)vc setDelegate:delegate];
 		} else {
 			XLog(self, LogFlagWarn, @"Warning! Passing XNavigationServiceDelegateParam to class %@, which does not respond to setDelegate:.", destination);
 		}

@@ -24,6 +24,7 @@
 #import "UIAlertView+Expa.h"
 #import "NSLayoutConstraint+Expa.h"
 #import "UIImage+Expa.h"
+#import "UIColor+Expa.h"
 
 // Utility function files
 #import "XGCDUtilites.h"
