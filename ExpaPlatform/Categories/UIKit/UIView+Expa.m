@@ -242,8 +242,8 @@ static char LoadingSpinnerKey;
 	#pragma clang diagnostic ignored "-Wundeclared-selector"
 	SEL sel = showsSpinner ? @selector(showHUDAddedTo:animated:) : @selector(hideAllHUDsForView:animated:);
 	IMP imp = [spinnerClass methodForSelector:sel];
-	void *(*function_pointer)(id, SEL, UIView *, BOOL) = (void *(*)(id, SEL, UIView *, BOOL))imp;
-	void *spinner_ptr = function_pointer(spinnerClass, sel, self, showsSpinner);
+	void *(*fn_ptr)(id, SEL, UIView *, BOOL) = (void *(*)(id, SEL, UIView *, BOOL))imp;
+	void *spinner_ptr = fn_ptr(spinnerClass, sel, self, showsSpinner);
 	__strong id spinner = showsSpinner ? (__bridge id)spinner_ptr : nil;
 	objc_setAssociatedObject(self, &LoadingSpinnerKey, spinner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
