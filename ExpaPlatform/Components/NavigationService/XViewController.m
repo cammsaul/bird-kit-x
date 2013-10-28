@@ -8,8 +8,6 @@
 
 #import "XViewController.h"
 
-@class GTTracker;
-
 @implementation XViewController
 
 + (void)validateParams:(NSDictionary *)params {}; // default implementation does nothing
@@ -30,12 +28,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 	
-	// Since GTTracker isn't part of ExpaPlatform (yet) use Obj-C runtime hackery to find the IMP and call it TODO.
+	// Since GTTracker isn't part of ExpaPlatform (yet) use ObjC runtime hackery to find the IMP and call it TODO.
 	const Class trackingClass = NSClassFromString(@"GTTracker");
 	#pragma clang diagnostic ignored "-Wundeclared-selector"
-	const SEL trackingSel = @selector(setViewName:);
-	const IMP trackingImp = [trackingClass methodForSelector:trackingSel];
-	trackingImp(trackingClass, trackingSel, NSStringFromClass([self class]));
+	const SEL trackingSel = @selector(setViewNameForViewController:);
+	const IMP _trackingImp = [trackingClass methodForSelector:trackingSel];
+	void(*trackingImp)(id, SEL, UIViewController *) = (void(*)(id, SEL, UIViewController *))_trackingImp; // cast IMP to a c function so ARC doesn't try to release it
+	trackingImp(trackingClass, trackingSel, self);
 }
 
 @end
