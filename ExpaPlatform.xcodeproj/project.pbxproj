@@ -403,6 +403,7 @@
 		7E255BF018171DEC008FD59D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = X;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Expa, LLC";
 			};
