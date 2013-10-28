@@ -238,22 +238,13 @@ static char LoadingSpinnerKey;
 - (void)setShowsLoadingSpinner:(BOOL)showsSpinner {
 	if (showsSpinner == [self showsLoadingSpinner]) return;
 	
-	id spinner = nil;
-	if (showsSpinner) {
-		Class spinnerClass = NSClassFromString(@"MBProgressHUD");
-		#pragma clang diagnostic ignored "-Wundeclared-selector"
-		SEL sel = @selector(showHUDAddedTo:animated:);
-		IMP imp = [spinnerClass methodForSelector:sel];
-		spinner = imp(spinnerClass, sel, self, YES);
-	} else {
-		
-		__weak UIView *wLoadingSpinner = (id)self.loadingSpinner;
-		[UIView animateWithDuration:0.3f animations:^{
-			wLoadingSpinner.alpha = 0;
-		} completion:^(BOOL finished) {
-			[wLoadingSpinner removeFromSuperview];
-		}];
-	}
+	Class spinnerClass = NSClassFromString(@"MBProgressHUD");
+	#pragma clang diagnostic ignored "-Wundeclared-selector"
+	SEL sel = showsSpinner ? @selector(showHUDAddedTo:animated:) : @selector(hideAllHUDsForView:animated:);
+	IMP imp = [spinnerClass methodForSelector:sel];
+	void *(*function_pointer)(id, SEL, UIView *, BOOL) = (void *(*)(id, SEL, UIView *, BOOL))imp;
+	void *spinner_ptr = function_pointer(spinnerClass, sel, self, showsSpinner);
+	__strong id spinner = showsSpinner ? (__bridge id)spinner_ptr : nil;
 	objc_setAssociatedObject(self, &LoadingSpinnerKey, spinner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

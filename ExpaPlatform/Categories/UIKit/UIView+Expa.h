@@ -99,7 +99,7 @@ typedef void(^Transform3DCompletionBlock)();
 /// Is there currently an MBProgressHUD in the current view? (Requires MBProgressHUD be added to the runtime)
 - (BOOL)showsLoadingSpinner;
 
-/// Show/hides an MBProgressHUD in the currentView, animated. (Requires MBProgressHUD be added to the runtime)
+/// Show/hides an MBProgressHUD in the currentView, animated.
 - (void)setShowsLoadingSpinner:(BOOL)showsLoadingSpinner;
 
 #pragma mark - 3D Animations
