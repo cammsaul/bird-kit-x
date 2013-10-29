@@ -32,4 +32,12 @@
 	return image;
 }
 
++ (UIImage *)imageFromView:(UIView *)view {
+	UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
+	[view.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return outputImage;
+}
+
 @end

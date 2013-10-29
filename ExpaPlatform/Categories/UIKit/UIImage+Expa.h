@@ -13,4 +13,7 @@
 /// Creates a new UIImage from a CoreMedia sample buffer.
 + (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef)sampleBuffer;
 
+/// Renders the UIView using the device's current scaling as a UIImage.
++ (UIImage *)imageFromView:(UIView *)view;
+
 @end
