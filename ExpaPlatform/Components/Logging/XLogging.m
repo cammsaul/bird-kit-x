@@ -15,8 +15,8 @@ __strong NSSet *XLogClasses = nil;
 
 char const * const StringForLogFlag(LogFlag flag) {
 	if		(flag & LogFlagVerbose)	return "Verbose";
-	else if (flag & LogFlagInfo)		return "Info";
-	else if (flag & LogFlagWarn)		return "Warn";
+	else if (flag & LogFlagInfo)	return "Info";
+	else if (flag & LogFlagWarn)	return "Warn";
 	else if (flag & LogFlagError)	return "Error";
 	else return NULL;
 }

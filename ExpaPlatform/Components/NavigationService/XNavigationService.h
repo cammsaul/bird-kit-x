@@ -32,6 +32,9 @@ static const NSString *XNavigationServiceDelegateParam = @"delegate";
 /// this navigation controller internally to push and pop view controllers.
 + (void)setNavigationController:(UINavigationController *)navigationController;
 
+/// Returns the current navigation controller being used by XNavigationService
++ (UINavigationController *)navigationController;
+
 @end
 
 @protocol InitWithParams <NSObject>

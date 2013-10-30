@@ -10,17 +10,22 @@
 #import "NSDictionary+Expa.h"
 #import "XLogging.h"
 
-static UINavigationController *_navigationController;
+static UINavigationController *__navigationController;
 
 @implementation XNavigationService
 
 + (void)setNavigationController:(UINavigationController *)navigationController {
+	NSAssert(navigationController, @"You should not set navigation controller to nil!");
 	XLog(self, LogFlagInfo, @"Root navigation controller set to: %@", navigationController);
-	_navigationController = navigationController;
+	__navigationController = navigationController;
+}
+
++ (UINavigationController *)navigationController {
+	return __navigationController;
 }
 
 + (void)navigateTo:(NSString *)destination params:(NSDictionary *)params {
-	NSAssert(_navigationController, @"you must call setNavigationController: before using the navigation service!");
+	NSAssert(__navigationController, @"you must call setNavigationController: before using the navigation service!");
 	
 	id delegate = params[XNavigationServiceDelegateParam];
 	
@@ -49,11 +54,11 @@ static UINavigationController *_navigationController;
 		}
 	}
 	
-	[_navigationController pushViewController:vc animated:YES];
+	[__navigationController pushViewController:vc animated:YES];
 }
 
 + (void)popViewControllerAnimated:(BOOL)animated {
-	[_navigationController popViewControllerAnimated:animated];
+	[__navigationController popViewControllerAnimated:animated];
 }
 
 @end
