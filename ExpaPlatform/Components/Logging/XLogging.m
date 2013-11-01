@@ -23,7 +23,7 @@ char const * const StringForLogFlag(LogFlag flag) {
 
 #if DEBUG
 	void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
-		if (!CurrentLogLevel & flag) return;
+		if (!(CurrentLogLevel & flag)) return;
 		if (XLogClasses && ![XLogClasses containsObject:[sender class]]) return;
 		
 		va_list argptr;

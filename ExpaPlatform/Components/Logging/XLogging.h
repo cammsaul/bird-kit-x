@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
 	LogLevelError	= 1,		// 0001
 	LogLevelWarn	= 3,		// 0011
 	LogLevelInfo	= 7,		// 0111
-	LogLevelVerbose	= 15,	// 1111
+	LogLevelVerbose	= 15,		// 1111
 } LogLevel;
 
 /// Change this value to set the logging level for the app (e.g., you may want to set it to 0 for production builds). Default is LogLevelInfo.
