@@ -227,7 +227,7 @@ static char LoadingSpinnerKey;
 	}
 }
 
-- (UIView *)loadingSpinner {
+- (UIActivityIndicatorView *)loadingSpinner {
 	return objc_getAssociatedObject(self, &LoadingSpinnerKey);
 }
 
@@ -236,16 +236,21 @@ static char LoadingSpinnerKey;
 }
 
 - (void)setShowsLoadingSpinner:(BOOL)showsSpinner {
-	if (showsSpinner == [self showsLoadingSpinner]) return;
+	UIActivityIndicatorView *loadingSpinner = self.loadingSpinner;
 	
-	Class spinnerClass = NSClassFromString(@"MBProgressHUD");
-	#pragma clang diagnostic ignored "-Wundeclared-selector"
-	SEL sel = showsSpinner ? @selector(showHUDAddedTo:animated:) : @selector(hideAllHUDsForView:animated:);
-	IMP imp = [spinnerClass methodForSelector:sel];
-	void *(*fn_ptr)(id, SEL, UIView *, BOOL) = (void *(*)(id, SEL, UIView *, BOOL))imp;
-	void *spinner_ptr = fn_ptr(spinnerClass, sel, self, showsSpinner);
-	__strong id spinner = showsSpinner ? (__bridge id)spinner_ptr : nil;
-	objc_setAssociatedObject(self, &LoadingSpinnerKey, spinner, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	if (showsSpinner == (loadingSpinner != nil)) return;
+	
+	if (showsSpinner) {
+		loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		loadingSpinner.autoresizingMask = UIViewAutoresizingFlexibleSize;
+		loadingSpinner.frame = self.bounds;
+		[self addSubview:loadingSpinner];
+		[loadingSpinner startAnimating];
+	} else {
+		[loadingSpinner removeFromSuperview];
+		loadingSpinner = nil;
+	}
+	objc_setAssociatedObject(self, &LoadingSpinnerKey, loadingSpinner, OBJC_ASSOCIATION_ASSIGN);
 }
 
 
