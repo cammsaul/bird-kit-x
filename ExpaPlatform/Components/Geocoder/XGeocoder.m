@@ -17,6 +17,7 @@ static BOOL __activeRequest;
 @interface XGeocoderResult ()
 PROP_STRONG NSString *name;
 PROP_STRONG NSString *streetAddress;
+PROP_STRONG NSString *city;
 PROP CLLocationCoordinate2D coordinate;
 @end
 
@@ -68,7 +69,6 @@ PROP CLLocationCoordinate2D coordinate;
 		completionBlock(nil); // too short to even try searching yet
 		return;
 	}
-	NSAssert(region, @"you must provide a region.");
 	
 	XLog(self, LogFlagInfo, @"geocoding %@, %@, %@, %@, %@", requestedStreetAddress, city, state, zipCode, country);
 	
@@ -130,6 +130,7 @@ PROP CLLocationCoordinate2D coordinate;
 			XGeocoderResult *result = [[XGeocoderResult alloc] init];
 			result.streetAddress = actualStreetAddress;
 			result.name = name;
+			result.city = placemark.locality;
 			result.coordinate = placemark.location.coordinate;
 			[results addObject:result];
         }
