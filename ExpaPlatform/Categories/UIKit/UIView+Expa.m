@@ -236,15 +236,17 @@ static char LoadingSpinnerKey;
 }
 
 - (void)setShowsLoadingSpinner:(BOOL)showsSpinner {
+	NSAssert(NSThread.isMainThread, @"UI updates need to be done in the main thread!");
 	UIActivityIndicatorView *loadingSpinner = self.loadingSpinner;
 	
 	if (showsSpinner == (loadingSpinner != nil)) return;
 	
 	if (showsSpinner) {
 		loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		loadingSpinner.autoresizingMask = UIViewAutoresizingFlexibleSize;
 		loadingSpinner.frame = self.bounds;
+		loadingSpinner.translatesAutoresizingMaskIntoConstraints = NO;
 		[self addSubview:loadingSpinner];
+		[self addConstraints:@[@"|[loadingSpinner]|", @"V:|[loadingSpinner]|"] views:NSDictionaryOfVariableBindings(loadingSpinner)];
 		[loadingSpinner startAnimating];
 	} else {
 		[loadingSpinner removeFromSuperview];
