@@ -13,6 +13,7 @@
 
 static char HiddenButtonKey;
 static char LoadingSpinnerKey;
+static char ShowsLoadingSpinnerKey;
 
 @implementation UIView (Expa)
 
@@ -227,32 +228,39 @@ static char LoadingSpinnerKey;
 	}
 }
 
+
+#pragma mark - Loading Spinner
+
+- (BOOL)showsLoadingSpinner {
+	return [objc_getAssociatedObject(self, &ShowsLoadingSpinnerKey) boolValue];
+}
+
 - (UIActivityIndicatorView *)loadingSpinner {
 	return objc_getAssociatedObject(self, &LoadingSpinnerKey);
 }
 
-- (BOOL)showsLoadingSpinner {
-	return self.loadingSpinner != nil;
-}
-
 - (void)setShowsLoadingSpinner:(BOOL)showsSpinner {
+	if (showsSpinner == self.showsLoadingSpinner) return;
+	
 	NSAssert(NSThread.isMainThread, @"UI updates need to be done in the main thread!");
 	UIActivityIndicatorView *loadingSpinner = self.loadingSpinner;
 	
-	if (showsSpinner == (loadingSpinner != nil)) return;
-	
 	if (showsSpinner) {
-		loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		loadingSpinner.frame = self.bounds;
-		loadingSpinner.translatesAutoresizingMaskIntoConstraints = NO;
-		[self addSubview:loadingSpinner];
-		[self addConstraints:@[@"|[loadingSpinner]|", @"V:|[loadingSpinner]|"] views:NSDictionaryOfVariableBindings(loadingSpinner)];
+		if (!loadingSpinner) {
+			loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+			loadingSpinner.frame = self.bounds;
+			loadingSpinner.translatesAutoresizingMaskIntoConstraints = NO;
+			[self addSubview:loadingSpinner];
+			[self addConstraints:@[@"|[loadingSpinner]|", @"V:|[loadingSpinner]|"] views:NSDictionaryOfVariableBindings(loadingSpinner)];
+			objc_setAssociatedObject(self, &LoadingSpinnerKey, loadingSpinner, OBJC_ASSOCIATION_ASSIGN);
+		}
 		[loadingSpinner startAnimating];
+		loadingSpinner.hidden = NO;
 	} else {
-		[loadingSpinner removeFromSuperview];
-		loadingSpinner = nil;
+		[loadingSpinner stopAnimating];
+		loadingSpinner.hidden = YES;
 	}
-	objc_setAssociatedObject(self, &LoadingSpinnerKey, loadingSpinner, OBJC_ASSOCIATION_ASSIGN);
+	objc_setAssociatedObject(self, &ShowsLoadingSpinnerKey, @(showsSpinner), OBJC_ASSOCIATION_ASSIGN);
 }
 
 
