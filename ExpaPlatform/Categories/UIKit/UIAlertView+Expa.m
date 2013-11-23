@@ -14,6 +14,12 @@ static char AlertViewButtonPressedBlockKey;
 @implementation UIAlertView (Expa)
 
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle {
+	if (!NSThread.isMainThread) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self showAlertWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
+		});
+		return;
+	}
 	[[[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil] show];
 }
 
