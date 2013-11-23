@@ -16,10 +16,12 @@ static char AlertViewButtonPressedBlockKey;
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle {
 	if (!NSThread.isMainThread) {
 		dispatch_async(dispatch_get_main_queue(), ^{
+			printf("HERE!\n");
 			[self showAlertWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
 		});
 		return;
 	}
+	printf("HERE2!\n");
 	[[[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil] show];
 }
 
@@ -28,7 +30,12 @@ static char AlertViewButtonPressedBlockKey;
 		buttonPressedBlock:(AlertViewButtonPressedBlock)buttonPressedBlock
 		 cancelButtonTitle:(NSString *)cancelButtonTitle
 		 otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION {
-	
+	if (!NSThread.isMainThread) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self showAlertWithTitle:title message:message buttonPressedBlock:buttonPressedBlock cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+		});
+		return;
+	}
 	UIAlertView *alertView = [[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
 	
 	if (buttonPressedBlock) {
