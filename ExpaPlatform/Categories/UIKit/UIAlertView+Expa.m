@@ -7,6 +7,7 @@
 //
 
 #import "UIAlertView+Expa.h"
+#import "XLogging.h"
 #import <objc/runtime.h>
 
 static char AlertViewButtonPressedBlockKey;
@@ -15,13 +16,13 @@ static char AlertViewButtonPressedBlockKey;
 
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle {
 	if (!NSThread.isMainThread) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			printf("HERE!\n");
+		dispatch_sync(dispatch_get_main_queue(), ^{
+			XLog(UIAlertView.class, LogFlagWarn, @"Attempted to show alert on background thread. Showing on main thread.", title, message);
 			[self showAlertWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
 		});
 		return;
 	}
-	printf("HERE2!\n");
+	XLog(UIAlertView.class, LogFlagInfo, @"Showing alert: Title: %@, Message: %@\n", title, message);
 	[[[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil] show];
 }
 
