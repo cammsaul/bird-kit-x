@@ -13,6 +13,7 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
+docs/
 .idea/
 *.hmap
 *.xccheckout

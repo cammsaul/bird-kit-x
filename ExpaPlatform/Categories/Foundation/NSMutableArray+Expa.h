@@ -14,6 +14,7 @@
 - (id)dequeue;
 
 /// Adds a new object to the end of the queue.
+/// @param obj the object to add at the end of the queue.
 - (void)enqueue:(id)obj;
 
 @end
