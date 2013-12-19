@@ -31,7 +31,6 @@ PROP_STRONG_RO NSDictionary *params;
 /// Initializes a new XViewController with a dictionary of parameters. You should not call this directly -
 /// XNavigationService will call this automatically. Subclasses of XViewController should override [super initWithParams:]
 /// rather than init: or initWithNibNamed:.
-///
 /// @param params Dictionary of parameters to pass to the view controller
 - (instancetype)initWithParams:(NSDictionary *)params;
 

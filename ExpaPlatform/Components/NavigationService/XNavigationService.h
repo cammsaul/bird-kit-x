@@ -9,7 +9,6 @@
 @import Foundation;
 @import UIKit;
 
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
 /// this parameter is a special case; if you set this parameter and the target view controller responds to setDelegate:,
@@ -33,7 +32,7 @@ static const NSString * const XNavigationServiceDelegateParam = @"delegate";
 /// This method should be called on app launch or whenever a new navigation controller comes into use. XNavigationService will use
 /// this navigation controller internally to push and pop view controllers.
 + (void)setNavigationController:(UINavigationController *)navigationController;
-	
+
 /// Returns the current navigation controller being used by XNavigationService
 + (UINavigationController *)navigationController;
 
