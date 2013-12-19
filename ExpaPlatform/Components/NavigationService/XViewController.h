@@ -14,6 +14,8 @@
 /// Implements the <InitWithParams> protocol, which means you can use XNavigationService to push
 /// an XViewController with [XNavigationService navigateTo:params:].
 /// The params property is automatically set and logged.
+///
+/// XViewController also automatically adds the call [NSNotificationCenter.defaultCenter removeObserver:self] in dealloc
 @interface XViewController : UIViewController <InitWithParams>
 
 /// A dictionary of parameters that were passed to the view controller if it was called with initWithParams
@@ -37,5 +39,19 @@ PROP_STRONG_RO NSDictionary *params;
 /// In any of the above cases, [self setup  is called]. You can override setup to do logic that would otherwise go in an init method (and possibly be duplicated amongst several).
 /// The default implementation does nothing.
 - (void)setup;
-
+	
+/*---- GEOTIP SPECIFIC FOR THE TIME BEING ----*/
+	
+/// Called when GeoTipNavigationController is about to make the receiving view controller the 'top' view controller. Called after loadView/viewDidLoad/etc
+- (void)viewControllerWillBecomeActive:(BOOL)animated;
+	
+/// Called after GeoTipNavigationController makes the receiving view controller its 'top' view controller.
+- (void)viewControllerDidBecomeActive:(BOOL)animated;
+	
+/// Called when GeoTipNavigationController pushes/pops to a new 'top' view controller.
+- (void)viewControllerWillBecomeInactive:(BOOL)animated;
+	
+/// Called after GeoTipNavigationController pushes/pops to a new 'top' view controller.
+- (void)viewControllerDidBecomeInactive:(BOOL)animated;
+	
 @end

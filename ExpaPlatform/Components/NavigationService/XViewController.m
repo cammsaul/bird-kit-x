@@ -56,6 +56,13 @@ PROP BOOL viewDidDisappearCalled;
 		NSAssert(self.viewControllerDidBecomeInactiveCalled, @"[super viewControllerDidBecomeInactive:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
 	}
 	NSAssert(self.viewDidDisappearCalled, @"[super viewDidDisappear:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
+	
+	[NSNotificationCenter.defaultCenter removeObserver:self];
+}
+	
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.viewWillAppearCalled = YES;
 }
 
 - (void)viewDidLoad {
@@ -64,36 +71,22 @@ PROP BOOL viewDidDisappearCalled;
 	self.viewDidLoadCalled = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	NSAssert(self.viewDidLoadCalled, @"[super viewDidLoad:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
-	[super viewWillAppear:animated];
-	self.viewWillAppearCalled = YES;
-}
-
 - (void)viewDidAppear:(BOOL)animated {
+	NSAssert(self.viewDidLoadCalled, @"[super viewDidLoad:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
 	NSAssert(self.viewWillAppearCalled, @"[super viewWillAppear:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
     [super viewDidAppear:animated];
 	
-	// Since GTTracker isn't part of ExpaPlatform (yet) use ObjC runtime hackery to find the IMP and call it TODO.
-	const Class trackingClass = NSClassFromString(@"GTTracker");
-	#pragma clang diagnostic push
-	#pragma clang diagnostic ignored "-Wundeclared-selector"
-	const SEL trackingSel = @selector(setViewNameForViewController:);
-	#pragma clang diagnostic pop
-	const IMP _trackingImp = [trackingClass methodForSelector:trackingSel];
-	void(*trackingImp)(id, SEL, UIViewController *) = (void(*)(id, SEL, UIViewController *))_trackingImp; // cast IMP to a c function so ARC doesn't try to release it
-	trackingImp(trackingClass, trackingSel, self);
-	
-	self.viewWillAppearCalled = YES;
+	self.viewDidAppearCalled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-	NSAssert(self.viewWillDisappearCalled, @"[super viewWillDisappear:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
+	NSAssert(self.viewDidAppearCalled, @"[super viewDidAppear:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
 	[super viewWillDisappear:animated];
 	self.viewWillDisappearCalled = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+	NSAssert(self.viewWillDisappearCalled, @"[super viewWillDisappear:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
 	[super viewDidDisappear:animated];
 	self.viewDidDisappearCalled = YES;
 }
@@ -106,6 +99,17 @@ PROP BOOL viewDidDisappearCalled;
 
 - (void)viewControllerDidBecomeActive:(BOOL)animated {
 	NSAssert(self.viewControllerWillBecomeActiveCalled, @"[super viewControllerWillBecomeActive:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
+	
+	// Since GTTracker isn't part of ExpaPlatform (yet) use ObjC runtime hackery to find the IMP and call it TODO.
+	const Class trackingClass = NSClassFromString(@"GTTracker");
+	#pragma clang diagnostic push
+	#pragma clang diagnostic ignored "-Wundeclared-selector"
+		const SEL trackingSel = @selector(setViewNameForViewController:);
+	#pragma clang diagnostic pop
+	const IMP _trackingImp = [trackingClass methodForSelector:trackingSel];
+	void(*trackingImp)(id, SEL, UIViewController *) = (void(*)(id, SEL, UIViewController *))_trackingImp; // cast IMP to a c function so ARC doesn't try to release it
+	trackingImp(trackingClass, trackingSel, self);
+	
 	self.viewControllerDidBecomeActiveCalled = YES;
 }
 
@@ -116,7 +120,7 @@ PROP BOOL viewDidDisappearCalled;
 
 - (void)viewControllerDidBecomeInactive:(BOOL)animated {
 	NSAssert(self.viewControllerWillBecomeInactiveCalled, @"[super viewControllerWillBecomeInactive:] never reached the XViewController. More than likely, you're missing that call in a subclass. Make sure all subclasses call super!");
-	self.viewControllerWillBecomeInactiveCalled = YES;
+	self.viewControllerDidBecomeInactiveCalled = YES;
 }
 
 //----- END GeoTip-only methods -----//

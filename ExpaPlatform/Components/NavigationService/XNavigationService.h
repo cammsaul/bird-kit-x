@@ -15,7 +15,7 @@
 /// this parameter is a special case; if you set this parameter and the target view controller responds to setDelegate:,
 /// then setDelegate: will be called with the value when that view controller is pushed.
 /// Since we don't want to retain delegate, the property is removed from the dictionary AFTER validation.
-static const NSString *XNavigationServiceDelegateParam = @"delegate";
+static const NSString * const XNavigationServiceDelegateParam = @"delegate";
 #pragma clang diagnostic pop
 
 /// Simple navigation service that supports navigating to different pages of the app with parameters, similar to Android
@@ -33,7 +33,7 @@ static const NSString *XNavigationServiceDelegateParam = @"delegate";
 /// This method should be called on app launch or whenever a new navigation controller comes into use. XNavigationService will use
 /// this navigation controller internally to push and pop view controllers.
 + (void)setNavigationController:(UINavigationController *)navigationController;
-
+	
 /// Returns the current navigation controller being used by XNavigationService
 + (UINavigationController *)navigationController;
 
