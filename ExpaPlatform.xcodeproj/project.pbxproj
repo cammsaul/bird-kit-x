@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
-		2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768091819D12200E684CF /* XFeedbackViewController.m */; };
-		2157680F1819D20E00E684CF /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157680E1819D20E00E684CF /* XFeedback.m */; };
 		215768121819EB8900E684CF /* NSString+XURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768111819EB8900E684CF /* NSString+XURLEncoding.m */; };
-		21576815181A00A100E684CF /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21576814181A00A100E684CF /* MPTextView.m */; };
+		328ED2791863025000C151E7 /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2731863025000C151E7 /* MPTextView.m */; };
+		328ED27A1863025000C151E7 /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2731863025000C151E7 /* MPTextView.m */; };
+		328ED27B1863025000C151E7 /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2751863025000C151E7 /* XFeedback.m */; };
+		328ED27C1863025000C151E7 /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2751863025000C151E7 /* XFeedback.m */; };
+		328ED27D1863025000C151E7 /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2771863025000C151E7 /* XFeedbackViewController.m */; };
+		328ED27E1863025000C151E7 /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2771863025000C151E7 /* XFeedbackViewController.m */; };
+		328ED27F1863025000C151E7 /* XFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328ED2781863025000C151E7 /* XFeedbackViewController.xib */; };
 		7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
 		7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */; };
 		7E0AE8D5181A2B3800C373E4 /* UIColor+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0AE8D4181A2B3800C373E4 /* UIColor+Expa.m */; };
@@ -82,15 +86,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		215768081819D12200E684CF /* XFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedbackViewController.h; sourceTree = "<group>"; };
-		215768091819D12200E684CF /* XFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedbackViewController.m; sourceTree = "<group>"; };
-		2157680A1819D12200E684CF /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
-		2157680D1819D20E00E684CF /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
-		2157680E1819D20E00E684CF /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
 		215768101819EB8900E684CF /* NSString+XURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XURLEncoding.h"; sourceTree = "<group>"; };
 		215768111819EB8900E684CF /* NSString+XURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XURLEncoding.m"; sourceTree = "<group>"; };
-		21576813181A00A100E684CF /* MPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTextView.h; sourceTree = "<group>"; };
-		21576814181A00A100E684CF /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
+		328ED2721863025000C151E7 /* MPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTextView.h; sourceTree = "<group>"; };
+		328ED2731863025000C151E7 /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
+		328ED2741863025000C151E7 /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
+		328ED2751863025000C151E7 /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
+		328ED2761863025000C151E7 /* XFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedbackViewController.h; sourceTree = "<group>"; };
+		328ED2771863025000C151E7 /* XFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedbackViewController.m; sourceTree = "<group>"; };
+		328ED2781863025000C151E7 /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
 		7E0AE8CE1819F2CD00C373E4 /* UIImage+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expa.h"; sourceTree = "<group>"; };
 		7E0AE8CF1819F2CD00C373E4 /* UIImage+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expa.m"; sourceTree = "<group>"; };
 		7E0AE8D3181A2B3800C373E4 /* UIColor+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expa.h"; sourceTree = "<group>"; };
@@ -167,18 +171,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		215768071819CFBA00E684CF /* Feedback */ = {
+		328ED2711863025000C151E7 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				21576813181A00A100E684CF /* MPTextView.h */,
-				21576814181A00A100E684CF /* MPTextView.m */,
-				215768081819D12200E684CF /* XFeedbackViewController.h */,
-				215768091819D12200E684CF /* XFeedbackViewController.m */,
-				2157680A1819D12200E684CF /* XFeedbackViewController.xib */,
-				2157680D1819D20E00E684CF /* XFeedback.h */,
-				2157680E1819D20E00E684CF /* XFeedback.m */,
+				328ED2721863025000C151E7 /* MPTextView.h */,
+				328ED2731863025000C151E7 /* MPTextView.m */,
+				328ED2741863025000C151E7 /* XFeedback.h */,
+				328ED2751863025000C151E7 /* XFeedback.m */,
+				328ED2761863025000C151E7 /* XFeedbackViewController.h */,
+				328ED2771863025000C151E7 /* XFeedbackViewController.m */,
+				328ED2781863025000C151E7 /* XFeedbackViewController.xib */,
 			);
-			name = Feedback;
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		7E255BEF18171DEC008FD59D = {
@@ -216,7 +220,6 @@
 		7E255BFD18171DEC008FD59D /* ExpaPlatform */ = {
 			isa = PBXGroup;
 			children = (
-				215768071819CFBA00E684CF /* Feedback */,
 				7E255C0018171DEC008FD59D /* ExpaPlatform.h */,
 				7E255C36181725A9008FD59D /* XGlobalMacros.h */,
 				7E46DB381819D6AE0010ADE2 /* Components */,
@@ -323,6 +326,7 @@
 		7E46DB381819D6AE0010ADE2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				328ED2711863025000C151E7 /* Feedback */,
 				7E46DB3F1819D6AE0010ADE2 /* NavigationService */,
 				7E46DB3C1819D6AE0010ADE2 /* Logging */,
 				7E46DB391819D6AE0010ADE2 /* Geocoder */,
@@ -431,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328ED27F1863025000C151E7 /* XFeedbackViewController.xib in Resources */,
 				7E255C1618171DEC008FD59D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Check if we have appledoc installed on the system -- you can install via homebrew\nAPPLEDOC=`which /usr/local/bin/appledoc`\nHOMEBREW=`which /usr/local/bin/brew`\nif [[ ${#APPLEDOC} == 0 ]]\nthen\n    if [[ ${#HOMEBREW} ]]\n    then\n        sudo -u $INSTALL_OWNER $HOMEBREW install appledoc\n    else\n        exit 127 # Please install appledoc on your computer. If you install homebrew, this script will install it automatically.\n    fi\nfi\n\n# Only run on prod builds\nif [[ $DEBUG ]]\nthen\n    exit 0\nfi\n\n# config\ncompany=\"Expa\";\ncompanyID=\"com.expa\";\ncompanyURL=\"http://expa.com\";\ntarget=\"iphoneos\";\noutputPath=\"${SRCROOT}/docs\";\n\n\n# delete old doc dirs\nrm -rf $outputPath/Categories\nrm -rf $outputPath/Classes\nrm -rf $outputPath/Protocols\nrm -rf $outputPath/css\nrm -rf $outputPath/img\n\n#appledoc Xcode script\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--docset-platform-family \"${target}\" \\\n--publish-docset \\\n--logformat xcode \\\n--install-docset \\\n--keep-intermediate-files \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--no-warn-undocumented-member \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"\n\n# move everthing in the HTML dir into $outputPath for upload to GitHub\ncd $outputPath\nmv -f html/* .\nrmdir html\n\n# push to GitHub, if possible\nsudo -u $INSTALL_OWNER git add --all\nsudo -u $INSTALL_OWNER git commit -am 'updated documentation (automatic)'\nsudo -u $INSTALL_OWNER git push origin gh-pages || echo 'Could not automatically push to github.'";
+			shellScript = "# Only run on prod builds\nif [[ $CONFIGURATION != \"Release\" ]]\nthen\n    exit 0\nfi\n\n# Check if we have appledoc installed on the system -- you can install via homebrew\nAPPLEDOC=`which /usr/local/bin/appledoc`\nHOMEBREW=`which /usr/local/bin/brew`\nif [[ ${#APPLEDOC} == 0 ]]\nthen\n    if [[ ${#HOMEBREW} ]]\n    then\n        sudo -u $INSTALL_OWNER $HOMEBREW install appledoc\n    else\n        exit 127 # Please install appledoc on your computer. If you install homebrew, this script will install it automatically.\n    fi\nfi\n\n# config\ncompany=\"Expa\";\ncompanyID=\"com.expa\";\ncompanyURL=\"http://expa.com\";\ntarget=\"iphoneos\";\noutputPath=\"${SRCROOT}/docs\";\n\n\n# delete old doc dirs\nrm -rf $outputPath/Categories\nrm -rf $outputPath/Classes\nrm -rf $outputPath/Protocols\nrm -rf $outputPath/css\nrm -rf $outputPath/img\n\n#appledoc Xcode script\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--docset-platform-family \"${target}\" \\\n--publish-docset \\\n--logformat xcode \\\n--install-docset \\\n--keep-intermediate-files \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--no-warn-undocumented-member \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"\n\n# move everthing in the HTML dir into $outputPath for upload to GitHub\ncd $outputPath\nmv -f html/* .\nrmdir html\n\n# push to GitHub, if possible\nsudo -u $INSTALL_OWNER git add --all\nsudo -u $INSTALL_OWNER git commit -am 'updated documentation (automatic)'\nsudo -u $INSTALL_OWNER git push origin gh-pages || echo 'Could not automatically push to github.'";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -460,8 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E46DB2C1819D59D0010ADE2 /* XLocationUtilities.m in Sources */,
-				2157680B1819D12200E684CF /* XFeedbackViewController.m in Sources */,
-				2157680F1819D20E00E684CF /* XFeedback.m in Sources */,
 				7E46DB0A1819CCC60010ADE2 /* UIView+Expa.m in Sources */,
 				7E46DB171819D4B40010ADE2 /* XEdgeSwipeGestureRecognizer.m in Sources */,
 				215768121819EB8900E684CF /* NSString+XURLEncoding.m in Sources */,
@@ -469,13 +472,15 @@
 				7E46DB441819D6AE0010ADE2 /* XGeocoder.m in Sources */,
 				7E46DB241819D4FF0010ADE2 /* XGCDUtilites.m in Sources */,
 				7E46DB061819CCC60010ADE2 /* UIAlertView+Expa.m in Sources */,
+				328ED2791863025000C151E7 /* MPTextView.m in Sources */,
 				7E46DB4A1819D6AE0010ADE2 /* XViewController.m in Sources */,
 				7E46DB4E1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
+				328ED27B1863025000C151E7 /* XFeedback.m in Sources */,
 				7E46DB481819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */,
+				328ED27D1863025000C151E7 /* XFeedbackViewController.m in Sources */,
 				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
-				21576815181A00A100E684CF /* MPTextView.m in Sources */,
 				7E0AE8D5181A2B3800C373E4 /* UIColor+Expa.m in Sources */,
 				7E46DB281819D54F0010ADE2 /* XDeviceUtilities.m in Sources */,
 				7E0AE8D01819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
@@ -495,10 +500,13 @@
 				7E255C1818171DEC008FD59D /* ExpaPlatformTests.m in Sources */,
 				7E46DB471819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB2D1819D59D0010ADE2 /* XLocationUtilities.m in Sources */,
+				328ED27A1863025000C151E7 /* MPTextView.m in Sources */,
 				7E46DB091819CCC60010ADE2 /* UIButton+Expa.m in Sources */,
 				7E46DB311819D5B80010ADE2 /* XDevUtilities.m in Sources */,
+				328ED27C1863025000C151E7 /* XFeedback.m in Sources */,
 				7E46DB491819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				7E46DB4F1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
+				328ED27E1863025000C151E7 /* XFeedbackViewController.m in Sources */,
 				7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB031819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */,
 				7E46DB451819D6AE0010ADE2 /* XGeocoder.m in Sources */,
@@ -599,6 +607,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
