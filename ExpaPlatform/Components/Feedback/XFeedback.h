@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <MessageUI/MessageUI.h>
-#import <MessageUI/MFMailComposeViewController.h>
+@import Foundation;
+@import MessageUI;
 
 @interface XFeedback : NSObject <MFMailComposeViewControllerDelegate>
 
