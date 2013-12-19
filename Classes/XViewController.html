@@ -187,7 +187,9 @@ Takes care of certain boilerpoint like automatically logging when VC appears.</p
 
 <p>Implements the <InitWithParams> protocol, which means you can use XNavigationService to push
 an XViewController with <a href="../Classes/XNavigationService.html#//api/name/navigateTo:params:">[XNavigationService navigateTo:params:]</a>.
-The params property is automatically set and logged.
+The params property is automatically set and logged.</p>
+
+<p>XViewController also automatically adds the call [NSNotificationCenter.defaultCenter removeObserver:self] in <a href="#//api/name/dealloc">dealloc</a>
 Check and make sure various calls in the view lifcycle are properly forwarded to super by doing some checking here</p>
 					</div>
 					
@@ -219,6 +221,30 @@ Check and make sure various calls in the view lifcycle are properly forwarded to
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setup">&ndash;&nbsp;setup</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerWillBecomeActive:">&ndash;&nbsp;viewControllerWillBecomeActive:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerDidBecomeActive:">&ndash;&nbsp;viewControllerDidBecomeActive:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerWillBecomeInactive:">&ndash;&nbsp;viewControllerWillBecomeInactive:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerDidBecomeInactive:">&ndash;&nbsp;viewControllerDidBecomeInactive:</a></code>
 	</span>
 	
 	
@@ -256,13 +282,13 @@ Check and make sure various calls in the view lifcycle are properly forwarded to
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/viewDidLoad">&ndash;&nbsp;viewDidLoad</a></code>
+		<code><a href="#//api/name/viewWillAppear:">&ndash;&nbsp;viewWillAppear:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/viewWillAppear:">&ndash;&nbsp;viewWillAppear:</a></code>
+		<code><a href="#//api/name/viewDidLoad">&ndash;&nbsp;viewDidLoad</a></code>
 	</span>
 	
 	
@@ -281,30 +307,6 @@ Check and make sure various calls in the view lifcycle are properly forwarded to
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/viewDidDisappear:">&ndash;&nbsp;viewDidDisappear:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewControllerWillBecomeActive:">&ndash;&nbsp;viewControllerWillBecomeActive:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewControllerDidBecomeActive:">&ndash;&nbsp;viewControllerDidBecomeActive:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewControllerWillBecomeInactive:">&ndash;&nbsp;viewControllerWillBecomeInactive:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewControllerDidBecomeInactive:">&ndash;&nbsp;viewControllerDidBecomeInactive:</a></code>
 	</span>
 	
 	
@@ -514,10 +516,35 @@ The default implementation does nothing.</p>
 	<h3 class="subsubtitle method-title">viewControllerDidBecomeActive:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Called after GeoTipNavigationController makes the receiving view controller its &lsquo;top&rsquo; view controller.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)viewControllerDidBecomeActive:(BOOL)<em>animated</em></code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -525,10 +552,35 @@ The default implementation does nothing.</p>
 	<h3 class="subsubtitle method-title">viewControllerDidBecomeInactive:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Called after GeoTipNavigationController pushes/pops to a new &lsquo;top&rsquo; view controller.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)viewControllerDidBecomeInactive:(BOOL)<em>animated</em></code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -536,10 +588,35 @@ The default implementation does nothing.</p>
 	<h3 class="subsubtitle method-title">viewControllerWillBecomeActive:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when GeoTipNavigationController is about to make the receiving view controller the &lsquo;top&rsquo; view controller. Called after loadView/viewDidLoad/etc</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)viewControllerWillBecomeActive:(BOOL)<em>animated</em></code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -547,10 +624,35 @@ The default implementation does nothing.</p>
 	<h3 class="subsubtitle method-title">viewControllerWillBecomeInactive:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when GeoTipNavigationController pushes/pops to a new &lsquo;top&rsquo; view controller.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)viewControllerWillBecomeInactive:(BOOL)<em>animated</em></code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
