@@ -68,15 +68,7 @@
 	
 	<option value="//api/name/viewControllerWillBecomeInactive:">&nbsp;&nbsp;&nbsp;&nbsp;- viewControllerWillBecomeInactive:</option>
 	
-	<option value="//api/name/viewDidAppear:">&nbsp;&nbsp;&nbsp;&nbsp;- viewDidAppear:</option>
-	
-	<option value="//api/name/viewDidDisappear:">&nbsp;&nbsp;&nbsp;&nbsp;- viewDidDisappear:</option>
-	
 	<option value="//api/name/viewDidLoad">&nbsp;&nbsp;&nbsp;&nbsp;- viewDidLoad</option>
-	
-	<option value="//api/name/viewWillAppear:">&nbsp;&nbsp;&nbsp;&nbsp;- viewWillAppear:</option>
-	
-	<option value="//api/name/viewWillDisappear:">&nbsp;&nbsp;&nbsp;&nbsp;- viewWillDisappear:</option>
 	
 	
 	
@@ -132,15 +124,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewControllerWillBecomeInactive:">viewControllerWillBecomeInactive:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewDidAppear:">viewDidAppear:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewDidDisappear:">viewDidDisappear:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewDidLoad">viewDidLoad</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewWillAppear:">viewWillAppear:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewWillDisappear:">viewWillDisappear:</a></span></li>
 	
 </ul></li>
 
@@ -189,8 +173,7 @@ Takes care of certain boilerpoint like automatically logging when VC appears.</p
 an XViewController with <a href="../Classes/XNavigationService.html#//api/name/navigateTo:params:">[XNavigationService navigateTo:params:]</a>.
 The params property is automatically set and logged.</p>
 
-<p>XViewController also automatically adds the call [NSNotificationCenter.defaultCenter removeObserver:self] in <a href="#//api/name/dealloc">dealloc</a>
-Check and make sure various calls in the view lifcycle are properly forwarded to super by doing some checking here</p>
+<p>XViewController also automatically adds the call [NSNotificationCenter.defaultCenter removeObserver:self] in <a href="#//api/name/dealloc">dealloc</a></p>
 					</div>
 					
 					
@@ -282,31 +265,7 @@ Check and make sure various calls in the view lifcycle are properly forwarded to
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/viewWillAppear:">&ndash;&nbsp;viewWillAppear:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/viewDidLoad">&ndash;&nbsp;viewDidLoad</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewDidAppear:">&ndash;&nbsp;viewDidAppear:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewWillDisappear:">&ndash;&nbsp;viewWillDisappear:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/viewDidDisappear:">&ndash;&nbsp;viewDidDisappear:</a></code>
 	</span>
 	
 	
@@ -656,56 +615,12 @@ The default implementation does nothing.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/viewDidAppear:" title="viewDidAppear:"></a>
-	<h3 class="subsubtitle method-title">viewDidAppear:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)viewDidAppear:(BOOL)<em>animated</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/viewDidDisappear:" title="viewDidDisappear:"></a>
-	<h3 class="subsubtitle method-title">viewDidDisappear:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)viewDidDisappear:(BOOL)<em>animated</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/viewDidLoad" title="viewDidLoad"></a>
 	<h3 class="subsubtitle method-title">viewDidLoad</h3>
 	
 	
 
 	<div class="method-subsection method-declaration"><code>- (void)viewDidLoad</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/viewWillAppear:" title="viewWillAppear:"></a>
-	<h3 class="subsubtitle method-title">viewWillAppear:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)viewWillAppear:(BOOL)<em>animated</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/viewWillDisappear:" title="viewWillDisappear:"></a>
-	<h3 class="subsubtitle method-title">viewWillDisappear:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)viewWillDisappear:(BOOL)<em>animated</em></code></div>
 
     
 </div>
