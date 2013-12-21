@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-typedef void(^weak_ref_block_t)(id weakRef);
+typedef void(^weak_ref_block_t)(__weak id weakRef);
 
 /// Shorthand for calling dispatch_after() to dispatch on the main thread after some delay.
 void dispatch_after_seconds(const double delayInSeconds, dispatch_block_t block);
