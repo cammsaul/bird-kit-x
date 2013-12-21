@@ -17,6 +17,7 @@
 // Foundation Categories
 #import "NSDictionary+Expa.h"
 #import "NSMutableArray+Expa.h"
+#import "NSString+XURLEncoding.h"
 
 // UIKit Categories
 #import "UIView+Expa.h"
