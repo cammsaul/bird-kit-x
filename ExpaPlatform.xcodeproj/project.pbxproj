@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E46DAFF1819CCC60010ADE2 /* UIButton+Expa.m */; };
 		215768121819EB8900E684CF /* NSString+XURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 215768111819EB8900E684CF /* NSString+XURLEncoding.m */; };
+		3261BE241866B7CC003016EA /* XRuntimeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3261BE231866B7CC003016EA /* XRuntimeUtilities.m */; };
+		3261BE251866B7CC003016EA /* XRuntimeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3261BE231866B7CC003016EA /* XRuntimeUtilities.m */; };
 		328ED2791863025000C151E7 /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2731863025000C151E7 /* MPTextView.m */; };
 		328ED27A1863025000C151E7 /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2731863025000C151E7 /* MPTextView.m */; };
 		328ED27B1863025000C151E7 /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 328ED2751863025000C151E7 /* XFeedback.m */; };
@@ -88,6 +90,8 @@
 /* Begin PBXFileReference section */
 		215768101819EB8900E684CF /* NSString+XURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XURLEncoding.h"; sourceTree = "<group>"; };
 		215768111819EB8900E684CF /* NSString+XURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XURLEncoding.m"; sourceTree = "<group>"; };
+		3261BE221866B7CC003016EA /* XRuntimeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntimeUtilities.h; sourceTree = "<group>"; };
+		3261BE231866B7CC003016EA /* XRuntimeUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRuntimeUtilities.m; sourceTree = "<group>"; };
 		328ED2721863025000C151E7 /* MPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTextView.h; sourceTree = "<group>"; };
 		328ED2731863025000C151E7 /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
 		328ED2741863025000C151E7 /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				7E46DB2B1819D59D0010ADE2 /* XLocationUtilities.m */,
 				7E46DB2E1819D5B80010ADE2 /* XDevUtilities.h */,
 				7E46DB2F1819D5B80010ADE2 /* XDevUtilities.m */,
+				3261BE221866B7CC003016EA /* XRuntimeUtilities.h */,
+				3261BE231866B7CC003016EA /* XRuntimeUtilities.m */,
 			);
 			name = UtilityFunctions;
 			path = Utilities;
@@ -478,6 +484,7 @@
 				328ED27B1863025000C151E7 /* XFeedback.m in Sources */,
 				7E46DB481819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				2140F874181A0EF80035E092 /* UIButton+Expa.m in Sources */,
+				3261BE241866B7CC003016EA /* XRuntimeUtilities.m in Sources */,
 				328ED27D1863025000C151E7 /* XFeedbackViewController.m in Sources */,
 				7E46DB461819D6AE0010ADE2 /* XLogging.m in Sources */,
 				7E46DB301819D5B80010ADE2 /* XDevUtilities.m in Sources */,
@@ -506,6 +513,7 @@
 				328ED27C1863025000C151E7 /* XFeedback.m in Sources */,
 				7E46DB491819D6AE0010ADE2 /* XNavigationService.m in Sources */,
 				7E46DB4F1819D74C0010ADE2 /* NSMutableArray+Expa.m in Sources */,
+				3261BE251866B7CC003016EA /* XRuntimeUtilities.m in Sources */,
 				328ED27E1863025000C151E7 /* XFeedbackViewController.m in Sources */,
 				7E0AE8D11819F2CD00C373E4 /* UIImage+Expa.m in Sources */,
 				7E46DB031819CCC60010ADE2 /* NSDictionary+Expa.m in Sources */,
