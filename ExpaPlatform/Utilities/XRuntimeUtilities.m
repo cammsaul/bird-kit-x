@@ -49,7 +49,10 @@ void add_method_with_block(Class cls, const char *name, id _block){
 	id block = objc_getAssociatedObject(cls, assoc_key);
 	struct _block_t *block_struct = (__bridge void *)block;
 	
-	NSCParameterAssert(block_struct->flags & flag_has_signature);
+	if (!(block_struct->flags & flag_has_signature)) {
+		@throw [[NSException alloc] initWithName:[NSString stringWithFormat:@"add_method_with_block(%@, %s, ...) failed", NSStringFromClass(cls), name] reason:@"Block does not have a method signature." userInfo:nil];
+	}
+	
 	const int index = (block_struct->flags & flag_copy_dispose) ? 2 : 0;
     const char *types = block_struct->descriptor->rest[index];
 	
