@@ -146,15 +146,26 @@ static char ShowsLoadingSpinnerKey;
 - (void)addConstraints:(NSArray *)visualFormatStrings metrics:(NSDictionary *)metrics views:(NSDictionary *)viewsDictionary {
 	if (!visualFormatStrings) return;
 	
+	for (UIView *view in viewsDictionary.allValues) {
+		NSAssert([self.subviews containsObject:view], @"view '%@' is not a subview of '%@'!!", view, self);
+	}
+	
 	for (NSString *vfString in visualFormatStrings) {
 		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:vfString options:0 metrics:metrics views:viewsDictionary priority:UILayoutPriorityRequired]];
 	}
 }
 
+- (void)addConstraintToCenterView:(UIView *)view {
+	[self addConstraintToCenterViewHorizontally:self];
+	[self addConstraintToCenterViewVertically:self];
+}
+
 - (void)addConstraintToCenterViewHorizontally:(UIView *)view {
+	NSAssert([self.subviews containsObject:view], @"view '%@' is not a subview of '%@'!!", view, self);
 	[self addConstraint:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX equalToSameAttributeOfItem:self multiplier:1 constant:0]];
 }
 - (void)addConstraintToCenterViewVertically:(UIView *)view {
+	NSAssert([self.subviews containsObject:view], @"view '%@' is not a subview of '%@'!!", view, self);
 	[self addConstraint:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterY equalToSameAttributeOfItem:self multiplier:1 constant:0]];
 }
 

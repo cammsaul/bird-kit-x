@@ -41,6 +41,11 @@ inline void dispatch_sync_main(dispatch_block_t block) {
 	dispatch_sync(dispatch_get_main_queue(), block);
 }
 
+inline void guarantee_on_main_thread(void(^block)()) {
+	if		(NSThread.isMainThread) block();
+	else	dispatch_sync_main(block);
+}
+
 void with_weak_ref(id obj, weak_ref_block_t weak_ref_block) {
 	__block __weak id weakRef = obj;
 	weak_ref_block(weakRef);

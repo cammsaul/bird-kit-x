@@ -67,9 +67,11 @@ typedef void(^Transform3DCompletionBlock)();
 /// Helper method to add constraints by an array of visual format strings to views passed in viewsDictionary, using metrics in metrics dictionary.
 - (void)addConstraints:(NSArray *)visualFormatStrings metrics:(NSDictionary *)metrics views:(NSDictionary *)viewsDictionary;
 
-/// Helper method to add a constraint to keep this view centered horizontally in its superview.
+/// Helper method to add constraints to keep this subview centered horizontally and vertically in self.
+- (void)addConstraintToCenterView:(UIView *)view;
+/// Helper method to add a constraint to keep this subview centered horizontally in self.
 - (void)addConstraintToCenterViewHorizontally:(UIView *)view;
-/// Helper method to add a constraint to keep this view centered vertically in its superview.
+/// Helper method to add a constraint to keep this subview centered vertically in self.
 - (void)addConstraintToCenterViewVertically:(UIView *)view;
 
 - (void)setBorderColor:(UIColor *)color;

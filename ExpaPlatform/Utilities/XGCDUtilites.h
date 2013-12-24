@@ -36,3 +36,6 @@ void dispatch_sync_main(dispatch_block_t block);
 
 /// Helper method to create a weak reference to an object. Happens syncronously.
 void with_weak_ref(id obj, weak_ref_block_t weak_ref_block);
+
+/// Guarantees that block will be executed syncronously on the main thread.
+void guarantee_on_main_thread(void(^block)());
