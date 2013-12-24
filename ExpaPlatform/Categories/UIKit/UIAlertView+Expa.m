@@ -16,7 +16,7 @@ static char AlertViewButtonPressedBlockKey;
 
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle {
 	if (!NSThread.isMainThread) {
-		dispatch_sync(dispatch_get_main_queue(), ^{
+		dispatch_async(dispatch_get_main_queue(), ^{
 			XLog(UIAlertView.class, LogFlagWarn, @"Attempted to show alert on background thread. Showing on main thread.", title, message);
 			[self showAlertWithTitle:title message:message cancelButtonTitle:cancelButtonTitle];
 		});
