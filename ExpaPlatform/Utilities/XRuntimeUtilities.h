@@ -11,7 +11,7 @@ typedef void(^swizzle_with_block_t)(id _self, ...);
 
 /// Easy method to swizzle a method with a block. Returns a pointer to the original function as well, if
 /// you would like to call that from the swizzled block. Example:
-/// #\code
+/// \code
 ///	swizzle_with_block(NSLayoutConstraint.class, sel_registerName("_addToEngine:integralizationAdjustment:mutuallyExclusiveConstraints:"), ^id(SEL sel, void(*orig_fptr)(id, SEL, ...)) {
 ///		return ^(UIView *_self, id engine, id integralizationAdjustment, id mutuallyExclusiveConstraints) {
 ///			@try {
@@ -21,7 +21,10 @@ typedef void(^swizzle_with_block_t)(id _self, ...);
 ///			}
 ///		};
 ///	});
-/// #\endcode
+/// \endcode
+/// \param cls The class whose method you'd like to swizzle
+/// \param sel The selector for the method you are swizzling, (use @selector() or sel_registerName())
+/// \param block A block of type ^id(SEL sel, void(*orig_fptr)(id, SEL, ...)), that should return a block that takes the same parameters as the method being swizzled.
 void swizzle_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...)));
 
 /// Easy method to add a method to a class at runtime with a block. Method signature is inferred automatically based on block's type.

@@ -10,7 +10,7 @@
 
 @implementation UIColor (Expa)
 
-+ (UIColor *)colorWithHexString:(char const * const)hexString {
++ (UIColor *)colorWithHexString:(const char *)hexString {
 	if (hexString[0] == '#') return [UIColor colorWithHexString:&hexString[1]]; // recurse if we start with a "#"
 	
 	const int ele_len = strnlen(hexString, 8) <= 4 ? 1 : 2;
