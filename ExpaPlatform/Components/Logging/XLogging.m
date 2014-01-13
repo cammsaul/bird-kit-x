@@ -37,8 +37,15 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
 	logMessage = [NSString stringWithFormat:@"[%s %s] %@", class_getName([sender class]), StringForLogFlag(flag), logMessage];
 
 	#if DEBUG
-		printf("%s\n", [logMessage cStringUsingEncoding:NSUTF8StringEncoding]);
-	#endif
-	
+        const char * const logColor =   (flag & LogFlagError)   ?   XLoggingColorRed    :
+                                        (flag & LogFlagWarn)    ?   XLoggingColorOrange :
+                                        (flag & LogLevelInfo)   ?   XLoggingColorGreen  :
+                                                                    XLoggingColorBlue   ;
+    //    setenv("XcodeColors", "YES", 0);
+        @synchronized(XLogClasses) {
+            printf("%s%s%s\n", logColor, [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+        }
+    #endif
+
 	CLSLog(@"%@", logMessage);
 }

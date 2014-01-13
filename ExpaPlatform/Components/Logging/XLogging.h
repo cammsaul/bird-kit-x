@@ -5,8 +5,17 @@
 //  Created by Cameron Saul on 10/22/13.
 //  Copyright (c) 2013 Series G. All rights reserved.
 //
+// Now with support for color logging!
+// Install the Xcode plugin by following the directions here: https://github.com/robbiehanson/XcodeColors
 
 @import Foundation;
+
+#define XLOGGING_COLOR_ESCAPE  "\033["
+static const char * const XLoggingColorReset    = ";";
+static const char * const XLoggingColorRed      = XLOGGING_COLOR_ESCAPE "fg255,0,0;";
+static const char * const XLoggingColorOrange   = XLOGGING_COLOR_ESCAPE "fg200,100,0;";
+static const char * const XLoggingColorGreen    = XLOGGING_COLOR_ESCAPE "fg0,180,0;";
+static const char * const XLoggingColorBlue     = XLOGGING_COLOR_ESCAPE "fg0,0,200;";
 
 typedef enum : NSUInteger {
 	LogFlagError	= 1 << 0, // 1 = 0001
