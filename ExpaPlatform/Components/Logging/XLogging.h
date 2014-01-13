@@ -11,7 +11,7 @@
 @import Foundation;
 
 #define XLOGGING_COLOR_ESCAPE  "\033["
-static const char * const XLoggingColorReset    = ";";
+static const char * const XLoggingColorReset    = XLOGGING_COLOR_ESCAPE "fg;";
 static const char * const XLoggingColorRed      = XLOGGING_COLOR_ESCAPE "fg255,0,0;";
 static const char * const XLoggingColorOrange   = XLOGGING_COLOR_ESCAPE "fg200,100,0;";
 static const char * const XLoggingColorGreen    = XLOGGING_COLOR_ESCAPE "fg0,180,0;";
