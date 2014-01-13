@@ -41,9 +41,9 @@ PROP CLLocationCoordinate2D coordinate;
 }
 
 + (void)reverseGeocodeCoordinate:(CLLocationCoordinate2D)coordinate completion:(XReverseGeocdoingCompletionBlock)completionBlock {
-	XLog(self, LogFlagInfo, @"Reverse geocoding %f, %f", coordinate.latitude, coordinate.longitude);
+//	XLog(self, LogFlagInfo, @"Reverse geocoding %f, %f", coordinate.latitude, coordinate.longitude);
 	if (__activeRequest) {
-		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
+//		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
 		[__geocoder cancelGeocode];
 	}
 	
@@ -57,7 +57,7 @@ PROP CLLocationCoordinate2D coordinate;
 		}
 		CLPlacemark *placemark = placemarks[0];
 		NSString *address = placemark.addressDictionary[@"Street"]; // <- what's the real constant key
-		XLog(self, LogFlagInfo, @"Reverse geocoding result: %@", address);
+//		XLog(self, LogFlagInfo, @"Reverse geocoding result: %@", address);
 		completionBlock(address);
 	}];
 }
@@ -70,10 +70,10 @@ PROP CLLocationCoordinate2D coordinate;
 		return;
 	}
 	
-	XLog(self, LogFlagInfo, @"geocoding %@, %@, %@, %@, %@", requestedStreetAddress, city, state, zipCode, country);
+//	XLog(self, LogFlagInfo, @"geocoding %@, %@, %@, %@, %@", requestedStreetAddress, city, state, zipCode, country);
 	
 	if (__activeRequest) {
-		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
+//		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
 		[__geocoder cancelGeocode];
 	}
 	__activeRequest = YES;
@@ -98,7 +98,7 @@ PROP CLLocationCoordinate2D coordinate;
             return;
         }
 		
-		XLog(self, LogFlagInfo, @"%d results for '%@' geocoding", placemarks.count, requestedStreetAddress);
+//		XLog(self, LogFlagInfo, @"%d results for '%@' geocoding", placemarks.count, requestedStreetAddress);
         
         NSMutableArray *results = [NSMutableArray array];
         for (CLPlacemark *placemark in placemarks) {

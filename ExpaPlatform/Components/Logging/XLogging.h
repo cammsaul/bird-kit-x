@@ -16,6 +16,7 @@ static const char * const XLoggingColorRed      = XLOGGING_COLOR_ESCAPE "fg255,0
 static const char * const XLoggingColorOrange   = XLOGGING_COLOR_ESCAPE "fg200,100,0;";
 static const char * const XLoggingColorGreen    = XLOGGING_COLOR_ESCAPE "fg0,180,0;";
 static const char * const XLoggingColorBlue     = XLOGGING_COLOR_ESCAPE "fg0,0,200;";
+static const char * const XLoggingColorPink     = XLOGGING_COLOR_ESCAPE "fg209,57,168;";
 
 typedef enum : NSUInteger {
 	LogFlagError	= 1 << 0, // 1 = 0001
