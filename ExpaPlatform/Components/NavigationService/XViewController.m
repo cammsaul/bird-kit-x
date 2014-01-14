@@ -7,6 +7,7 @@
 //
 
 #import "XViewController.h"
+#import "NSDictionary+Expa.h"
 
 @implementation XViewController
 
@@ -25,6 +26,12 @@
 - (instancetype)initWithParams:(NSDictionary *)params {
 	if (self = [super init]) {
 		_params = params;
+        if (params[XNavigationServiceDelegateParam]) {
+            if ([self respondsToSelector:@selector(setDelegate:)]) {
+                [(id)self setDelegate:params[XNavigationServiceDelegateParam]];
+                _params = [_params dictionaryBySettingValue:nil forKey:XNavigationServiceDelegateParam];
+            }
+        }
 		[self setup];
 	}
 	return self;
