@@ -19,7 +19,7 @@
 @interface XViewController : UIViewController <InitWithParams>
 
 /// A dictionary of parameters that were passed to the view controller if it was called with initWithParams
-PROP_STRONG_RO NSDictionary *params;
+@property (nonatomic, strong, readonly) NSDictionary *params;
 
 /// Optional class method that can be used to do parameter validation.
 /// Default implementation does nothing, but subclasses of XViewController can override this to validate their parameters.

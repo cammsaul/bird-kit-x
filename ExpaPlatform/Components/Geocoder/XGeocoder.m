@@ -15,10 +15,10 @@ static CLGeocoder *__geocoder;
 static BOOL __activeRequest;
 
 @interface XGeocoderResult ()
-PROP_STRONG NSString *name;
-PROP_STRONG NSString *streetAddress;
-PROP_STRONG NSString *city;
-PROP CLLocationCoordinate2D coordinate;
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, strong, readwrite) NSString *streetAddress;
+@property (nonatomic, strong, readwrite) NSString *city;
+@property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
 @end
 
 @implementation XGeocoderResult

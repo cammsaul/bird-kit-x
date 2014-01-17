@@ -10,6 +10,4 @@
 	@import QuartzCore;
 	@import CoreLocation;
 	@import MapKit;
-
-	#import "XGlobalMacros.h"
 #endif

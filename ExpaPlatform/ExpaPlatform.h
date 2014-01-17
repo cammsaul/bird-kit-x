@@ -7,7 +7,6 @@
 //
 
 // components
-#import "XGlobalMacros.h"
 #import "XLogging.h"
 #import "XNavigationService.h"
 #import "XViewController.h"

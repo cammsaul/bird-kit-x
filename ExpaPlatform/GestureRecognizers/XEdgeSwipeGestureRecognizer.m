@@ -10,10 +10,10 @@
 #import "UIView+Expa.h"
 
 @interface BKEdgeSwipeGestureRecognizer()
-PROP UISwipeGestureRecognizerDirection swipeDirection;
-PROP CGFloat swipeAmount;
-PROP CGPoint swipeStartPoint;
-PROP BOOL currentlyTrackingSwipe;
+@property (nonatomic, readwrite) UISwipeGestureRecognizerDirection swipeDirection;
+@property (nonatomic, readwrite) CGFloat swipeAmount;
+@property (nonatomic, readwrite) CGPoint swipeStartPoint;
+@property (nonatomic, readwrite) BOOL currentlyTrackingSwipe;
 @end
 
 @implementation BKEdgeSwipeGestureRecognizer
