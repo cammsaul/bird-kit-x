@@ -10,8 +10,17 @@
 #import "NSString+XURLEncoding.h"
 #import "XFeedbackViewController.h"
 
+/// Notes to include as part of a new Asana ticket. postBugReportWithImage:message: sets this property.
+static NSString * const XFeedbackOptionsAsanaTaskNotes = @"notes";
+
+/// The name of the new Asana ticket. Default is "[AppName] [AppVersion] Feedback".
+/// Message provided by the user, if any, is automatically appended to the Task Name.
+static NSString * const XFeedbackOptionsAsanaTaskName = @"name";
+
+static __weak id<XFeedbackDelegate> __delegate;
+
 static NSString *__AsanaAPIKey;
-static NSString *__AsanaWorkspaceID;
+static NSMutableDictionary *__AsanaOptions;
 
 static NSString * XBase64EncodedStringFromString(NSString *string) {
     NSData *data = [NSData dataWithBytes:[string UTF8String] length:[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
@@ -54,14 +63,25 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
     return sharedInstance;
 }
 
-+ (void)registerAsanaAPIKey:(NSString *)appID workspaceID:(NSString*)workspaceID{
-    __AsanaAPIKey = appID;
-    __AsanaWorkspaceID = workspaceID;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance]
-                                             selector:@selector(screenshotTaken)
-                                                 name:UIApplicationUserDidTakeScreenshotNotification
-                                               object:nil];
++ (void)registerAsanaAPIKey:(NSString *)apiKey workspaceID:(NSString *)workspaceID {
+	[self registerAsanaAPIKey:apiKey options:@{XFeedbackOptionsAsanaProjectIDs:workspaceID}];
+}
+
++ (void)registerAsanaAPIKey:(NSString *)apiKey options:(NSDictionary *)options {
+    __AsanaAPIKey = apiKey;
+	
+	NSMutableDictionary *asanaOptions = options ? [options mutableCopy] : [NSMutableDictionary dictionary];
+	
+	if (asanaOptions[XFeedbackOptionsDelegate]) {
+		__delegate = asanaOptions[XFeedbackOptionsDelegate];
+		[asanaOptions removeObjectForKey:XFeedbackOptionsDelegate];
+	}
+	
+	if (!asanaOptions[XFeedbackOptionsAsanaAssigneeStatus]) asanaOptions[XFeedbackOptionsAsanaAssigneeStatus] = XFeedbackOptionsAsanaAssigneeStatusInbox;
+	
+	__AsanaOptions = asanaOptions;
+	
+    [[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(screenshotTaken) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
 }
 
 - (void)callMailAsFallback:(UIImage*)image
@@ -95,6 +115,7 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
 
 + (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message
 {
+	NSAssert(__AsanaAPIKey, @"You need to call registerAsanaAPIKey:options: before calling this method.");
     [[self sharedInstance] postBugReportWithImage:image message:message];
 }
 
@@ -105,15 +126,38 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", XBase64EncodedStringFromString(basicAuthCredentials)];
     [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
     
-    NSString *name = [NSString stringWithFormat:@"name=%@",
-                      [@"New Bug Report" urlEncodeUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSString *msg = [NSString stringWithFormat:@"notes=%@",
-                     [message urlEncodeUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSString *myParameters = [NSString stringWithFormat:@"%@&%@&workspace=%@",name,msg,__AsanaWorkspaceID];
+	// get notes
+	NSString * const appName = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+	NSString * const appVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+	NSString *notes = [NSString stringWithFormat:@"%@ %@\n", appName, appVersion];
+	if (__delegate && [__delegate respondsToSelector:@selector(feedbackNotesForNewTask)]) {
+		notes = [notes stringByAppendingString:[__delegate feedbackNotesForNewTask]];
+	}
+	
+	__AsanaOptions[XFeedbackOptionsAsanaTaskNotes] = notes;
+	__AsanaOptions[XFeedbackOptionsAsanaTaskName] = message.length ? message : @"Feedback";
+	
+	NSMutableString *params = [[NSMutableString alloc] init];
+	for (NSString *key in __AsanaOptions) {
+		if (params.length) [params appendString:@"&"];
+		NSString *encodedValue = nil;
+		id value = __AsanaOptions[key];
+		
+		if ([value isKindOfClass:NSString.class]) {
+			encodedValue = [value urlEncodeUsingEncoding:NSUTF8StringEncoding];
+		} else if ([value isKindOfClass:NSArray.class]) {
+			encodedValue = @"";
+			for (NSString *aValue in value) {
+				if (encodedValue.length) encodedValue = [encodedValue stringByAppendingString:@","];
+				encodedValue = [encodedValue stringByAppendingString:[aValue urlEncodeUsingEncoding:NSUTF8StringEncoding]];
+			}
+		}
+		
+		[params appendFormat:@"%@=%@", key, encodedValue];
+	}
+	
     [urlRequest setHTTPMethod:@"POST"];
-    [urlRequest setHTTPBody:[myParameters dataUsingEncoding:NSUTF8StringEncoding]];
+    [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     [NSURLConnection sendAsynchronousRequest:urlRequest
                                        queue:[NSOperationQueue mainQueue]
