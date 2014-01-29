@@ -156,8 +156,8 @@ static char ShowsLoadingSpinnerKey;
 }
 
 - (void)addConstraintToCenterView:(UIView *)view {
-	[self addConstraintToCenterViewHorizontally:self];
-	[self addConstraintToCenterViewVertically:self];
+	[self addConstraintToCenterViewHorizontally:view];
+	[self addConstraintToCenterViewVertically:view];
 }
 
 - (void)addConstraintToCenterViewHorizontally:(UIView *)view {
