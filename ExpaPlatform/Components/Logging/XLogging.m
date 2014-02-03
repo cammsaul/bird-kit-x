@@ -25,27 +25,51 @@ char const * const StringForLogFlag(LogFlag flag) {
 	else return NULL;
 }
 
+//**** These functions are largely duplicated because varargs don't play very nicely when passing between functions ****//
+
 void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
-	if (!(CurrentLogLevel & flag)) return;
 	if (XLogClasses && ![XLogClasses containsObject:[sender class]]) return;
+	if (!(CurrentLogLevel & flag)) return;
 	
 	va_list argptr;
 	va_start(argptr, formatString);
 	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
 	va_end(argptr);
-
+	
 	logMessage = [NSString stringWithFormat:@"[%s %s] %@", class_getName([sender class]), StringForLogFlag(flag), logMessage];
-
+	
 	#if DEBUG
-        const char * const logColor =   (flag & LogFlagError)   ?   XLoggingColorRed    :
-                                        (flag & LogFlagWarn)    ?   XLoggingColorOrange :
-                                        (flag & LogLevelInfo)   ?   XLoggingColorGreen  :
-                                                                    XLoggingColorBlue   ;
-    //    setenv("XcodeColors", "YES", 0);
-        @synchronized(XLogClasses) {
-            printf("%s%s%s\n", logColor, [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
-        }
-    #endif
+		const char * const logColor =   (flag & LogFlagError)   ?   XLoggingColorRed    :
+		(flag & LogFlagWarn)    ?   XLoggingColorOrange :
+		(flag & LogLevelInfo)   ?   XLoggingColorGreen  :
+		XLoggingColorBlue   ;
+		@synchronized(XLogClasses) {
+			printf("%s%s%s\n", logColor, [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+		}
+	#endif
+	
+	CLSLog(@"%@", logMessage);
+}
 
+void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
+	if (!(CurrentLogLevel & flag)) return;
+		
+	va_list argptr;
+	va_start(argptr, formatString);
+	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
+	va_end(argptr);
+	
+	logMessage = [NSString stringWithFormat:@"[%s %s] %@", tag, StringForLogFlag(flag), logMessage];
+	
+	#if DEBUG
+		const char * const logColor =   (flag & LogFlagError)   ?   XLoggingColorRed    :
+										(flag & LogFlagWarn)    ?   XLoggingColorOrange :
+										(flag & LogLevelInfo)   ?   XLoggingColorGreen  :
+																	XLoggingColorBlue   ;
+		@synchronized(XLogClasses) {
+			printf("%s%s%s\n", logColor, [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+		}
+	#endif
+	
 	CLSLog(@"%@", logMessage);
 }

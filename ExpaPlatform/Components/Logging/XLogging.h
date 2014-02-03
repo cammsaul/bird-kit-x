@@ -27,6 +27,13 @@ typedef enum : NSUInteger {
 
 void XLog(id sender, LogFlag flag, NSString *formatString, ...);
 
+/// Alternative version of XLog that allows you to specify a tag for situations where it
+/// is used outside of an Objective-C class.
+/// \param tag Tag will appear at the beginning of a log message like this: [TAG Info] ...
+/// \param flag LogFlagError, LogFlagWarn, LogFlagInfo, or LogFlagVerbose
+/// \param formatString NSString with format specifiers.
+void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...);
+
 typedef enum : NSUInteger {
 	LogLevelError	= 1,		// 0001
 	LogLevelWarn	= 3,		// 0011
