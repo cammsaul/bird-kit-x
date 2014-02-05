@@ -63,10 +63,6 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
     return sharedInstance;
 }
 
-+ (void)registerAsanaAPIKey:(NSString *)apiKey workspaceID:(NSString *)workspaceID {
-	[self registerAsanaAPIKey:apiKey options:@{XFeedbackOptionsAsanaProjectIDs:workspaceID}];
-}
-
 + (void)registerAsanaAPIKey:(NSString *)apiKey options:(NSDictionary *)options {
     __AsanaAPIKey = apiKey;
 	

@@ -48,10 +48,6 @@ static NSString * const XFeedbackOptionsDelegate = @"[delegate]";
 /// \param xFeedbackOptions Dictionary of options keyed by an XFeedbackOptions string.
 + (void)registerAsanaAPIKey:(NSString *)apiKey options:(NSDictionary *)xFeedbackOptions;
 
-/// Register an AsanaAPIKey and a workspace ID to create tasks to. Provided for backwards compatibility.
-/// \deprecated Prefer registerAsanaAPIKey:options: over this method.
-+ (void)registerAsanaAPIKey:(NSString *)apiKey workspaceID:(NSString *)workspaceID;
-
 /// Post a new Asana ticket with image and message using the configuration settings from registerAsanaAPIKey:options:
 + (void)postBugReportWithImage:(UIImage*)image message:(NSString*)message;
 
