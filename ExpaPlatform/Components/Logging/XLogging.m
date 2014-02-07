@@ -53,6 +53,7 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
 
 void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
 	if (!(CurrentLogLevel & flag)) return;
+	if (XLogClasses) return;
 		
 	va_list argptr;
 	va_start(argptr, formatString);
