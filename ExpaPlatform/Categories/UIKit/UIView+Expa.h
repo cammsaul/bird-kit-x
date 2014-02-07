@@ -74,7 +74,9 @@ typedef void(^Transform3DCompletionBlock)();
 /// Helper method to add a constraint to keep this subview centered vertically in self.
 - (void)addConstraintToCenterViewVertically:(UIView *)view;
 
+/// Convenience method to set self.layer.borderColor using a UIColor
 - (void)setBorderColor:(UIColor *)color;
+/// Convenience method to set self.layer.borderWidth
 - (void)setBorderWidth:(CGFloat)width;
 
 - (UIButton *)hiddenButton;
