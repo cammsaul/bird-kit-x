@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>InitWithParams Protocol Reference</title>
+		<title>XTestWhatever Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">InitWithParams Protocol Reference</h1>
+				<h1 class="hideInXcode">XTestWhatever Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,16 +37,15 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/validateParams:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParams:</option>
-	
-	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithParams:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithParams:</option>
+	<option value="//api/name/setUp">&nbsp;&nbsp;&nbsp;&nbsp;- setUp</option>
+	
+	<option value="//api/name/tearDown">&nbsp;&nbsp;&nbsp;&nbsp;- tearDown</option>
+	
+	<option value="//api/name/testExample">&nbsp;&nbsp;&nbsp;&nbsp;- testExample</option>
 	
 	
 	
@@ -70,17 +69,15 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParams:">validateParams:</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithParams:">initWithParams:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUp">setUp</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tearDown">tearDown</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testExample">testExample</a></span></li>
 	
 </ul></li>
 
@@ -89,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="InitWithParams Protocol Reference" name="top"></a>
+				<a title="XTestWhatever Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -98,18 +95,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">InitWithParams Protocol Reference</h1>
+						<h1 class="title title-header">XTestWhatever Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">XCTestCase</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">XNavigationService.h</td>
+	<td class="specification-value">XTestWhatever.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -129,13 +126,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithParams:">&ndash;&nbsp;initWithParams:</a></code>
+		<code><a href="#//api/name/setUp">&ndash;&nbsp;setUp</a></code>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/validateParams:">+&nbsp;validateParams:</a></code>
+		<code><a href="#//api/name/tearDown">&ndash;&nbsp;tearDown</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testExample">&ndash;&nbsp;testExample</a></code>
 	</span>
 	
 	
@@ -150,49 +153,6 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/validateParams:" title="validateParams:"></a>
-	<h3 class="subsubtitle method-title">validateParams:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>You may optionally implement this method and do validation of the parameters passed to the view controller. This method is called, if it exists,
-whenever the view controller is pushed. Use NSAssert to do simple parameter checking.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)validateParams:(NSDictionary *)<em>params</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">XNavigationService.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
@@ -200,41 +160,36 @@ whenever the view controller is pushed. Use NSAssert to do simple parameter chec
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithParams:" title="initWithParams:"></a>
-	<h3 class="subsubtitle method-title">initWithParams:</h3>
+	<a name="//api/name/setUp" title="setUp"></a>
+	<h3 class="subsubtitle method-title">setUp</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>Called automagically by <a href="../Classes/XNavigationService.html#//api/name/navigateTo:params:">[XNavigationService navigateTo:params:]</a> if this method is implemented. XViewController implements this method,
-And the default implementation just sets self.params.
-Subclasses of XViewController should override [super initWithParams:] rather than init: or initWithNibNamed:.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithParams:(NSDictionary *)<em>params</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setUp</code></div>
 
     
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tearDown" title="tearDown"></a>
+	<h3 class="subsubtitle method-title">tearDown</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (void)tearDown</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testExample" title="testExample"></a>
+	<h3 class="subsubtitle method-title">testExample</h3>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">XNavigationService.h</code><br />
-	</div>				
-	
-	
+
+	<div class="method-subsection method-declaration"><code>- (void)testExample</code></div>
+
+    
 </div>
 						
 					</div>
