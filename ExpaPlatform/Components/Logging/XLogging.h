@@ -17,12 +17,14 @@ static const char * const XLoggingColorOrange   = XLOGGING_COLOR_ESCAPE "fg200,1
 static const char * const XLoggingColorGreen    = XLOGGING_COLOR_ESCAPE "fg0,180,0;";
 static const char * const XLoggingColorBlue     = XLOGGING_COLOR_ESCAPE "fg0,0,200;";
 static const char * const XLoggingColorPink     = XLOGGING_COLOR_ESCAPE "fg209,57,168;";
+static const char * const XLoggingColorPurp     = XLOGGING_COLOR_ESCAPE "fg128,0,255;";
 
 typedef enum : NSUInteger {
-	LogFlagError	= 1 << 0, // 1 = 0001
-	LogFlagWarn		= 1 << 1, // 2 = 0010
-	LogFlagInfo		= 1 << 2, // 4 = 0100
-	LogFlagVerbose	= 1 << 3, // 8 = 1000
+	LogFlagError	= 1 << 0, //  1 = 00001
+	LogFlagWarn		= 1 << 1, //  2 = 00010
+	LogFlagDebug	= 1 << 2, //  4 = 00100
+	LogFlagInfo		= 1 << 3, //  8 = 01000
+	LogFlagVerbose	= 1 << 4, // 16 = 10000
 } LogFlag;
 
 void XLog(id sender, LogFlag flag, NSString *formatString, ...);
@@ -35,10 +37,11 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...);
 void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...);
 
 typedef enum : NSUInteger {
-	LogLevelError	= 1,		// 0001
-	LogLevelWarn	= 3,		// 0011
-	LogLevelInfo	= 7,		// 0111
-	LogLevelVerbose	= 15,		// 1111
+	LogLevelError	= 1,		// 00001
+	LogLevelWarn	= 3,		// 00011
+	LogLevelDebug	= 7,		// 00111
+	LogLevelInfo	= 15,		// 01111
+	LogLevelVerbose	= 31,		// 11111
 } LogLevel;
 
 /// Change this value to set the logging level for the app (e.g., you may want to set it to 0 for production builds). Default is LogLevelInfo.
