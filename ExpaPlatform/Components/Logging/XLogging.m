@@ -42,7 +42,7 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
 	
 	va_list argptr;
 	va_start(argptr, formatString);
-	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
+	NSString *logMessage = [[[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr] copy];
 	va_end(argptr);
 	
 	logMessage = [NSString stringWithFormat:@"[%s %s] %@", class_getName([sender class]), stringForLogFlag(flag), logMessage];
@@ -62,7 +62,7 @@ void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
 		
 	va_list argptr;
 	va_start(argptr, formatString);
-	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
+	NSString *logMessage = [[[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr] copy];
 	va_end(argptr);
 	
 	logMessage = [NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), logMessage];
