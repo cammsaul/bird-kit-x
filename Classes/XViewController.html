@@ -55,6 +55,8 @@
 	
 	<option value="//api/name/awakeFromNib">&nbsp;&nbsp;&nbsp;&nbsp;- awakeFromNib</option>
 	
+	<option value="//api/name/callSetup">&nbsp;&nbsp;&nbsp;&nbsp;- callSetup</option>
+	
 	<option value="//api/name/dealloc">&nbsp;&nbsp;&nbsp;&nbsp;- dealloc</option>
 	
 	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
@@ -116,6 +118,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/awakeFromNib">awakeFromNib</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callSetup">callSetup</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dealloc">dealloc</a></span></li>
 	
@@ -276,6 +280,12 @@ The params property is automatically set and logged.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/callSetup">&ndash;&nbsp;callSetup</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
 	</span>
 	
@@ -411,6 +421,42 @@ This method is called, if it exists, whenever the view controller is pushed. Use
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/callSetup" title="callSetup"></a>
+	<h3 class="subsubtitle method-title">callSetup</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Helper to check self.hasCalledSetup so we don&rsquo;t do it more than once</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)callSetup</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/dealloc" title="dealloc"></a>
 	<h3 class="subsubtitle method-title">dealloc</h3>
 	
@@ -426,10 +472,35 @@ This method is called, if it exists, whenever the view controller is pushed. Use
 	<h3 class="subsubtitle method-title">init</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>We don&rsquo;t want to accidentally call <a href="#//api/name/setup">setup</a> multiple times is various subclasses do/don&rsquo;t implement different versions of init, etc</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XViewController.m</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
