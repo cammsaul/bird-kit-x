@@ -32,19 +32,29 @@ static char AlertViewButtonPressedBlockKey;
 		buttonPressedBlock:(AlertViewButtonPressedBlock)buttonPressedBlock
 		 cancelButtonTitle:(NSString *)cancelButtonTitle
 		 otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION {
-	if (!NSThread.isMainThread) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self showAlertWithTitle:title message:message buttonPressedBlock:buttonPressedBlock cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
-		});
-		return;
-	}
-	UIAlertView *alertView = [[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+	
+	UIAlertView *alertView = [[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
+	
+	va_list args;
+	va_start(args, otherButtonTitles);
+	NSString *otherButtonTitle = otherButtonTitles; // the first arg
+	do {
+		if (otherButtonTitle) [alertView addButtonWithTitle:otherButtonTitle];
+	} while ((otherButtonTitle = va_arg(args, NSString *)) != nil);
+	va_end(args);
 	
 	if (buttonPressedBlock) {
 		alertView.delegate = alertView;
 		objc_setAssociatedObject(alertView, &AlertViewButtonPressedBlockKey, buttonPressedBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 	}
-	[alertView show];
+	
+	if (!NSThread.isMainThread) {
+		dispatch_async_main(^{
+			[alertView show];
+		});
+	} else {
+		[alertView show];
+	}
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
