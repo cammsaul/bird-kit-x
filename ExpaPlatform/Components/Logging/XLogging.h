@@ -36,6 +36,10 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...);
 /// \param formatString NSString with format specifiers.
 void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...);
 
+/// If DEBUG is set, logging is also saved to a string in memory so it can be viewed at runtime.
+/// This method returns a copy to that string
+NSString *XLogApplicationLog();
+
 typedef enum : NSUInteger {
 	LogLevelError	= 1,		// 00001
 	LogLevelWarn	= 3,		// 00011

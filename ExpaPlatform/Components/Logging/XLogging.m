@@ -17,6 +17,8 @@ int *XLogLevel = &CurrentLogLevel;
 
 __strong NSSet *XLogClasses = nil;
 
+static NSMutableString *__xLogString = nil;
+
 const char * stringForLogFlag(LogFlag flag) {
 	if		(flag & LogFlagVerbose)	return "Verbose";
 	else if (flag & LogFlagDebug)	return "Debug";
@@ -34,7 +36,7 @@ const char *colorForLogFlag(LogFlag flag) {
 										XLoggingColorBlue   ;
 }
 
-//**** These functions are largely duplicated because varargs don't play very nicely when passing between functions ****//
+void logMessage(const char *tag, LogFlag flag, NSString *message);
 
 void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
 	if (XLogClasses && ![XLogClasses containsObject:[sender class]]) return;
@@ -42,18 +44,10 @@ void XLog(id sender, LogFlag flag, NSString *formatString, ...) {
 	
 	va_list argptr;
 	va_start(argptr, formatString);
-	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
+	NSString *message = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
 	va_end(argptr);
 	
-	logMessage = [[NSString stringWithFormat:@"[%s %s] %@", class_getName([sender class]), stringForLogFlag(flag), logMessage] copy];
-	
-	#if DEBUG
-		@synchronized(XLogClasses) {
-			printf("%s%s%s\n", colorForLogFlag(flag), [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
-		}
-	#endif
-	
-	CLSLog(@"%@", logMessage);
+	logMessage(class_getName([sender class]), flag, message);
 }
 
 void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
@@ -62,16 +56,29 @@ void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
 		
 	va_list argptr;
 	va_start(argptr, formatString);
-	NSString *logMessage = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
+	NSString *message = [[NSString alloc] initWithFormat:(NSString *)formatString arguments:argptr];
 	va_end(argptr);
-	
-	logMessage = [[NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), logMessage] copy];
+		
+	logMessage(tag, flag, message);
+}
+
+void logMessage(const char *tag, LogFlag flag, NSString *message) {
+	message = [[NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), message] copy];
 	
 	#if DEBUG
 		@synchronized(XLogClasses) {
-			printf("%s%s%s\n", colorForLogFlag(flag), [logMessage cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+			printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+			
+			if (!__xLogString) {
+				__xLogString = [NSMutableString string];
+			}
+			[__xLogString appendFormat:@"%@\n\n", message];
 		}
 	#endif
 	
-	CLSLog(@"%@", logMessage);
+	CLSLog(@"%@", message);
+}
+
+NSString *XLogApplicationLog() {
+	return [__xLogString copy];
 }
