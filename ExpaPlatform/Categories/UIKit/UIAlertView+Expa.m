@@ -35,13 +35,15 @@ static char AlertViewButtonPressedBlockKey;
 	
 	UIAlertView *alertView = [[self alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
 	
-	va_list args;
-	va_start(args, otherButtonTitles);
-	NSString *otherButtonTitle = otherButtonTitles; // the first arg
-	do {
-		if (otherButtonTitle) [alertView addButtonWithTitle:otherButtonTitle];
-	} while ((otherButtonTitle = va_arg(args, NSString *)) != nil);
-	va_end(args);
+	if (otherButtonTitles) {
+		va_list args;
+		va_start(args, otherButtonTitles);
+		NSString *otherButtonTitle = otherButtonTitles; // the first arg
+		do {
+			if (otherButtonTitle) [alertView addButtonWithTitle:otherButtonTitle];
+		} while ((otherButtonTitle = va_arg(args, NSString *)) != nil);
+		va_end(args);
+	}
 	
 	if (buttonPressedBlock) {
 		alertView.delegate = alertView;
