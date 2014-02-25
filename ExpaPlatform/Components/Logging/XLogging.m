@@ -62,27 +62,35 @@ void XLogWithTag(const char *tag, LogFlag flag, NSString *formatString, ...) {
 	logMessage(tag, flag, message);
 }
 
-void logMessage(const char *tag, LogFlag flag, NSString *message) {
-	message = [[NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), message] copy];
-	
-	#if DEBUG
-		dispatch_async_background_priority(^{
-			@synchronized(XLogClasses) {
-				printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
-				
-				if (!__xLogString) {
-					__xLogString = [NSMutableString string];
-				}
-				[__xLogString appendFormat:@"%@\n\n", message];
-			}
-		});
-	#endif
-	
-	CLSLog(@"%@", message);
+dispatch_queue_t loggingDispatchQueue() {
+	@synchronized(XLogClasses) {
+		static dispatch_queue_t __loggingDispatchQueue;
+		
+		if (!__loggingDispatchQueue) {
+			__loggingDispatchQueue = dispatch_queue_create("com.expa.loggingDispatchQueue", DISPATCH_QUEUE_SERIAL);
+			__xLogString = [NSMutableString string];
+		}
+		
+		return __loggingDispatchQueue;
+	}
+}
+
+void logMessage(const char *tag, LogFlag flag, NSString *_message) {
+	dispatch_async(loggingDispatchQueue(), ^{
+		NSString *message = [NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), _message];
+		
+		printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+		
+		[__xLogString appendFormat:@"%@\n\n", message];
+		
+		CLSLog(@"%@", message);
+	});
 }
 
 NSString *XLogApplicationLog() {
-	@synchronized(XLogClasses) {
-		return [__xLogString copy];
-	}
+	__block NSString *logStr;
+	dispatch_sync(loggingDispatchQueue(), ^{
+		logStr = [__xLogString copy];
+	});
+	return logStr;
 }
