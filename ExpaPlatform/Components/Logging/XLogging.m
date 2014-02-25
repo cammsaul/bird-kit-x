@@ -8,6 +8,7 @@
 
 #import "XLogging.h"
 #import <objc/runtime.h>
+#import "XGCDUtilites.h"
 
 /// Support for Crashlytics
 OBJC_EXTERN void CLSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
@@ -16,7 +17,6 @@ static int CurrentLogLevel = LogLevelInfo;
 int *XLogLevel = &CurrentLogLevel;
 
 __strong NSSet *XLogClasses = nil;
-
 static NSMutableString *__xLogString = nil;
 
 const char * stringForLogFlag(LogFlag flag) {
@@ -66,19 +66,23 @@ void logMessage(const char *tag, LogFlag flag, NSString *message) {
 	message = [[NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), message] copy];
 	
 	#if DEBUG
-		@synchronized(XLogClasses) {
-			printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
-			
-			if (!__xLogString) {
-				__xLogString = [NSMutableString string];
+		dispatch_async_background_priority(^{
+			@synchronized(XLogClasses) {
+				printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
+				
+				if (!__xLogString) {
+					__xLogString = [NSMutableString string];
+				}
+				[__xLogString appendFormat:@"%@\n\n", message];
 			}
-			[__xLogString appendFormat:@"%@\n\n", message];
-		}
+		});
 	#endif
 	
 	CLSLog(@"%@", message);
 }
 
 NSString *XLogApplicationLog() {
-	return [__xLogString copy];
+	@synchronized(XLogClasses) {
+		return [__xLogString copy];
+	}
 }
