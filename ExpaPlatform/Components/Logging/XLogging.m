@@ -76,9 +76,8 @@ dispatch_queue_t loggingDispatchQueue() {
 }
 
 void logMessage(const char *tag, LogFlag flag, NSString *_message) {
+	NSString *message = [NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), _message];
 	dispatch_async(loggingDispatchQueue(), ^{
-		NSString *message = [NSString stringWithFormat:@"[%s %s] %@", tag, stringForLogFlag(flag), _message];
-		
 		printf("%s%s%s\n", colorForLogFlag(flag), [message cStringUsingEncoding:NSUTF8StringEncoding], XLoggingColorReset);
 		
 		[__xLogString appendFormat:@"%@\n\n", message];
