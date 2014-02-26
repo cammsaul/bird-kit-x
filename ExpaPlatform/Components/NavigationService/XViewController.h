@@ -38,6 +38,17 @@
 /// In any of the above cases, [self setup  is called]. You can override setup to do logic that would otherwise go in an init method (and possibly be duplicated amongst several).
 /// The default implementation does nothing.
 - (void)setup;
+
+/// XViewController overrides nibName behavior to return the name of bundled nibs with suffix '-([NSBundle mainBundle].infoDictionary[@"CFBundleName"])' if present, or whose name matches the name of a superclass.
+/// (CFBundleName is the 'Bundle Name' property in Info.plist. CFBundleName == ${PRODUCT_NAME} by default)
+///
+/// If view controller is initialized via initWithNibNamed:, return that nib if name != NSStringFromClass(self.class).
+///
+/// Otherwise check for nib with '-[BundleName]' suffix in the main bundle, and return if it exists.
+/// (This is useful to have different build targets use different nibs for the same class, or have a certain target override the default nib.)
+///
+/// Otherwise, look for nib whose name matches class name and return one if found. Otherwise, recurse and continue to look for nibs by the name of superclasses.
+- (NSString *)nibName;
 	
 /*---- GEOTIP SPECIFIC FOR THE TIME BEING ----*/
 	
