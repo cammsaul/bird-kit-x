@@ -9,8 +9,7 @@
 #import "XRuntimeUtilities.h"
 #import <objc/runtime.h>
 
-void swizzle_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...))) {
-	Method orig_method = class_getInstanceMethod(cls, sel);
+void swizzle_method_with_block(Method orig_method, Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...))) {
 	IMP orig_imp = method_getImplementation(orig_method);
 	
 	id _swzz_blck = block(sel, (void *)orig_imp);
@@ -22,6 +21,18 @@ void swizzle_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel
 	
 	IMP swizz_imp = imp_implementationWithBlock(swzz_blck);
 	class_replaceMethod(cls, sel, swizz_imp, method_getTypeEncoding(orig_method));
+}
+
+void swizzle_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...))) {
+	Method orig_method = class_getInstanceMethod(cls, sel);
+	swizzle_method_with_block(orig_method, cls, sel, block);
+}
+
+void swizzle_class_method_with_block(Class _cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...))) {
+	Class cls = object_getClass(_cls);
+	
+	Method orig_method = class_getClassMethod(cls, sel);
+	swizzle_method_with_block(orig_method, cls, sel, block);
 }
 
 void add_method_with_block(Class cls, const char *name, id _block){

@@ -25,6 +25,9 @@ typedef void(^swizzle_with_block_t)(id _self, ...);
 /// \param block A block of type ^id(SEL sel, void(*orig_fptr)(id, SEL, ...)), that should return a block that takes a pointer to self and then the same parameters as the method being swizzled.
 void swizzle_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...)));
 
+/// version of swizzle_with_block to swizzle a class method.
+void swizzle_class_method_with_block(Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...)));
+
 /// Easy method to add a method to a class at runtime with a block. Method signature is inferred automatically based on block's type.
 void add_method_with_block(Class cls, const char *name, id _block);
 
