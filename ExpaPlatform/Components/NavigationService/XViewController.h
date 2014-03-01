@@ -63,5 +63,7 @@
 	
 /// Called after GeoTipNavigationController pushes/pops to a new 'top' view controller.
 - (void)viewControllerDidBecomeInactive:(BOOL)animated;
+
+- (void)trackEventType:(NSString *)string otherParams:(NSDictionary *)params;
 	
 @end
