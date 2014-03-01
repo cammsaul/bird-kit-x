@@ -8,7 +8,7 @@
 // Now with support for color logging!
 // Install the Xcode plugin by following the directions here: https://github.com/robbiehanson/XcodeColors
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 #define XLOGGING_COLOR_ESCAPE  "\033["
 static const char * const XLoggingColorReset    = XLOGGING_COLOR_ESCAPE "fg;";

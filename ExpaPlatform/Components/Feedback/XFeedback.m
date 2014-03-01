@@ -7,7 +7,7 @@
 //
 
 #import "XFeedback.h"
-#import "NSString+XURLEncoding.h"
+#import "NSString+Expa.h"
 #import "XFeedbackViewController.h"
 
 /// Notes to include as part of a new Asana ticket. postBugReportWithImage:message: sets this property.

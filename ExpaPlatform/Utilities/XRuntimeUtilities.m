@@ -35,6 +35,28 @@ void swizzle_class_method_with_block(Class _cls, SEL sel, swizzle_with_block_t(^
 	swizzle_method_with_block(orig_method, cls, sel, block);
 }
 
+void swizzle_swap_class_methods(Class _cls, SEL orig_sel, SEL new_sel) {
+	Class cls = object_getClass(_cls);
+	Method orig_m = class_getClassMethod(cls, orig_sel);
+	
+	Method new_m = class_getClassMethod(cls, new_sel);
+	IMP new_imp = method_getImplementation(new_m);
+	
+	IMP orig_imp = class_replaceMethod(cls, orig_sel, new_imp, method_getTypeEncoding(orig_m));
+	if (orig_imp) class_replaceMethod(cls, new_sel, orig_imp, method_getTypeEncoding(new_m));
+}
+
+void swizzle_swap_methods(Class cls, SEL orig_sel, SEL new_sel) {
+	Method orig_m = class_getInstanceMethod(cls, orig_sel);
+	
+	Method new_m = class_getInstanceMethod(cls, new_sel);
+	IMP new_imp = method_getImplementation(new_m);
+	
+	IMP orig_imp = class_replaceMethod(cls, orig_sel, new_imp, method_getTypeEncoding(orig_m));
+	class_replaceMethod(cls, new_sel, orig_imp, method_getTypeEncoding(new_m));
+}
+
+
 void add_method_with_block(Class cls, const char *name, id _block){
 	struct _block_descriptor_t {
 		unsigned long reserved;
