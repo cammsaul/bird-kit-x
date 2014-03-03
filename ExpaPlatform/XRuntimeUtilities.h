@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
+#import <objc/runtime.h>
+
 /// The type of block you should return when using swizzle_with_block.
 typedef void(^swizzle_with_block_t)(id _self, ...);
 

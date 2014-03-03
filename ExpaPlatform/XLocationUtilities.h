@@ -8,6 +8,10 @@
 
 #import <MapKit/MapKit.h>
 
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 /// Fast method to calculate distance between coordinates. Uses Haversine formula, but if that fails, tries Spherical Law of Cosines.
 /// Assumes coordinates are both valid. (this is in meters)
 float distance_between_coordinates(CLLocationCoordinate2D coordinate1, CLLocationCoordinate2D coordinate2);
@@ -25,3 +29,7 @@ MKCoordinateRegion MKCoordinateRegionForCoordinates(CLLocationCoordinate2D coord
 
 /// returns YES if the coordinates are equal
 BOOL CLLocationCoordinatesEqual(CLLocationCoordinate2D coordinate1, CLLocationCoordinate2D coordinate2);
+
+#ifdef __cplusplus
+	}
+#endif
