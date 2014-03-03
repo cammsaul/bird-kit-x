@@ -7,34 +7,34 @@
 //
 
 // components
-#import "XLogging.h"
-#import "XNavigationService.h"
-#import "XViewController.h"
-#import "XGeocoder.h"
-#import "XFeedback.h"
+#import "Components/Logging/XLogging.h"
+#import "Components/NavigationService/XNavigationService.h"
+#import "Components/NavigationService/XViewController.h"
+#import "Components/Geocoder/XGeocoder.h"
+#import "Components/Feedback/XFeedback.h"
 
 // Foundation Categories
-#import "NSDictionary+Expa.h"
-#import "NSMutableArray+Expa.h"
-#import "NSString+Expa.h"
+#import "Categories/Foundation/NSDictionary+Expa.h"
+#import "Categories/Foundation/NSMutableArray+Expa.h"
+#import "Categories/Foundation/NSString+Expa.h"
 
 // UIKit Categories
-#import "UIView+Expa.h"
-#import "UIButton+Expa.h"
-#import "UIAlertView+Expa.h"
-#import "NSLayoutConstraint+Expa.h"
-#import "UIImage+Expa.h"
-#import "UIColor+Expa.h"
+#import "Categories/UIKit/UIView+Expa.h"
+#import "Categories/UIKit/UIButton+Expa.h"
+#import "Categories/UIKit/UIAlertView+Expa.h"
+#import "Categories/UIKit/NSLayoutConstraint+Expa.h"
+#import "Categories/UIKit/UIImage+Expa.h"
+#import "Categories/UIKit/UIColor+Expa.h"
 
 // Utility function files
 #ifdef __cplusplus
 	extern "C" {
 #endif
-	#import "XGCDUtilites.h"
-	#import "XDeviceUtilities.h"
-	#import "XLocationUtilities.h"
-	#import "XDevUtilities.h"
-	#import "XRuntimeUtilities.h"
+	#import "Utilities/XGCDUtilites.h"
+	#import "Utilities/XDeviceUtilities.h"
+	#import "Utilities/XLocationUtilities.h"
+	#import "Utilities/XDevUtilities.h"
+	#import "Utilities/XRuntimeUtilities.h"
 #ifdef __cplusplus
 	}
 #endif

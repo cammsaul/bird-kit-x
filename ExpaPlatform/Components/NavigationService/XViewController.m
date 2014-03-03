@@ -12,6 +12,7 @@
 #import "NSDictionary+Expa.h"
 #import "XRuntimeUtilities.h"
 #import "XLogging.h"
+
 @implementation XViewController
 
 + (void)validateParams:(NSDictionary *)params {}; // default implementation does nothing
