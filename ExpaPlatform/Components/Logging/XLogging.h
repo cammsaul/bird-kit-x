@@ -10,6 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef CRASHLYTICS_INTEGRATION
+	#define CRASHLYTICS_INTEGRATION 1
+#endif
+
 #define XLOGGING_COLOR_ESCAPE  "\033["
 static const char * const XLoggingColorReset    = XLOGGING_COLOR_ESCAPE "fg;";
 static const char * const XLoggingColorRed      = XLOGGING_COLOR_ESCAPE "fg255,0,0;";

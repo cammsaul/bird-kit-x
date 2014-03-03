@@ -11,7 +11,9 @@
 #import "XGCDUtilites.h"
 
 /// Support for Crashlytics
-OBJC_EXTERN void CLSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+#if CRASHLYTICS_INTEGRATION
+	OBJC_EXTERN void CLSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+#endif
 
 static int CurrentLogLevel = LogLevelInfo;
 int *XLogLevel = &CurrentLogLevel;
@@ -82,7 +84,9 @@ void logMessage(const char *tag, LogFlag flag, NSString *_message) {
 		
 		[__xLogString appendFormat:@"%@\n\n", message];
 		
-		CLSLog(@"%@", message);
+		#if CRASHLYTICS_INTEGRATION
+			CLSLog(@"%@", message);
+		#endif
 	});
 }
 
