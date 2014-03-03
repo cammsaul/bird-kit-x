@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface UIButton (Expa)
 

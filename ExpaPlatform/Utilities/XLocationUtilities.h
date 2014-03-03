@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-@import MapKit;
+#import <MapKit/MapKit.h>
 
 /// Fast method to calculate distance between coordinates. Uses Haversine formula, but if that fails, tries Spherical Law of Cosines.
 /// Assumes coordinates are both valid. (this is in meters)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 /// Save ourselves a bit of typing by defining some really common resizing masks here
 static const UIViewAutoresizing UIViewAutoresizingFlexibleVerticalMargins	= UIViewAutoresizingFlexibleTopMargin		| UIViewAutoresizingFlexibleBottomMargin;

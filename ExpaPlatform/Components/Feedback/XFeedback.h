@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-@import Foundation;
-@import MessageUI;
+#import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
 
 @protocol XFeedbackDelegate <NSObject>
 @optional

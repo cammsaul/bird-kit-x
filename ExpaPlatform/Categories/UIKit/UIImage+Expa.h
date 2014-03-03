@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-@import CoreMedia;
+#import <CoreMedia/CoreMedia.h>
 
 @interface UIImage (Expa)
 

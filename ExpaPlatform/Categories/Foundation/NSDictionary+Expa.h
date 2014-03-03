@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @interface NSDictionary (Expa)
 

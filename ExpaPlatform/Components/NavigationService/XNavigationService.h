@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
-@import Foundation;
-@import UIKit;
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
