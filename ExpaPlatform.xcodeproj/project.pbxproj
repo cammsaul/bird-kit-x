@@ -278,15 +278,6 @@
 		7E255C5818173047008FD59D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				7E46DAF61819CCC60010ADE2 /* Foundation */,
-				7E46DAF91819CCC60010ADE2 /* UIKit */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		7E46DAF61819CCC60010ADE2 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
 				32DCE4AF18C4DB5000B48621 /* NSDictionary+Expa.h */,
 				32DCE4B018C4DB5000B48621 /* NSDictionary+Expa.m */,
 				32DCE4B118C4DB5000B48621 /* NSLayoutConstraint+Expa.h */,
@@ -295,13 +286,6 @@
 				32DCE4B418C4DB5000B48621 /* NSMutableArray+Expa.m */,
 				32DCE4B518C4DB5000B48621 /* NSString+Expa.h */,
 				32DCE4B618C4DB5000B48621 /* NSString+Expa.mm */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		7E46DAF91819CCC60010ADE2 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
 				32DCE4A018C4DB4400B48621 /* UIAlertView+Expa.h */,
 				32DCE4A118C4DB4400B48621 /* UIAlertView+Expa.m */,
 				32DCE4A218C4DB4400B48621 /* UIButton+Expa.h */,
@@ -313,7 +297,7 @@
 				32DCE4A818C4DB4400B48621 /* UIView+Expa.h */,
 				32DCE4A918C4DB4400B48621 /* UIView+Expa.m */,
 			);
-			path = UIKit;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
