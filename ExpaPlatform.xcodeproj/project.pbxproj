@@ -50,7 +50,6 @@
 		32DCE51018C4DDA100B48621 /* XRuntimeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE50F18C4DDA100B48621 /* XRuntimeUtilities.m */; };
 		32DCE51118C4DDA100B48621 /* XRuntimeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE50F18C4DDA100B48621 /* XRuntimeUtilities.m */; };
 		7E255BFC18171DEC008FD59D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BFB18171DEC008FD59D /* Foundation.framework */; };
-		7E255C0118171DEC008FD59D /* ExpaPlatform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E255C0018171DEC008FD59D /* ExpaPlatform.h */; };
 		7E255C0A18171DEC008FD59D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C0918171DEC008FD59D /* XCTest.framework */; };
 		7E255C0B18171DEC008FD59D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255BFB18171DEC008FD59D /* Foundation.framework */; };
 		7E255C0D18171DEC008FD59D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C0C18171DEC008FD59D /* UIKit.framework */; };
@@ -79,7 +78,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				7E255C0118171DEC008FD59D /* ExpaPlatform.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +134,6 @@
 		7E255BF818171DEC008FD59D /* libExpaPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpaPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255BFB18171DEC008FD59D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E255BFF18171DEC008FD59D /* ExpaPlatform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpaPlatform-Prefix.pch"; sourceTree = "<group>"; };
-		7E255C0018171DEC008FD59D /* ExpaPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpaPlatform.h; sourceTree = "<group>"; };
 		7E255C0818171DEC008FD59D /* ExpaPlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpaPlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E255C0918171DEC008FD59D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7E255C0C18171DEC008FD59D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -221,7 +218,6 @@
 		7E255BFD18171DEC008FD59D /* ExpaPlatform */ = {
 			isa = PBXGroup;
 			children = (
-				7E255C0018171DEC008FD59D /* ExpaPlatform.h */,
 				32DCE4D218C4DBBB00B48621 /* XSingleton.h */,
 				32DCE4D318C4DBBB00B48621 /* XSingleton.m */,
 				32DCE4E518C4DD1400B48621 /* XFeedback.h */,
