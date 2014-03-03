@@ -16,4 +16,7 @@
 /// Renders the UIView using the device's current scaling as a UIImage.
 + (UIImage *)imageFromView:(UIView *)view;
 
+/// Render a new version of the image scaled to fit a certain size.
+- (UIImage *)imageScaledToSize:(CGSize)size;
+
 @end
