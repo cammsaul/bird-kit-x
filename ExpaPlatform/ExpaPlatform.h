@@ -6,10 +6,6 @@
 //  Copyright (c) 2013 Expa, LLC. All rights reserved.
 //
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 // components
 #import "XLogging.h"
 #import "XNavigationService.h"
@@ -31,12 +27,14 @@ extern "C" {
 #import "UIColor+Expa.h"
 
 // Utility function files
-#import "XGCDUtilites.h"
-#import "XDeviceUtilities.h"
-#import "XLocationUtilities.h"
-#import "XDevUtilities.h"
-#import "XRuntimeUtilities.h"
-
 #ifdef __cplusplus
-}
+	extern "C" {
+#endif
+	#import "XGCDUtilites.h"
+	#import "XDeviceUtilities.h"
+	#import "XLocationUtilities.h"
+	#import "XDevUtilities.h"
+	#import "XRuntimeUtilities.h"
+#ifdef __cplusplus
+	}
 #endif
