@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+Expa.h"
+#import "XLogging.h"
 
 @implementation NSDictionary (Expa)
 
@@ -45,6 +46,19 @@
 
 - (BOOL)valueForBool:(NSString *)key {
 	return [self[key] boolValue];
+}
+
+- (NSString *)JSONString {
+	NSError *error = nil;
+	NSString *string = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error] encoding:NSUTF8StringEncoding];
+	if (error) {
+		XLog(self, LogFlagError, @"Error converting NSDictionary to JSON: %@", error.localizedDescription);
+	}
+	return error ? nil : string;
+}
+
+- (NSString *)JSONStringWithError:(__autoreleasing NSError **)error {
+	return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:error] encoding:NSUTF8StringEncoding];
 }
 
 @end

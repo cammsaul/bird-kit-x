@@ -37,4 +37,12 @@
 /// Returns a boolean value for the NSNumber associated with key.
 - (BOOL)valueForBool:(NSString *)key;
 
+/// Returns JSON string representation of dictionary, pretty printed, or nil if serialization produces an error
+/// @seealso JSONStringWithError:
+- (NSString *)JSONString;
+
+/// Returns JSON string representation of dictionary, pretty printed, with error out param
+/// @seealso JSONString
+- (NSString *)JSONStringWithError:(__autoreleasing NSError **)error;
+
 @end
