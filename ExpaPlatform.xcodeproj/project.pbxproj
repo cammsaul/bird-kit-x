@@ -59,6 +59,7 @@
 		7E255C3118172345008FD59D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3018172345008FD59D /* UIKit.framework */; };
 		7E255C331817234A008FD59D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C321817234A008FD59D /* QuartzCore.framework */; };
 		7E255C3518172350008FD59D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3418172350008FD59D /* CoreGraphics.framework */; };
+		D115B1D518D118450076A27F /* NSData+Expa.m in Sources */ = {isa = PBXBuildFile; fileRef = D115B1D418D118450076A27F /* NSData+Expa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,8 @@
 		7E255C3018172345008FD59D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E255C321817234A008FD59D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E255C3418172350008FD59D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D115B1D318D118450076A27F /* NSData+Expa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Expa.h"; sourceTree = "<group>"; };
+		D115B1D418D118450076A27F /* NSData+Expa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Expa.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,8 @@
 				32DCE4A718C4DB4400B48621 /* UIImage+Expa.m */,
 				32DCE4A818C4DB4400B48621 /* UIView+Expa.h */,
 				32DCE4A918C4DB4400B48621 /* UIView+Expa.m */,
+				D115B1D318D118450076A27F /* NSData+Expa.h */,
+				D115B1D418D118450076A27F /* NSData+Expa.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				32DCE4FB18C4DD3F00B48621 /* XEdgeSwipeGestureRecognizer.m in Sources */,
 				32DCE50418C4DD8E00B48621 /* XDeviceUtilities.m in Sources */,
 				32DCE50C18C4DD9A00B48621 /* XLocationUtilities.m in Sources */,
+				D115B1D518D118450076A27F /* NSData+Expa.m in Sources */,
 				32DCE4E718C4DD1400B48621 /* XFeedback.m in Sources */,
 				32DCE50018C4DD8800B48621 /* XDevUtilities.m in Sources */,
 				32DCE4EF18C4DD2E00B48621 /* XLogging.m in Sources */,
