@@ -65,11 +65,6 @@ static BOOL __activeRequest;
 + (void)geocodeStreetAddress:(NSString *)requestedStreetAddress city:(NSString *)city state:(NSString *)state zipCode:(NSNumber *)zipCode
 					 country:(NSString *)country inRegion:(CLRegion *)region completion:(XGeocodingCompletionBlock)completionBlock {
 	
-	if (requestedStreetAddress.length < 3) {
-		completionBlock(nil); // too short to even try searching yet
-		return;
-	}
-	
 //	XLog(self, LogFlagInfo, @"geocoding %@, %@, %@, %@, %@", requestedStreetAddress, city, state, zipCode, country);
 	
 	if (__activeRequest) {
