@@ -15,6 +15,9 @@
 @interface NSString (Expa)
 -(NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
+/// Returns edit distance of string from another
+- (NSInteger)distanceFromString:(NSString *)otherString;
+
 #ifdef __cplusplus
 /// Helper method to return a C++ std::string
 - (const std::string)stdString;
