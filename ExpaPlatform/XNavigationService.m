@@ -10,22 +10,29 @@
 #import "NSDictionary+Expa.h"
 #import "XLogging.h"
 
-static UINavigationController *__navigationController;
+@interface XNavigationService ()
+@property (nonatomic, strong) UINavigationController *navigationController;
++ (XNavigationService *)sharedInstance;
+@end
 
 @implementation XNavigationService
+
++ (XNavigationService *)sharedInstance {
+	return [super sharedInstance];
+}
 
 + (void)setNavigationController:(UINavigationController *)navigationController {
 	NSAssert(navigationController, @"You should not set navigation controller to nil!");
 	XLog(self, LogFlagInfo, @"Root navigation controller set to: %@", navigationController);
-	__navigationController = navigationController;
+	[self sharedInstance].navigationController = navigationController;
 }
 
 + (UINavigationController *)navigationController {
-	return __navigationController;
+	return [self sharedInstance].navigationController;
 }
 
 + (void)navigateTo:(NSString *)destination params:(NSDictionary *)params {
-	NSAssert(__navigationController, @"you must call setNavigationController: before using the navigation service!");
+	NSAssert([self sharedInstance].navigationController, @"you must call setNavigationController: before using the navigation service!");
 	
 	id delegate = params[XNavigationServiceDelegateParam];
 	
@@ -54,11 +61,11 @@ static UINavigationController *__navigationController;
 		}
 	}
 	
-	[__navigationController pushViewController:vc animated:YES];
+	[[self sharedInstance].navigationController pushViewController:vc animated:YES];
 }
 
 + (void)popViewControllerAnimated:(BOOL)animated {
-	[__navigationController popViewControllerAnimated:animated];
+	[[self sharedInstance].navigationController popViewControllerAnimated:animated];
 }
 
 @end

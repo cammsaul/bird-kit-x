@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "XSingleton.h"
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
 /// this parameter is a special case; if you set this parameter and the target view controller responds to setDelegate:,
@@ -19,7 +21,7 @@ static const NSString * const XNavigationServiceDelegateParam = @"delegate";
 
 /// Simple navigation service that supports navigating to different pages of the app with parameters, similar to Android
 /// activities or web navigation.
-@interface XNavigationService : NSObject
+@interface XNavigationService : XSingleton
 
 /// Navigaties to the view controller with the provided name. Automatically calls initWithParams: if the view controller
 /// supports it, which sets the params property of that view controller.
