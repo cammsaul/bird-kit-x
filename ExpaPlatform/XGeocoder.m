@@ -18,6 +18,8 @@ static BOOL __activeRequest;
 @property (nonatomic, strong, readwrite) NSString *name;
 @property (nonatomic, strong, readwrite) NSString *streetAddress;
 @property (nonatomic, strong, readwrite) NSString *city;
+@property (nonatomic, strong, readwrite) NSString *state;
+@property (nonatomic, strong, readwrite) NSString *country;
 @property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
 @end
 
@@ -82,7 +84,6 @@ static BOOL __activeRequest;
 	if (zipCode) {
 		requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@" %@", [zipCode description]];
 	}
-	if (!country) country = @"United States";
 	requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@", %@", country];
 	
 	[__geocoder geocodeAddressString:requestedStreetAddress inRegion:region completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -126,6 +127,8 @@ static BOOL __activeRequest;
 			result.streetAddress = actualStreetAddress;
 			result.name = name;
 			result.city = placemark.locality;
+			result.state = placemark.administrativeArea;
+			result.country = placemark.country;
 			result.coordinate = placemark.location.coordinate;
 			[results addObject:result];
         }

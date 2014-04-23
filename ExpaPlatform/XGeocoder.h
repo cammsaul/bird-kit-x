@@ -10,14 +10,12 @@ typedef void(^XReverseGeocdoingCompletionBlock)(NSString *addressOrNil);
 typedef void(^XGeocodingCompletionBlock)(NSArray *results);
 
 @interface XGeocoderResult : NSObject
-/// Name of the location of the geocoder result
-- (NSString *)name;
-/// Street address of the geocoder result
-- (NSString *)streetAddress;
-/// City of the geocoder result
-- (NSString *)city;
-/// Coordinate of the geocoder results
-- (CLLocationCoordinate2D)coordinate;
+- (NSString *)name;						///< Name of the location of the geocoder result
+- (NSString *)streetAddress;			///< full street address (!), e.g. '937 Howard St, San Francisco, CA'
+- (NSString *)city;						///< City of the geocoder result
+- (NSString *)state;					///< state or provience e.g. 'CA'
+- (NSString *)country;					///< e.g. 'United States' (?)
+- (CLLocationCoordinate2D)coordinate;	///< Coordinate of the geocoder results
 @end
 
 @interface XGeocoder : NSObject

@@ -146,9 +146,11 @@ static char ShowsLoadingSpinnerKey;
 - (void)addConstraints:(NSArray *)visualFormatStrings metrics:(NSDictionary *)metrics views:(NSDictionary *)viewsDictionary {
 	if (!visualFormatStrings) return;
 	
-	for (UIView *view in viewsDictionary.allValues) {
-		NSAssert([self.subviews containsObject:view], @"view '%@' is not a subview of '%@'!!", view, self);
-	}
+	#if DEBUG
+		for (UIView *view in viewsDictionary.allValues) {
+			NSAssert([self.subviews containsObject:view], @"view '%@' is not a subview of '%@'!!", view, self);
+		}
+	#endif
 	
 	for (NSString *vfString in visualFormatStrings) {
 		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:vfString options:0 metrics:metrics views:viewsDictionary priority:UILayoutPriorityRequired]];
