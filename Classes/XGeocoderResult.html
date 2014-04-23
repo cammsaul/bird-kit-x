@@ -41,7 +41,11 @@
 	
 	<option value="//api/name/coordinate">&nbsp;&nbsp;&nbsp;&nbsp;coordinate</option>
 	
+	<option value="//api/name/country">&nbsp;&nbsp;&nbsp;&nbsp;country</option>
+	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;state</option>
 	
 	<option value="//api/name/streetAddress">&nbsp;&nbsp;&nbsp;&nbsp;streetAddress</option>
 	
@@ -56,6 +60,8 @@
 	
 	<option value="//api/name/coordinate">&nbsp;&nbsp;&nbsp;&nbsp;- coordinate</option>
 	
+	<option value="//api/name/country">&nbsp;&nbsp;&nbsp;&nbsp;- country</option>
+	
 	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
 	
 	<option value="//api/name/hash">&nbsp;&nbsp;&nbsp;&nbsp;- hash</option>
@@ -63,6 +69,8 @@
 	<option value="//api/name/isEqual:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqual:</option>
 	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;- name</option>
+	
+	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;- state</option>
 	
 	<option value="//api/name/streetAddress">&nbsp;&nbsp;&nbsp;&nbsp;- streetAddress</option>
 	
@@ -94,7 +102,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coordinate">coordinate</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/country">country</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/streetAddress">streetAddress</a></span></li>
 	
@@ -110,6 +122,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coordinate">coordinate</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/country">country</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hash">hash</a></span></li>
@@ -117,6 +131,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqual:">isEqual:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/streetAddress">streetAddress</a></span></li>
 	
@@ -185,6 +201,18 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/state">&ndash;&nbsp;state</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/country">&ndash;&nbsp;country</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/coordinate">&ndash;&nbsp;coordinate</a></code>
 	</span>
 	
@@ -243,6 +271,18 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/country">&nbsp;&nbsp;country</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/coordinate">&nbsp;&nbsp;coordinate</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -283,12 +323,34 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/country" title="country"></a>
+	<h3 class="subsubtitle method-title">country</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSString *country</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/name" title="name"></a>
 	<h3 class="subsubtitle method-title">name</h3>
 	
 	
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSString *name</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/state" title="state"></a>
+	<h3 class="subsubtitle method-title">state</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSString *state</code></div>
 
     
 </div>
@@ -321,7 +383,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>City of the geocoder result</p>
+		<p>&lt; full street address (!), e.g. &lsquo;937 Howard St, San Francisco, CA&rsquo;</p>
 	</div>		
 	
     
@@ -357,12 +419,48 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Coordinate of the geocoder results</p>
+		<p>&lt; e.g. &lsquo;United States&rsquo; (?)</p>
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>- (CLLocationCoordinate2D)coordinate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XGeocoder.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/country" title="country"></a>
+	<h3 class="subsubtitle method-title">country</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>&lt; <a href="#//api/name/state">state</a> or provience e.g. &lsquo;CA&rsquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)country</code></div>
 
     
 	
@@ -424,14 +522,25 @@
 	<h3 class="subsubtitle method-title">name</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)name</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/state" title="state"></a>
+	<h3 class="subsubtitle method-title">state</h3>
+	
+	
 	
 	<div class="method-subsection brief-description">
-		<p>Name of the location of the geocoder result</p>
+		<p>&lt; City of the geocoder result</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSString *)name</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)state</code></div>
 
     
 	
@@ -462,7 +571,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Street address of the geocoder result</p>
+		<p>&lt; Name of the location of the geocoder result</p>
 	</div>		
 	
     
