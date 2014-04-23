@@ -8,6 +8,10 @@
 
 #import <objc/runtime.h>
 
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 /// The type of block you should return when using swizzle_with_block.
 typedef void(^swizzle_with_block_t)(id _self, ...);
 
@@ -58,6 +62,10 @@ void add_method_with_block(Class cls, const char *name, id _block);
 
 /// Debugger utility method that dumps all methods and signatures instances of a class respond to.
 void debug_class_dump_methods(const id cls);
+
+#ifdef __cplusplus
+	} // end extern "C"
+#endif
 
 #define _ASSOC_PROP(TYPE, GETTER, SETTER, OBJC_ASSOCIATION_POLICY, PLUS_OR_MINUS) \
 	static const char GETTER##Key = '\0'; \
