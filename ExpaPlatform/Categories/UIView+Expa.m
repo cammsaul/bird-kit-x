@@ -263,15 +263,16 @@ static char ShowsLoadingSpinnerKey;
 			loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 			loadingSpinner.frame = self.bounds;
 			loadingSpinner.translatesAutoresizingMaskIntoConstraints = NO;
+			loadingSpinner.hidesWhenStopped = YES;
 			[self addSubview:loadingSpinner];
 			[self addConstraints:@[@"|[loadingSpinner]|", @"V:|[loadingSpinner]|"] views:NSDictionaryOfVariableBindings(loadingSpinner)];
 			objc_setAssociatedObject(self, &LoadingSpinnerKey, loadingSpinner, OBJC_ASSOCIATION_ASSIGN);
 		}
 		[loadingSpinner startAnimating];
-		loadingSpinner.hidden = NO;
+//		loadingSpinner.hidden = NO;
 	} else {
 		[loadingSpinner stopAnimating];
-		loadingSpinner.hidden = YES;
+//		loadingSpinner.hidden = YES;
 	}
 	objc_setAssociatedObject(self, &ShowsLoadingSpinnerKey, @(showsSpinner), OBJC_ASSOCIATION_ASSIGN);
 }
