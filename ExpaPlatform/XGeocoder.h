@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
+#include "XSingleton.h"
+
 typedef void(^XReverseGeocdoingCompletionBlock)(NSString *addressOrNil);
 typedef void(^XGeocodingCompletionBlock)(NSArray *results);
 
@@ -18,7 +20,7 @@ typedef void(^XGeocodingCompletionBlock)(NSArray *results);
 - (CLLocationCoordinate2D)coordinate;	///< Coordinate of the geocoder results
 @end
 
-@interface XGeocoder : NSObject
+@interface XGeocoder : XSingleton
 
 /// According to Apple, you can only have one reverse geocoding request at any given moment, so calling this will cancel any exisiting requests (completion block will return nil).
 + (void)reverseGeocodeCoordinate:(CLLocationCoordinate2D)coordinate completion:(XReverseGeocdoingCompletionBlock)completionBlock;

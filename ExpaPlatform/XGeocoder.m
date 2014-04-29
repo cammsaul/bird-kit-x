@@ -6,13 +6,14 @@
 //  Copyright (c) 2013 Expa. All rights reserved.
 //
 
+#import <AddressBook/AddressBook.h>
+
 #import "XGeocoder.h"
 #import "XLogging.h"
 #import "NSMutableArray+Expa.h"
 #import "XLocationUtilities.h"
 
-static CLGeocoder *__geocoder;
-static BOOL __activeRequest;
+#pragma mark - XGeocoderResult
 
 @interface XGeocoderResult ()
 @property (nonatomic, strong, readwrite) NSString *name;
@@ -36,22 +37,39 @@ static BOOL __activeRequest;
 }
 @end
 
+
+#pragma mark - XGeocoder
+
+@interface XGeocoder ()
+@property (nonatomic, strong) CLGeocoder *geocoder;
+@property (nonatomic)		  BOOL		 activeRequest; ///< do we currently have an active request?
+
++ (XGeocoder *)sharedInstance;
+@end
+
 @implementation XGeocoder
 
-+ (void)load {
-	__geocoder = [[CLGeocoder alloc] init];
++ (XGeocoder *)sharedInstance {
+	return [super sharedInstance];
+}
+
+- (id)init {
+	if (self = [super init]) {
+		self.geocoder = [[CLGeocoder alloc] init];
+	}
+	return self;
 }
 
 + (void)reverseGeocodeCoordinate:(CLLocationCoordinate2D)coordinate completion:(XReverseGeocdoingCompletionBlock)completionBlock {
 //	XLog(self, LogFlagInfo, @"Reverse geocoding %f, %f", coordinate.latitude, coordinate.longitude);
-	if (__activeRequest) {
+	if ([self sharedInstance].activeRequest) {
 //		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
-		[__geocoder cancelGeocode];
+		[[self sharedInstance].geocoder cancelGeocode];
 	}
 	
-	__activeRequest = YES;
-	[__geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
-		__activeRequest = NO;
+	[self sharedInstance].activeRequest = YES;
+	[[self sharedInstance].geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+		[self sharedInstance].activeRequest = NO;
 		
 		if (error || !placemarks[0]) {
 			completionBlock(nil);
@@ -64,37 +82,33 @@ static BOOL __activeRequest;
 	}];
 }
 
-+ (void)geocodeStreetAddress:(NSString *)requestedStreetAddress city:(NSString *)city state:(NSString *)state zipCode:(NSNumber *)zipCode
++ (void)geocodeStreetAddress:(NSString *)requestedAddress city:(NSString *)city state:(NSString *)state zipCode:(NSNumber *)zipCode
 					 country:(NSString *)country inRegion:(CLRegion *)region completion:(XGeocodingCompletionBlock)completionBlock {
 	
-//	XLog(self, LogFlagInfo, @"geocoding %@, %@, %@, %@, %@", requestedStreetAddress, city, state, zipCode, country);
+//	XLog(self, LogFlagDebug, @"geocoding %@, %@, %@, %@, %@", requestedAddress, city, state, zipCode, country);
 	
-	if (__activeRequest) {
-//		XLog(self, LogFlagInfo, @"An existing geocoding request has been canceled.");
-		[__geocoder cancelGeocode];
+	if ([self sharedInstance].activeRequest) {
+//		XLog(self, LogFlagDebug, @"An existing geocoding request has been canceled.");
+		[[self sharedInstance].geocoder cancelGeocode];
 	}
-	__activeRequest = YES;
+	[self sharedInstance].activeRequest = YES;
 	
-	if (city.length) {
-		requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@", %@", city];
-	}
-	if (state.length) {
-		requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@", %@", state];
-	}
-	if (zipCode) {
-		requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@" %@", [zipCode description]];
-	}
-	requestedStreetAddress = [requestedStreetAddress stringByAppendingFormat:@", %@", country];
+	NSMutableDictionary *addressDict = @{}.mutableCopy;
+	if (requestedAddress.length)	addressDict[(NSString *)kABPersonAddressStreetKey]	= requestedAddress;
+	if (city.length)				addressDict[(NSString *)kABPersonAddressCityKey]	= city;
+	if (state.length)				addressDict[(NSString *)kABPersonAddressStateKey]	= state;
+	if (zipCode)					addressDict[(NSString *)kABPersonAddressZIPKey]		= zipCode;
+	if (country)					addressDict[(NSString *)kABPersonAddressCountryKey] = country;
 	
-	[__geocoder geocodeAddressString:requestedStreetAddress inRegion:region completionHandler:^(NSArray *placemarks, NSError *error) {
-		__activeRequest = NO;
+	[[self sharedInstance].geocoder geocodeAddressDictionary:addressDict completionHandler:^(NSArray *placemarks, NSError *error) {
+		[self sharedInstance].activeRequest = NO;
 		
         if (error || placemarks.count == 0) {
             completionBlock(nil);
             return;
         }
 		
-//		XLog(self, LogFlagInfo, @"%d results for '%@' geocoding", placemarks.count, requestedStreetAddress);
+//		XLog(self, LogFlagDebug, @"%d results for '%@' geocoding", placemarks.count, addressDict);
         
         NSMutableArray *results = [NSMutableArray array];
         for (CLPlacemark *placemark in placemarks) {
@@ -107,7 +121,7 @@ static BOOL __activeRequest;
                 actualStreetAddress = placemark.subThoroughfare;
             }
 			// want our name to be something like '937A Howard', otherwise try for placemark name (probably nil), otherwise just take the first part of whatever the user typed in
-			NSString *name = actualStreetAddress.length ? actualStreetAddress : placemark.name.length ? placemark.name : [requestedStreetAddress componentsSeparatedByString:@","][0];
+			NSString *name = actualStreetAddress.length ? actualStreetAddress : placemark.name.length ? placemark.name : requestedAddress;
 			
             if (placemark.locality) {
                 if (actualStreetAddress) {
