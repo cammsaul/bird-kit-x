@@ -46,7 +46,10 @@ inline void guarantee_on_main_thread(void(^block)()) {
 	else	dispatch_sync_main(block);
 }
 
-void with_weak_ref(id obj, weak_ref_block_t weak_ref_block) {
-	__block __weak id weakRef = obj;
-	weak_ref_block(weakRef);
-}
+// c++ version is a template in the header
+#ifndef __cplusplus
+	void with_weak_ref(id obj, weak_ref_block_t weak_ref_block) {
+		__block __weak id weakRef = obj;
+		weak_ref_block(weakRef);
+	}
+#endif
