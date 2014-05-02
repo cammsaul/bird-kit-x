@@ -44,15 +44,28 @@
     //create drawing context
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
     
-    //draw
-    [self drawInRect:CGRectMake(0.0f, 0.0f, size.width, size.height)];
-    
+	// maintain aspect ratio
+	const float resizeFactor = MAX(size.width / self.size.height, size.height / self.size.height);
+	CGSize newSize = CGSizeMake(self.size.width * resizeFactor, self.size.height * resizeFactor);
+	if (newSize.width < size.width) {
+		float factor = size.width / newSize.width;
+		newSize = CGSizeMake(newSize.width * factor, newSize.height * factor);
+	}
+	if (newSize.height < size.height) {
+		float factor = size.height / newSize.height;
+		newSize = CGSizeMake(newSize.width * factor, newSize.height * factor);
+	}
+	const int xOffset = (newSize.width - size.width) * -0.5;
+	const int yOffset = (newSize.height - size.height) * -0.5;
+	
+    [self drawInRect:CGRectMake(xOffset, yOffset, newSize.width, newSize.height)];
+		
     //capture resultant image
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    //return image
-    return image;
+    //return properly rotated image
+    return [UIImage imageWithCGImage:image.CGImage scale:1.0f orientation:self.imageOrientation];
 }
 
 @end
