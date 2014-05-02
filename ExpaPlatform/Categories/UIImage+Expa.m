@@ -65,7 +65,7 @@
     UIGraphicsEndImageContext();
     
     //return properly rotated image
-    return [UIImage imageWithCGImage:image.CGImage scale:1.0f orientation:self.imageOrientation];
+    return image;
 }
 
 @end
