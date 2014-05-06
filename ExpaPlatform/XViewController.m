@@ -115,7 +115,6 @@ ASSOC_PROP_STRONG(NSNumber *, hasCalledSetup, setHasCalledSetup);
 - (void)viewControllerWillBecomeActive:(BOOL)animated {}
 - (void)viewControllerWillBecomeInactive:(BOOL)animated {}
 - (void)viewControllerDidBecomeInactive:(BOOL)animated {}
-- (void)trackEventType:(NSString *)string otherParams:(NSDictionary *)params {}
 
 //----- END GeoTip-only methods -----//
 
