@@ -1,6 +1,6 @@
 //
 //  XLogging.h
-//  GeoTip
+//  Spot
 //
 //  Created by Cameron Saul on 10/22/13.
 //  Copyright (c) 2013 Series G. All rights reserved.

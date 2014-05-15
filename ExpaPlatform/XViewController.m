@@ -1,6 +1,6 @@
 //
 //  XViewController.m
-//  GeoTip
+//  Spot
 //
 //  Created by Cameron Saul on 10/17/13.
 //  Copyright (c) 2013 Series G. All rights reserved.
@@ -97,7 +97,7 @@ ASSOC_PROP_STRONG(NSNumber *, hasCalledSetup, setHasCalledSetup);
 	self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
-//----- These methods don't exist as part of expa-ios per se (GeoTipNavigationController calls them) YET -- they will soon -----//
+//----- These methods don't exist as part of expa-ios per se (SpotNavigationController calls them) YET -- they will soon -----//
 
 - (void)viewControllerDidBecomeActive:(BOOL)animated {
 	// Since GTTracker isn't part of ExpaPlatform (yet) use ObjC runtime hackery to find the IMP and call it TODO.
@@ -116,7 +116,7 @@ ASSOC_PROP_STRONG(NSNumber *, hasCalledSetup, setHasCalledSetup);
 - (void)viewControllerWillBecomeInactive:(BOOL)animated {}
 - (void)viewControllerDidBecomeInactive:(BOOL)animated {}
 
-//----- END GeoTip-only methods -----//
+//----- END Spot-only methods -----//
 
 
 @end

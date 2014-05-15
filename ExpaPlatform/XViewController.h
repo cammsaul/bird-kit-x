@@ -1,6 +1,6 @@
 //
 //  XViewController.h
-//  GeoTip
+//  Spot
 //
 //  Created by Cameron Saul on 10/17/13.
 //  Copyright (c) 2013 Series G. All rights reserved.
@@ -52,16 +52,16 @@
 	
 /*---- GEOTIP SPECIFIC FOR THE TIME BEING ----*/
 	
-/// Called when GeoTipNavigationController is about to make the receiving view controller the 'top' view controller. Called after loadView/viewDidLoad/etc
+/// Called when SpotNavigationController is about to make the receiving view controller the 'top' view controller. Called after loadView/viewDidLoad/etc
 - (void)viewControllerWillBecomeActive:(BOOL)animated;
 	
-/// Called after GeoTipNavigationController makes the receiving view controller its 'top' view controller.
+/// Called after SpotNavigationController makes the receiving view controller its 'top' view controller.
 - (void)viewControllerDidBecomeActive:(BOOL)animated;
 	
-/// Called when GeoTipNavigationController pushes/pops to a new 'top' view controller.
+/// Called when SpotNavigationController pushes/pops to a new 'top' view controller.
 - (void)viewControllerWillBecomeInactive:(BOOL)animated;
 	
-/// Called after GeoTipNavigationController pushes/pops to a new 'top' view controller.
+/// Called after SpotNavigationController pushes/pops to a new 'top' view controller.
 - (void)viewControllerDidBecomeInactive:(BOOL)animated;
 	
 @end

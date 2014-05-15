@@ -89,7 +89,7 @@ static NSString * XBase64EncodedStringFromString(NSString *string) {
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
         [mailViewController setSubject:@"Feedback for Beta 1"];
-        [mailViewController setToRecipients:@[@"feedback@geotip.com"]];
+        [mailViewController setToRecipients:@[@"feedback@spot.com"]];
         [mailViewController addAttachmentData:imageData mimeType:@"image/png" fileName:@"feedback.png"];
         [rootVC presentViewController:mailViewController animated:YES completion:nil];
         
