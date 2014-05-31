@@ -52,6 +52,8 @@
 	
 	<option value="//api/name/popViewControllerAnimated:">&nbsp;&nbsp;&nbsp;&nbsp;+ popViewControllerAnimated:</option>
 	
+	<option value="//api/name/pushViewController:animated:">&nbsp;&nbsp;&nbsp;&nbsp;+ pushViewController:animated:</option>
+	
 	<option value="//api/name/setNavigationController:">&nbsp;&nbsp;&nbsp;&nbsp;+ setNavigationController:</option>
 	
 	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
@@ -97,6 +99,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/navigationController">navigationController</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popViewControllerAnimated:">popViewControllerAnimated:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushViewController:animated:">pushViewController:animated:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNavigationController:">setNavigationController:</a></span></li>
 	
@@ -161,6 +165,12 @@ activities or web navigation.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/navigateTo:params:">+&nbsp;navigateTo:params:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushViewController:animated:">+&nbsp;pushViewController:animated:</a></code>
 	</span>
 	
 	
@@ -249,7 +259,7 @@ activities or web navigation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Navigaties to the view controller with the provided name. Automatically calls initWithParams: if the view controller
+		<p>Navigates to the view controller with the provided name. Automatically calls initWithParams: if the view controller
 supports it, which sets the params property of that view controller.
 Automatically logs the navigation and passed params.</p>
 	</div>		
@@ -329,6 +339,42 @@ Automatically logs the navigation and passed params.</p>
     
 
 	<div class="method-subsection method-declaration"><code>+ (void)popViewControllerAnimated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">XNavigationService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushViewController:animated:" title="pushViewController:animated:"></a>
+	<h3 class="subsubtitle method-title">pushViewController:animated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Pushes the view controller with the singleton navigation controller</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)pushViewController:(UIViewController *)<em>viewController</em> animated:(BOOL)<em>animated</em></code></div>
 
     
 	
