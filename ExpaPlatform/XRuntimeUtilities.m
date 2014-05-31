@@ -12,7 +12,7 @@
 void swizzle_method_with_block(Method orig_method, Class cls, SEL sel, swizzle_with_block_t(^block)(SEL sel, void(*orig_fptr)(id _self, SEL _sel, ...))) {
 	IMP orig_imp = method_getImplementation(orig_method);
 	
-	id _swzz_blck = block(sel, (void *)orig_imp);
+	id _swzz_blck = block(sel, (void(*)(id _self, SEL _sel, ...))orig_imp);
 	
 	// store the block as an associated object so it gets copied onto heap
 	const char *assoc_key = sel_getName(sel);
@@ -80,14 +80,14 @@ void add_method_with_block(Class cls, const char *name, id _block){
 	const char *assoc_key = sel_getName(sel);
 	objc_setAssociatedObject(cls, assoc_key, _block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 	id block = objc_getAssociatedObject(cls, assoc_key);
-	struct _block_t *block_struct = (__bridge void *)block;
+	struct _block_t *block_struct = (__bridge struct _block_t *)block;
 	
 	if (!(block_struct->flags & flag_has_signature)) {
 		@throw [[NSException alloc] initWithName:[NSString stringWithFormat:@"add_method_with_block(%@, %s, ...) failed", NSStringFromClass(cls), name] reason:@"Block does not have a method signature." userInfo:nil];
 	}
 	
 	const int index = (block_struct->flags & flag_copy_dispose) ? 2 : 0;
-    const char *types = block_struct->descriptor->rest[index];
+    const char *types = (char *)block_struct->descriptor->rest[index];
 	
 	IMP imp = imp_implementationWithBlock(block);
 	
