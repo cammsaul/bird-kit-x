@@ -23,10 +23,13 @@ static const NSString * const XNavigationServiceDelegateParam = @"delegate";
 /// activities or web navigation.
 @interface XNavigationService : XSingleton
 
-/// Navigaties to the view controller with the provided name. Automatically calls initWithParams: if the view controller
+/// Navigates to the view controller with the provided name. Automatically calls initWithParams: if the view controller
 /// supports it, which sets the params property of that view controller.
 /// Automatically logs the navigation and passed params.
 + (void)navigateTo:(NSString *)destinationClassName params:(NSDictionary *)params;
+
+/// Pushes the view controller with the singleton navigation controller
++ (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 
 /// Pops the top view controller.
 + (void)popViewControllerAnimated:(BOOL)animated;

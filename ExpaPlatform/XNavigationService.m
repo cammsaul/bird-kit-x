@@ -61,7 +61,12 @@
 		}
 	}
 	
-	[[self sharedInstance].navigationController pushViewController:vc animated:YES];
+    [self pushViewController:vc animated:YES];
+}
+
++ (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+	[[self sharedInstance].navigationController pushViewController:viewController animated:animated];
 }
 
 + (void)popViewControllerAnimated:(BOOL)animated {
