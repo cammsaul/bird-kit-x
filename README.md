@@ -33,7 +33,3 @@ Restrict logging to certain classes (you can even do this at runtime via lldb):
 
     // now only messages from VenueDetailsViewController will be logged
     (lldb) po XLogClasses = (NSSet *)[NSSet setWithObject:[VenueDetailsViewController class]]
-
-**XFeedback**
-
-Automatically collect feedback and add to Asana whenever a user takes a screenshot.
