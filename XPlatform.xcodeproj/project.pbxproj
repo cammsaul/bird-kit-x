@@ -11,12 +11,9 @@
 		7E255C3118172345008FD59D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3018172345008FD59D /* UIKit.framework */; };
 		7E255C331817234A008FD59D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C321817234A008FD59D /* QuartzCore.framework */; };
 		7E255C3518172350008FD59D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E255C3418172350008FD59D /* CoreGraphics.framework */; };
-		D174AC031B7DF46500E22B39 /* MPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABDD1B7DF46500E22B39 /* MPTextView.m */; };
-		D174AC041B7DF46500E22B39 /* XFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABDF1B7DF46500E22B39 /* XFeedbackViewController.m */; };
 		D174AC051B7DF46500E22B39 /* XDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE21B7DF46500E22B39 /* XDeviceUtilities.m */; };
 		D174AC061B7DF46500E22B39 /* XDevUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE41B7DF46500E22B39 /* XDevUtilities.m */; };
 		D174AC071B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */; };
-		D174AC081B7DF46500E22B39 /* XFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE81B7DF46500E22B39 /* XFeedback.m */; };
 		D174AC091B7DF46500E22B39 /* XGCDUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */; };
 		D174AC0A1B7DF46500E22B39 /* XGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEC1B7DF46500E22B39 /* XGeocoder.m */; };
 		D174AC0B1B7DF46500E22B39 /* XLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEE1B7DF46500E22B39 /* XLocationUtilities.m */; };
@@ -58,19 +55,12 @@
 		7E255C321817234A008FD59D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E255C3418172350008FD59D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D174ABDA1B7DF46500E22B39 /* XPlatform-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XPlatform-Prefix.pch"; sourceTree = "<group>"; };
-		D174ABDC1B7DF46500E22B39 /* MPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTextView.h; sourceTree = "<group>"; };
-		D174ABDD1B7DF46500E22B39 /* MPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTextView.m; sourceTree = "<group>"; };
-		D174ABDE1B7DF46500E22B39 /* XFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedbackViewController.h; sourceTree = "<group>"; };
-		D174ABDF1B7DF46500E22B39 /* XFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedbackViewController.m; sourceTree = "<group>"; };
-		D174ABE01B7DF46500E22B39 /* XFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFeedbackViewController.xib; sourceTree = "<group>"; };
 		D174ABE11B7DF46500E22B39 /* XDeviceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDeviceUtilities.h; sourceTree = "<group>"; };
 		D174ABE21B7DF46500E22B39 /* XDeviceUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDeviceUtilities.m; sourceTree = "<group>"; };
 		D174ABE31B7DF46500E22B39 /* XDevUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDevUtilities.h; sourceTree = "<group>"; };
 		D174ABE41B7DF46500E22B39 /* XDevUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDevUtilities.m; sourceTree = "<group>"; };
 		D174ABE51B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEdgeSwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XEdgeSwipeGestureRecognizer.m; sourceTree = "<group>"; };
-		D174ABE71B7DF46500E22B39 /* XFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFeedback.h; sourceTree = "<group>"; };
-		D174ABE81B7DF46500E22B39 /* XFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFeedback.m; sourceTree = "<group>"; };
 		D174ABE91B7DF46500E22B39 /* XGCDUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGCDUtilites.h; sourceTree = "<group>"; };
 		D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGCDUtilites.m; sourceTree = "<group>"; };
 		D174ABEB1B7DF46500E22B39 /* XGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGeocoder.h; sourceTree = "<group>"; };
@@ -159,15 +149,12 @@
 			children = (
 				D174ABDA1B7DF46500E22B39 /* XPlatform-Prefix.pch */,
 				D174AC111B7DF5E200E22B39 /* Categories */,
-				D174ABDB1B7DF46500E22B39 /* Feedback */,
 				D174ABE11B7DF46500E22B39 /* XDeviceUtilities.h */,
 				D174ABE21B7DF46500E22B39 /* XDeviceUtilities.m */,
 				D174ABE31B7DF46500E22B39 /* XDevUtilities.h */,
 				D174ABE41B7DF46500E22B39 /* XDevUtilities.m */,
 				D174ABE51B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.h */,
 				D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */,
-				D174ABE71B7DF46500E22B39 /* XFeedback.h */,
-				D174ABE81B7DF46500E22B39 /* XFeedback.m */,
 				D174ABE91B7DF46500E22B39 /* XGCDUtilites.h */,
 				D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */,
 				D174ABEB1B7DF46500E22B39 /* XGeocoder.h */,
@@ -186,18 +173,6 @@
 				D174ABF81B7DF46500E22B39 /* XViewController.m */,
 			);
 			path = XPlatform;
-			sourceTree = "<group>";
-		};
-		D174ABDB1B7DF46500E22B39 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				D174ABDC1B7DF46500E22B39 /* MPTextView.h */,
-				D174ABDD1B7DF46500E22B39 /* MPTextView.m */,
-				D174ABDE1B7DF46500E22B39 /* XFeedbackViewController.h */,
-				D174ABDF1B7DF46500E22B39 /* XFeedbackViewController.m */,
-				D174ABE01B7DF46500E22B39 /* XFeedbackViewController.xib */,
-			);
-			path = Feedback;
 			sourceTree = "<group>";
 		};
 		D174AC111B7DF5E200E22B39 /* Categories */ = {
@@ -303,19 +278,16 @@
 				D174AC0D1B7DF46500E22B39 /* XNavigationService.m in Sources */,
 				D174AC2C1B7DF5E200E22B39 /* UIButton+X.m in Sources */,
 				D174AC2D1B7DF5E200E22B39 /* UIColor+X.m in Sources */,
-				D174AC041B7DF46500E22B39 /* XFeedbackViewController.m in Sources */,
 				D174AC291B7DF5E200E22B39 /* NSMutableArray+X.m in Sources */,
 				D174AC0A1B7DF46500E22B39 /* XGeocoder.m in Sources */,
 				D174AC2F1B7DF5E200E22B39 /* UIView+X.m in Sources */,
 				D174AC271B7DF5E200E22B39 /* NSDictionary+X.m in Sources */,
 				D174AC0C1B7DF46500E22B39 /* XLogging.m in Sources */,
-				D174AC081B7DF46500E22B39 /* XFeedback.m in Sources */,
 				D174AC2A1B7DF5E200E22B39 /* NSString+X.mm in Sources */,
 				D174AC2B1B7DF5E200E22B39 /* UIAlertView+X.m in Sources */,
 				D174AC281B7DF5E200E22B39 /* NSLayoutConstraint+X.m in Sources */,
 				D174AC0F1B7DF46500E22B39 /* XSingleton.m in Sources */,
 				D174AC051B7DF46500E22B39 /* XDeviceUtilities.m in Sources */,
-				D174AC031B7DF46500E22B39 /* MPTextView.m in Sources */,
 				D174AC091B7DF46500E22B39 /* XGCDUtilites.m in Sources */,
 				D174AC261B7DF5E200E22B39 /* NSData+X.m in Sources */,
 				D174AC061B7DF46500E22B39 /* XDevUtilities.m in Sources */,

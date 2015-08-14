@@ -18,6 +18,9 @@
 /// Returns edit distance of string from another
 - (NSInteger)distanceFromString:(NSString *)otherString;
 
+/// Return a Base-64 encoded version of the current string
+- (NSString *)base64EncodedString;
+
 #ifdef __cplusplus
 /// Helper method to return a C++ std::string
 - (const std::string)stdString;
