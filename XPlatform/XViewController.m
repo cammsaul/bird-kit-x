@@ -1,6 +1,6 @@
 //
 //  XViewController.m
-//  Spot
+//  Cam Saül
 //
 //  Created by Cameron Saul on 10/17/13.
 //  Copyright (c) 2013 Series G. All rights reserved.
