@@ -14,7 +14,7 @@
 		D174AC051B7DF46500E22B39 /* XDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE21B7DF46500E22B39 /* XDeviceUtilities.m */; };
 		D174AC061B7DF46500E22B39 /* XDevUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE41B7DF46500E22B39 /* XDevUtilities.m */; };
 		D174AC071B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */; };
-		D174AC091B7DF46500E22B39 /* XGCDUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */; };
+		D174AC091B7DF46500E22B39 /* XGCDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEA1B7DF46500E22B39 /* XGCDUtilities.m */; };
 		D174AC0A1B7DF46500E22B39 /* XGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEC1B7DF46500E22B39 /* XGeocoder.m */; };
 		D174AC0B1B7DF46500E22B39 /* XLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABEE1B7DF46500E22B39 /* XLocationUtilities.m */; };
 		D174AC0C1B7DF46500E22B39 /* XLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = D174ABF01B7DF46500E22B39 /* XLogging.m */; };
@@ -61,8 +61,8 @@
 		D174ABE41B7DF46500E22B39 /* XDevUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDevUtilities.m; sourceTree = "<group>"; };
 		D174ABE51B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEdgeSwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XEdgeSwipeGestureRecognizer.m; sourceTree = "<group>"; };
-		D174ABE91B7DF46500E22B39 /* XGCDUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGCDUtilites.h; sourceTree = "<group>"; };
-		D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGCDUtilites.m; sourceTree = "<group>"; };
+		D174ABE91B7DF46500E22B39 /* XGCDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGCDUtilities.h; sourceTree = "<group>"; };
+		D174ABEA1B7DF46500E22B39 /* XGCDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGCDUtilities.m; sourceTree = "<group>"; };
 		D174ABEB1B7DF46500E22B39 /* XGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGeocoder.h; sourceTree = "<group>"; };
 		D174ABEC1B7DF46500E22B39 /* XGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGeocoder.m; sourceTree = "<group>"; };
 		D174ABED1B7DF46500E22B39 /* XLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLocationUtilities.h; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 				D174ABE41B7DF46500E22B39 /* XDevUtilities.m */,
 				D174ABE51B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.h */,
 				D174ABE61B7DF46500E22B39 /* XEdgeSwipeGestureRecognizer.m */,
-				D174ABE91B7DF46500E22B39 /* XGCDUtilites.h */,
-				D174ABEA1B7DF46500E22B39 /* XGCDUtilites.m */,
+				D174ABE91B7DF46500E22B39 /* XGCDUtilities.h */,
+				D174ABEA1B7DF46500E22B39 /* XGCDUtilities.m */,
 				D174ABEB1B7DF46500E22B39 /* XGeocoder.h */,
 				D174ABEC1B7DF46500E22B39 /* XGeocoder.m */,
 				D174ABED1B7DF46500E22B39 /* XLocationUtilities.h */,
@@ -288,7 +288,7 @@
 				D174AC281B7DF5E200E22B39 /* NSLayoutConstraint+X.m in Sources */,
 				D174AC0F1B7DF46500E22B39 /* XSingleton.m in Sources */,
 				D174AC051B7DF46500E22B39 /* XDeviceUtilities.m in Sources */,
-				D174AC091B7DF46500E22B39 /* XGCDUtilites.m in Sources */,
+				D174AC091B7DF46500E22B39 /* XGCDUtilities.m in Sources */,
 				D174AC261B7DF5E200E22B39 /* NSData+X.m in Sources */,
 				D174AC061B7DF46500E22B39 /* XDevUtilities.m in Sources */,
 				D174AC101B7DF46500E22B39 /* XViewController.m in Sources */,

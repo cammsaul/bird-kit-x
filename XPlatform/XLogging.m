@@ -8,7 +8,7 @@
 
 #import "XLogging.h"
 #import <objc/runtime.h>
-#import "XGCDUtilites.h"
+#import "XGCDUtilities.h"
 
 static int CurrentLogLevel = LogLevelInfo;
 int *XLogLevel = &CurrentLogLevel;
