@@ -2,7 +2,7 @@
 //  XRuntimeUtilities.m
 //  XPlatform
 //
-//  Created by Cam Saul on 12/21/13.
+//  Created by Cam Saül on 12/21/13.
 //  Copyright (c) 2013 Cam Saül. All rights reserved.
 //
 

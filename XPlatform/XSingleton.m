@@ -2,7 +2,7 @@
 //  XSingleton.m
 //  XPlatform
 //
-//  Created by Cam Saul on 3/2/14.
+//  Created by Cam Saül on 3/2/14.
 //  Copyright (c) 2014 Cam Saül. All rights reserved.
 //
 

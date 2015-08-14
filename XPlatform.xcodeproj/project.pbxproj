@@ -32,6 +32,7 @@
 		D174AC2D1B7DF5E200E22B39 /* UIColor+X.m in Sources */ = {isa = PBXBuildFile; fileRef = D174AC211B7DF5E200E22B39 /* UIColor+X.m */; };
 		D174AC2E1B7DF5E200E22B39 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = D174AC231B7DF5E200E22B39 /* UIImage+X.m */; };
 		D174AC2F1B7DF5E200E22B39 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = D174AC251B7DF5E200E22B39 /* UIView+X.m */; };
+		D174AC831B7E035400E22B39 /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = D174AC821B7E035400E22B39 /* NSDate+X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +98,8 @@
 		D174AC231B7DF5E200E22B39 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
 		D174AC241B7DF5E200E22B39 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
 		D174AC251B7DF5E200E22B39 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
+		D174AC811B7E035400E22B39 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
+		D174AC821B7E035400E22B39 /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				D174AC231B7DF5E200E22B39 /* UIImage+X.m */,
 				D174AC241B7DF5E200E22B39 /* UIView+X.h */,
 				D174AC251B7DF5E200E22B39 /* UIView+X.m */,
+				D174AC811B7E035400E22B39 /* NSDate+X.h */,
+				D174AC821B7E035400E22B39 /* NSDate+X.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				D174AC061B7DF46500E22B39 /* XDevUtilities.m in Sources */,
 				D174AC101B7DF46500E22B39 /* XViewController.m in Sources */,
 				D174AC0B1B7DF46500E22B39 /* XLocationUtilities.m in Sources */,
+				D174AC831B7E035400E22B39 /* NSDate+X.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
