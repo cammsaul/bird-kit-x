@@ -1,6 +1,6 @@
 Highly useful helper functions, classes, and categories.
 
-View the documentation at http://x.github.io/ios-platform/. Doing a production build will also generate the documentation and automatically install into Xcode, and can be viewed via Xcode -> Help -> Documentation and API Reference.
+View the documentation at http://cammsaul.github.io/bird-kit-x/. Doing a production build will also generate the documentation and automatically install into Xcode, and can be viewed via Xcode -> Help -> Documentation and API Reference.
 
 The X iOS Platform Offers several useful components, such as:
 
