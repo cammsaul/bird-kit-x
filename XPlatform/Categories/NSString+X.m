@@ -8,8 +8,6 @@
 
 #import "NSString+X.h"
 
-using namespace std;
-
 @implementation NSString (X)
 
 -(NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
@@ -101,6 +99,10 @@ using namespace std;
     return [[NSString alloc] initWithData:mutableData encoding:NSASCIIStringEncoding];
 }
 
+#ifdef __cplusplus
+
+using namespace std;
+
 - (const string)stdString {
 	return static_cast<const string>([self cStringUsingEncoding:NSUTF8StringEncoding]);
 }
@@ -108,6 +110,8 @@ using namespace std;
 + (NSString *)stringWithStdString:(const string &)stdString {
 	return [NSString stringWithCString:stdString.c_str() encoding:NSUTF8StringEncoding];
 }
+
+#endif
 
 
 @end

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Cam Saül. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #ifdef __cplusplus
 #include <string>
 #endif
