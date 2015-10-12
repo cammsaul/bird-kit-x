@@ -19,6 +19,15 @@
     return [dateFormatter dateFromString:string];
 }
 
+- (NSString *)RFC3339String {
+    NSDateFormatter *dateFormatter  = [[NSDateFormatter alloc] init];
+    dateFormatter.locale            = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    dateFormatter.dateFormat        = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
+    dateFormatter.timeZone          = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    
+    return [dateFormatter stringFromDate:self];
+}
+
 - (NSDateComponents *)components:(NSCalendarUnit)unitFlags {
     return [[NSCalendar currentCalendar] components:unitFlags fromDate:self];
 }

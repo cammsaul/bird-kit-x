@@ -13,6 +13,9 @@
 /// Parse a date with the format yyyy-MM-ddTHH:mm:ssZ
 + (NSDate *)dateFromRFC3339String:(NSString *)string;
 
+/// Return yyyy-MM-ddTHH:mm:ssZ formatted string
+- (NSString *)RFC3339String;
+
 /// Return date components using the current calendar.
 - (NSDateComponents *)components:(NSCalendarUnit)unitFlags;
 
