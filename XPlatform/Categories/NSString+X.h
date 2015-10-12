@@ -19,6 +19,9 @@
 /// Return a Base-64 encoded version of the current string
 - (NSString *)base64EncodedString;
 
+/// Return the string with all whitespace characters (including newlines) removed.
+- (NSString *)stringByRemovingWhitespace;
+
 #ifdef __cplusplus
 /// Helper method to return a C++ std::string
 - (const std::string)stdString;

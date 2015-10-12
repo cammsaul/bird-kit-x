@@ -99,6 +99,11 @@
     return [[NSString alloc] initWithData:mutableData encoding:NSASCIIStringEncoding];
 }
 
+- (NSString *)stringByRemovingWhitespace {
+    return [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsJoinedByString:@""];
+}
+
+
 #ifdef __cplusplus
 
 using namespace std;
