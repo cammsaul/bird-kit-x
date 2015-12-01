@@ -33,13 +33,11 @@
 }
 
 + (UIImage *)imageFromView:(UIView *)view {
-    CGSize size = view.bounds.size;
-    size.width  *= [UIScreen mainScreen].scale;
-    size.height *= [UIScreen mainScreen].scale;
+	UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0); // 0.0 = scale factor set to that of mainScreen
     
-	UIGraphicsBeginImageContextWithOptions(size, YES, 0.0);
 	[view.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    
 	UIGraphicsEndImageContext();
 	return outputImage;
 }
