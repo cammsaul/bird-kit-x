@@ -33,7 +33,11 @@
 }
 
 + (UIImage *)imageFromView:(UIView *)view {
-	UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
+    CGSize size = view.bounds.size;
+    size.width  *= [UIScreen mainScreen].scale;
+    size.height *= [UIScreen mainScreen].scale;
+    
+	UIGraphicsBeginImageContextWithOptions(size, YES, 0.0);
 	[view.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
@@ -41,7 +45,7 @@
 }
 
 - (UIImage *)imageScaledToSize:(CGSize)size {
-    //create drawing context
+    // create drawing context
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
     
 	// maintain aspect ratio
